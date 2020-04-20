@@ -1,0 +1,98 @@
+
+
+
+//////////////////////////////////////////////////////////////////////////////////////////
+
+// ccipd includes
+#include "ccipdProstaFuseResultsOptions.h"
+
+#ifdef _MSC_VER
+#pragma warning( push, 0 )
+#endif // _MSC_VER
+
+// Qt includes
+#include "ui_ccipdProstaFuseResultsOptions.h"
+
+#ifdef _MSC_VER
+#pragma warning( pop )
+#endif // _MSC_VER
+
+//////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+namespace ccipd
+{
+  
+
+
+//////////////////////////////////////////////////////////////////////////////////////////
+ProstaFuseResultsOptions::ProstaFuseResultsOptions(
+    const bool               displayFixedTRUS, 
+    const NumberOfBlindsType initialHorizontalBlinds,
+    const NumberOfBlindsType initialVerticalBlinds     ) :
+ui( new Ui_ProstaFuseResultsOptions )
+{
+
+  // set up the user interface
+  this->ui->setupUi( this );
+
+  // set up the options
+  this->ui->m_DisplayFixedTRUSImage->setChecked( displayFixedTRUS );
+  // set up the options
+  this->ui->m_HorizontalBlindsSpin->setValue(
+    static_cast< int >( initialHorizontalBlinds ) );
+  this->ui->m_VerticalBlindsSpin->setValue(
+    static_cast< int >( initialVerticalBlinds ) );
+
+} // Constructor
+//////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+//////////////////////////////////////////////////////////////////////////////////////////
+bool ProstaFuseResultsOptions::GetDisplayFixedTRUS() const
+{
+
+  return this->ui->m_DisplayFixedTRUSImage->isChecked();
+
+} // GetDisplayFixedTRUS
+//////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+//////////////////////////////////////////////////////////////////////////////////////////
+ProstaFuseResultsOptions::NumberOfBlindsType
+ProstaFuseResultsOptions::GetHorizontalBlinds() const
+{
+
+  return static_cast< NumberOfBlindsType >(
+    this->ui->m_HorizontalBlindsSpin->value() );
+
+} // GetHorizontalBlinds
+//////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+//////////////////////////////////////////////////////////////////////////////////////////
+ProstaFuseResultsOptions::NumberOfBlindsType
+ProstaFuseResultsOptions::GetVerticalBlinds() const
+{
+
+  return static_cast< NumberOfBlindsType >(
+    this->ui->m_VerticalBlindsSpin->value() );
+
+} // GetHorizontalBlinds
+//////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+//////////////////////////////////////////////////////////////////////////////////////////
+ProstaFuseResultsOptions::~ProstaFuseResultsOptions()
+{
+} // Destructor
+//////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+} // namespace ccipd

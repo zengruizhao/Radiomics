@@ -1,0 +1,33 @@
+#ifndef __ccipdGradientDescentOptionsGUI_h
+#define __ccipdGradientDescentOptionsGUI_h
+
+
+
+//////////////////////////////////////////////////////////////////////////////////////////
+#include "ccipdRegisterAlgorithmsForwardDeclarations.h"
+//////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+namespace ccipd
+{
+
+
+
+//////////////////////////////////////////////////////////////////////////////////////////
+/**
+ * Take in an existing gradient descent
+ * and show a GUI dialog box
+ * to modify its options.
+ * 
+ * If the user presses "cancel",
+ * the object isn't changed.
+ * 
+ */
+void ModifyGradientDescentOptions( RegisterOptimizerGradientDescent & gradientDescent );
+//////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+} // namespace ccipd
+#endif // __ccipdGradientDescentOptionsGUI_h

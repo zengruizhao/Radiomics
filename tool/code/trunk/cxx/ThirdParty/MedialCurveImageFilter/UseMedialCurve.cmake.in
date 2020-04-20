@@ -1,0 +1,46 @@
+#
+# This file sets up include directories, link directories, and
+# compiler settings for a project to use MedialCurve.  It should not be
+# included directly, but rather through the MedialCurve_USE_FILE setting
+# obtained from MedialCurve.cmake.
+# 
+# Modeled after UseItkVtkGlue.cmake.in
+# https://farsight-svn.ee.uh.edu/repos/farsight/trunk/ItkVtkGlue/UseItkVtkGlue.cmake.in
+# 
+# -Rob Toth
+
+
+
+###########################################################################################
+# http://ccipd.rutgers.edu/short/n
+IF ( NOT USEMEDIALCURVE_INCLUDED )
+	SET( USEMEDIALCURVE_INCLUDED TRUE ) 
+########################################################################################### 
+
+
+
+###########################################################################################
+# use our cmake library
+FIND_PACKAGE( CMakeCode REQUIRED )
+INCLUDE( ${CMAKECODE_USE_FILE} )
+###########################################################################################
+
+##########################################################################################
+# we need the ccipd common library
+FIND_PACKAGE( ITK REQUIRED )
+INCLUDE( ${ITK_USE_FILE} )
+###########################################################################################
+
+###########################################################################################
+# Add include directories needed to use MedialCurve.
+INCLUDE_DIRECTORIES ( BEFORE @MEDIAL_CURVE_INCLUDE_DIRS@ )
+###########################################################################################
+
+###########################################################################################
+# Add link directories needed to use MedialCurve.
+LINK_DIRECTORIES( "@MEDIAL_CURVE_LIBRARY_DIRS@" )
+###########################################################################################
+
+
+
+ENDIF ( NOT USEMEDIALCURVE_INCLUDED )

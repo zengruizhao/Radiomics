@@ -1,0 +1,33 @@
+#-----------------------------------------------------------------------------
+#
+# Classification.cmake - Classification CMake configuration file for external projects.
+#
+# This file is configured by Classification and used by the UseClassification.cmake module
+# to load Classification's settings for an external project.
+#-----------------------------------------------------------------------------
+# Settings specific to the build tree.
+# 
+# Modeled after ItkVtkGlueConfig.cmake.in
+# https://farsight-svn.ee.uh.edu/repos/farsight/trunk/ItkVtkGlue/ItkVtkGlueConfig.cmake.in
+# 
+# -Ahmad
+
+# Generate CMake lines that will define the Classification_SOURCE_DIR in the ClassificationConfig.cmake.
+
+# The "use" file.
+SET ( CLASSIFICATION_USE_FILE "@CLASSIFICATION_USE_FILE@" )
+
+# Library directory.
+SET ( CLASSIFICATION_LIBRARY_DIRS @CLASSIFICATION_LIBRARY_DIRS@ )
+
+# Libraries
+SET ( CLASSIFICATION_CORE_LIBS       @CLASSIFICATION_CORE_LIBS@       )
+SET ( CLASSIFICATION_VALIDATION_LIBS @CLASSIFICATION_VALIDATION_LIBS@ )
+# Which libraries are enabled
+SET( ENABLE_CLASSIFICATION_CORE       @ENABLE_CLASSIFICATION_CORE@       )
+SET( ENABLE_CLASSIFICATION_VALIDATION @ENABLE_CLASSIFICATION_VALIDATION@ )
+
+
+#######################################################################
+# Include directories needed.
+SET ( CLASSIFICATION_INCLUDE_DIRS @CLASSIFICATION_INCLUDE_DIRS@ )

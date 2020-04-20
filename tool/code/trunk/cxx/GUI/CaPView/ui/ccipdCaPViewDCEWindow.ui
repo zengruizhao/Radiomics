@@ -1,0 +1,592 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>CaPViewDCEWindow</class>
+ <widget class="QMainWindow" name="CaPViewDCEWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>799</width>
+    <height>744</height>
+   </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>600</width>
+    <height>400</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>CaPView</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="../Resources/ccipdCaPViewMain.qrc">
+    <normaloff>:/resources/MainWindow2.png</normaloff>:/resources/MainWindow2.png</iconset>
+  </property>
+  <property name="styleSheet">
+   <string notr="true"/>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QGridLayout" name="gridLayout_2">
+    <item row="0" column="0">
+     <widget class="QVTKWidget" name="qVTKWidget_DCE" native="true">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+        <horstretch>4</horstretch>
+        <verstretch>5</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="minimumSize">
+       <size>
+        <width>150</width>
+        <height>150</height>
+       </size>
+      </property>
+      <property name="sizeIncrement">
+       <size>
+        <width>0</width>
+        <height>0</height>
+       </size>
+      </property>
+      <property name="baseSize">
+       <size>
+        <width>0</width>
+        <height>0</height>
+       </size>
+      </property>
+      <property name="cursor">
+       <cursorShape>OpenHandCursor</cursorShape>
+      </property>
+      <property name="mouseTracking">
+       <bool>true</bool>
+      </property>
+      <property name="contextMenuPolicy">
+       <enum>Qt::ActionsContextMenu</enum>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: qradialgradient(spread:pad, cx:0.5, cy:0.5, radius:0.5, fx:0.5, fy:0.5, stop:0 rgba(0, 0, 0, 0), stop:0.52 rgba(0, 0, 0, 0), stop:0.565 rgba(82, 121, 76, 33), stop:0.65 rgba(159, 235, 148, 64), stop:0.721925 rgba(255, 238, 150, 129), stop:0.77 rgba(255, 128, 128, 204), stop:0.89 rgba(191, 128, 255, 64), stop:1 rgba(0, 0, 0, 0));</string>
+      </property>
+     </widget>
+    </item>
+    <item row="0" column="1" rowspan="2">
+     <layout class="QGridLayout" name="gridLayout">
+      <item row="0" column="0">
+       <widget class="QLineEdit" name="lineEdit_HeatmapLegendRange">
+        <property name="enabled">
+         <bool>true</bool>
+        </property>
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Fixed" vsizetype="Minimum">
+          <horstretch>0</horstretch>
+          <verstretch>2</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>20</width>
+          <height>15</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>30</width>
+          <height>20</height>
+         </size>
+        </property>
+        <property name="sizeIncrement">
+         <size>
+          <width>0</width>
+          <height>0</height>
+         </size>
+        </property>
+        <property name="font">
+         <font>
+          <weight>75</weight>
+          <bold>true</bold>
+          <kerning>false</kerning>
+         </font>
+        </property>
+        <property name="cursor">
+         <cursorShape>ArrowCursor</cursorShape>
+        </property>
+        <property name="mouseTracking">
+         <bool>false</bool>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">
+color: rgb(255, 255, 255);
+
+
+background-color: rgba(100, 0, 0, 255);</string>
+        </property>
+        <property name="text">
+         <string>1.00</string>
+        </property>
+        <property name="frame">
+         <bool>false</bool>
+        </property>
+        <property name="readOnly">
+         <bool>false</bool>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="0">
+       <widget class="QGraphicsView" name="graphicsView_HeatmapLegend">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Fixed" vsizetype="Minimum">
+          <horstretch>1</horstretch>
+          <verstretch>2</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>30</width>
+          <height>100</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>30</width>
+          <height>16777215</height>
+         </size>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background-color: qlineargradient(spread:pad, 
+x1:0, y1:0, x2:1, y2:0, 
+stop:0 rgba(0, 0, 255, 255),
+stop:0.40 rgba(255, 255, 0, 255), 
+stop:1.00 rgba(255, 0, 0, 255)
+);
+background-color: qlineargradient(spread:pad, x1:0, y1:1, x2:0, y2:0
+, stop:0.0625 rgba(000, 000, 255, 255)
+, stop:0.3750 rgba(000, 255, 000, 255)
+, stop:0.5000 rgba(255, 255, 000, 255)
+, stop:0.6250 rgba(255, 200, 000, 255)
+, stop:0.7500 rgba(255, 000, 000, 255)
+, stop:1.0000 rgba(100, 000, 000, 255)
+);
+</string>
+        </property>
+        <property name="frameShape">
+         <enum>QFrame::StyledPanel</enum>
+        </property>
+        <property name="frameShadow">
+         <enum>QFrame::Plain</enum>
+        </property>
+        <property name="foregroundBrush">
+         <brush brushstyle="Dense7Pattern">
+          <color alpha="255">
+           <red>0</red>
+           <green>255</green>
+           <blue>0</blue>
+          </color>
+         </brush>
+        </property>
+        <property name="cacheMode">
+         <set>QGraphicsView::CacheBackground</set>
+        </property>
+        <property name="transformationAnchor">
+         <enum>QGraphicsView::NoAnchor</enum>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="1">
+       <widget class="QxtSpanSlider" name="qxtSpanSlider_Heatmap">
+        <property name="maximum">
+         <number>100</number>
+        </property>
+        <property name="tickPosition">
+         <enum>QSlider::TicksAbove</enum>
+        </property>
+        <property name="tickInterval">
+         <number>10</number>
+        </property>
+        <property name="upperValue">
+         <number>100</number>
+        </property>
+        <property name="handleMovementMode">
+         <enum>QxtSpanSlider::NoOverlapping</enum>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="0">
+       <widget class="QLineEdit" name="lineEdit_HeatmapLegendMinimum">
+        <property name="enabled">
+         <bool>true</bool>
+        </property>
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Fixed" vsizetype="Minimum">
+          <horstretch>0</horstretch>
+          <verstretch>2</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>20</width>
+          <height>15</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>30</width>
+          <height>20</height>
+         </size>
+        </property>
+        <property name="font">
+         <font>
+          <weight>75</weight>
+          <bold>true</bold>
+          <kerning>false</kerning>
+         </font>
+        </property>
+        <property name="cursor">
+         <cursorShape>ArrowCursor</cursorShape>
+        </property>
+        <property name="mouseTracking">
+         <bool>false</bool>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">color: rgb(255, 255, 255);
+background-color: rgba(0, 0, 255, 255);</string>
+        </property>
+        <property name="text">
+         <string>0.00</string>
+        </property>
+        <property name="frame">
+         <bool>false</bool>
+        </property>
+        <property name="readOnly">
+         <bool>false</bool>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+    <item row="1" column="0">
+     <layout class="QGridLayout" name="gridLayout_6">
+      <item row="0" column="1">
+       <widget class="QLabel" name="label_Slice">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Preferred" vsizetype="Minimum">
+          <horstretch>0</horstretch>
+          <verstretch>1</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>50</width>
+          <height>20</height>
+         </size>
+        </property>
+        <property name="font">
+         <font>
+          <family>MS Shell Dlg 2</family>
+          <pointsize>10</pointsize>
+          <weight>9</weight>
+          <italic>false</italic>
+          <bold>false</bold>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">font: 75 10pt &quot;MS Shell Dlg 2&quot;;
+color: rgb(85, 0, 0);
+</string>
+        </property>
+        <property name="text">
+         <string>Slice #</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="2">
+       <widget class="QSlider" name="horizontalSlider_currentSlice">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Expanding" vsizetype="Minimum">
+          <horstretch>0</horstretch>
+          <verstretch>1</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>85</width>
+          <height>20</height>
+         </size>
+        </property>
+        <property name="styleSheet">
+         <string notr="true"/>
+        </property>
+        <property name="minimum">
+         <number>1</number>
+        </property>
+        <property name="maximum">
+         <number>100</number>
+        </property>
+        <property name="pageStep">
+         <number>17</number>
+        </property>
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="tickPosition">
+         <enum>QSlider::TicksAbove</enum>
+        </property>
+        <property name="tickInterval">
+         <number>1</number>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="3">
+       <widget class="QSpinBox" name="spinBox_currentSlice">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+          <horstretch>0</horstretch>
+          <verstretch>1</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>50</width>
+          <height>20</height>
+         </size>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">color: rgb(85, 0, 0);</string>
+        </property>
+        <property name="minimum">
+         <number>1</number>
+        </property>
+        <property name="maximum">
+         <number>100</number>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="0">
+       <widget class="QComboBox" name="comboBox_Features_DCE">
+        <item>
+         <property name="text">
+          <string>Maximum Uptake</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Time to Peak</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Rate of Uptake</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Rate of Washout</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Enhancement</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Enhancement Ratio</string>
+         </property>
+        </item>
+       </widget>
+      </item>
+     </layout>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>799</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuFile">
+    <property name="title">
+     <string>File</string>
+    </property>
+    <widget class="QMenu" name="menuLoad">
+     <property name="title">
+      <string>Load ...</string>
+     </property>
+     <widget class="QMenu" name="menuMask_mha_mhd">
+      <property name="title">
+       <string>Mask</string>
+      </property>
+     </widget>
+     <widget class="QMenu" name="menuVolume">
+      <property name="title">
+       <string>Volume</string>
+      </property>
+      <addaction name="action_Load_DCE"/>
+     </widget>
+     <addaction name="menuVolume"/>
+     <addaction name="separator"/>
+     <addaction name="menuMask_mha_mhd"/>
+    </widget>
+    <widget class="QMenu" name="menuSave">
+     <property name="title">
+      <string>Save ...</string>
+     </property>
+     <addaction name="action_SaveDCEImage"/>
+     <addaction name="action_SaveAppSnapshot"/>
+    </widget>
+    <addaction name="menuLoad"/>
+    <addaction name="separator"/>
+    <addaction name="menuSave"/>
+    <addaction name="actionExit"/>
+   </widget>
+   <widget class="QMenu" name="menuAbout">
+    <property name="title">
+     <string>Help</string>
+    </property>
+    <addaction name="actionCaPView_Help"/>
+    <addaction name="actionAbout_CaPView"/>
+    <addaction name="actionAbout_CCIPD"/>
+   </widget>
+   <widget class="QMenu" name="menuView">
+    <property name="title">
+     <string>View</string>
+    </property>
+    <addaction name="action_ResetCamera"/>
+   </widget>
+   <widget class="QMenu" name="menuTools">
+    <property name="title">
+     <string>Tools</string>
+    </property>
+    <addaction name="actionReset_Parameters"/>
+   </widget>
+   <addaction name="menuFile"/>
+   <addaction name="menuView"/>
+   <addaction name="menuTools"/>
+   <addaction name="menuAbout"/>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+  <action name="actionExit">
+   <property name="icon">
+    <iconset resource="../Resources/ccipdCaPViewMain.qrc">
+     <normaloff>:/resources/Exit3.png</normaloff>:/resources/Exit3.png</iconset>
+   </property>
+   <property name="text">
+    <string>Exit</string>
+   </property>
+  </action>
+  <action name="actionCaPView_Help">
+   <property name="text">
+    <string>CaPView Help</string>
+   </property>
+  </action>
+  <action name="actionAbout_CaPView">
+   <property name="text">
+    <string>About CaPView</string>
+   </property>
+  </action>
+  <action name="actionAbout_CCIPD">
+   <property name="text">
+    <string>About CCIPD</string>
+   </property>
+  </action>
+  <action name="action_SaveAppSnapshot">
+   <property name="text">
+    <string>Save App Image As ...</string>
+   </property>
+  </action>
+  <action name="action_ResetCamera">
+   <property name="icon">
+    <iconset resource="../Resources/ccipdCaPViewMain.qrc">
+     <normaloff>:/resources/ResetCamera3.png</normaloff>:/resources/ResetCamera3.png</iconset>
+   </property>
+   <property name="text">
+    <string>Reset Camera</string>
+   </property>
+  </action>
+  <action name="actionReset_Parameters">
+   <property name="icon">
+    <iconset resource="../Resources/ccipdCaPViewMain.qrc">
+     <normaloff>:/resources/Reset2.png</normaloff>:/resources/Reset2.png</iconset>
+   </property>
+   <property name="text">
+    <string>Reset Parameters</string>
+   </property>
+  </action>
+  <action name="action_Load_DCE">
+   <property name="icon">
+    <iconset resource="../Resources/ccipdCaPViewMain.qrc">
+     <normaloff>:/resources/LoadImage2.png</normaloff>
+     <normalon>LoadImage.bmp</normalon>:/resources/LoadImage2.png</iconset>
+   </property>
+   <property name="text">
+    <string>DCE</string>
+   </property>
+   <property name="toolTip">
+    <string>Load DCE Volume Image</string>
+   </property>
+  </action>
+  <action name="action_SaveDCEImage">
+   <property name="icon">
+    <iconset resource="../Resources/ccipdCaPViewMain.qrc">
+     <normaloff>:/resources/Save1.png</normaloff>:/resources/Save1.png</iconset>
+   </property>
+   <property name="text">
+    <string>Save DCE Viewer Image As ...</string>
+   </property>
+   <property name="toolTip">
+    <string>Saves a snapshot of the DCE viewer window</string>
+   </property>
+  </action>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>QxtSpanSlider</class>
+   <extends>QSlider</extends>
+   <header>QxtSpanSlider</header>
+  </customwidget>
+  <customwidget>
+   <class>QVTKWidget</class>
+   <extends>QWidget</extends>
+   <header>QVTKWidget.h</header>
+  </customwidget>
+ </customwidgets>
+ <resources>
+  <include location="../Resources/ccipdCaPViewMain.qrc"/>
+ </resources>
+ <connections>
+  <connection>
+   <sender>horizontalSlider_currentSlice</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>spinBox_currentSlice</receiver>
+   <slot>setValue(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>694</x>
+     <y>653</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>750</x>
+     <y>653</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>spinBox_currentSlice</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>horizontalSlider_currentSlice</receiver>
+   <slot>setValue(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>750</x>
+     <y>653</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>694</x>
+     <y>653</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>

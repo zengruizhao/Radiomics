@@ -1,0 +1,117 @@
+#ifndef __ccipdMFACrossValidationFileNames_h
+#define __ccipdMFACrossValidationFileNames_h
+
+
+
+//////////////////////////////////////////////////////////////////////////////////////////
+
+#ifdef _MSC_VER
+#pragma warning( push, 0 )
+#endif // _MSC_VER
+
+// std includes
+#include <string>
+
+#ifdef _MSC_VER
+#pragma warning( pop )
+#endif // _MSC_VER
+
+//////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+namespace ccipd
+{
+
+  
+
+//////////////////////////////////////////////////////////////////////////////////////////
+/**
+ * \brief For consistency, define the file name of the MFA parameters.
+ * 
+ * \author  Rob Toth
+ * \date    2012-06-01
+ * \ingroup MFACrossValidation
+ */
+std::string GetMFASegmentationParametersFileName();
+//////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+//////////////////////////////////////////////////////////////////////////////////////////
+/**
+ * \brief For consistency, define the file name of the final, trained model.
+ * 
+ * \author  Rob Toth
+ * \date    2012-05-31
+ * \ingroup MFACrossValidation
+ */
+std::string GetTrainedMFAModelFileName();
+//////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+//////////////////////////////////////////////////////////////////////////////////////////
+/**
+ * \brief For consistency, define the file name indicating that it's trained.
+ * 
+ * \author  Rob Toth
+ * \date    2012-05-31
+ * \ingroup MFACrossValidation
+ */
+std::string GetTrainedFileName();
+//////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+//////////////////////////////////////////////////////////////////////////////////////////
+/**
+ * \brief For consistency, define the file name indicating that it's segmented.
+ * 
+ * \author  Rob Toth
+ * \date    2012-06-11
+ * \ingroup MFACrossValidation
+ */
+std::string GetSegmentedFileName();
+//////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+//////////////////////////////////////////////////////////////////////////////////////////
+/**
+ * \brief For consistency, define the file name indicating that it's locked.
+ * 
+ * \author  Rob Toth
+ * \date    2012-05-31
+ * \ingroup MFACrossValidation
+ */
+std::string GetLockedFileName();
+//////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+//////////////////////////////////////////////////////////////////////////////////////////
+/**
+ * \brief Equivalent to the "touch" command on *nix
+ * 
+ * \returns false if the file was not created.
+ * 
+ * \author  Rob Toth
+ * \date    2012-05-31
+ * \ingroup MFACrossValidation
+ */
+bool CreateEmptyFile( const std::string & fullFileName );
+
+/**
+ * \see CreateEmptyFile( const std::string & );
+ * \ingroup MFACrossValidation
+ */
+bool CreateEmptyFile(
+  const std::string & directory,
+  const std::string & shortFileName );
+//////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+} // namespace ccipd
+#endif // __ccipdCrossValidationFileNames_h

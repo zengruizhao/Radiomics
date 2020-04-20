@@ -1,0 +1,78 @@
+#ifndef __ccipdLoadPatientsGUI_h
+#define __ccipdLoadPatientsGUI_h
+
+
+
+
+//////////////////////////////////////////////////////////////////////////////////////////
+#include <utility>
+#include <string>
+#include <memory>
+//////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+//////////////////////////////////////////////////////////////////////////////////////////
+class QWidget;
+//////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+namespace ccipd
+{
+
+
+
+//////////////////////////////////////////////////////////////////////////////////////////
+/**
+ * \brief Load an object from a file.
+ * 
+ * An "open" dialog will prompt the
+ * user to select a file.
+ *
+ * The type of object must be
+ * derived from ccipd::Loadable
+ * and the code will check that.
+ * 
+ * \date    2013-01-22
+ * \author  Rob Toth
+ * \ingroup GUI
+ */
+template< class TLoadable >
+std::shared_ptr< TLoadable >LoadObjectGUI(
+        QWidget * const parent  = 0,
+  const bool            verbose = true );
+//////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+//////////////////////////////////////////////////////////////////////////////////////////
+/**
+ * Same as LoadObjectGUI() except it also returns the file name.
+ * 
+ * If nothing was loaded, an empty string will be returned.
+ */
+template< class TLoadable >
+std::pair< std::shared_ptr< TLoadable >, std::string >
+LoadObjectAndFileNameGUI(
+        QWidget * const parent  = 0,
+  const bool            verbose = true );
+//////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+//////////////////////////////////////////////////////////////////////////////////////////
+/**
+ * Same as LoadObjectAndFileNameGUI() except it only returns the file name.
+ * 
+ * If nothing was loaded, an empty string will be returned.
+ */
+template< class TLoadable >
+std::string LoadFileNameGUI(
+        QWidget * const parent  = 0,
+  const bool            verbose = true );
+//////////////////////////////////////////////////////////////////////////////////////////
+
+
+} // namespace ccipd
+#endif // __ccipdLoadPatientsGUI_h

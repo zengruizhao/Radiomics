@@ -1,0 +1,134 @@
+#
+# This file sets up include directories, link directories, and
+# compiler settings for a project to use Common.  It should not be
+# included directly, but rather through the Common_USE_FILE setting
+# obtained from Common.cmake.
+#
+# Modeled after UseItkVtkGlue.cmake.in
+# https://farsight-svn.ee.uh.edu/repos/farsight/trunk/ItkVtkGlue/UseItkVtkGlue.cmake.in
+# 
+# -Rob Toth
+
+
+
+###########################################################################################
+# http://ccipd.rutgers.edu/short/n
+IF ( NOT USECOMMON_INCLUDED )
+SET( USECOMMON_INCLUDED TRUE )
+
+SET( OLD_ENABLE_COMMON_CORE           ${ENABLE_COMMON_CORE}           )
+SET( OLD_ENABLE_COMMON_VTK_CONVERSION ${ENABLE_COMMON_VTK_CONVERSION} )
+SET( OLD_ENABLE_COMMON_MATH           ${ENABLE_COMMON_MATH}           )
+SET( OLD_ENABLE_COMMON_IMAGES         ${ENABLE_COMMON_IMAGES}         )
+SET( OLD_ENABLE_COMMON_LANDMARKS      ${ENABLE_COMMON_LANDMARKS}      )
+SET( OLD_ENABLE_COMMON_HASH           ${ENABLE_COMMON_HASH}           )
+
+SET( OLD_COMMON_CORE_LIBS           ${COMMON_CORE_LIBS}           )
+SET( OLD_COMMON_VTK_CONVERSION_LIBS ${COMMON_VTK_CONVERSION_LIBS} )
+SET( OLD_COMMON_MATH_LIBS           ${COMMON_MATH_LIBS}           )
+SET( OLD_COMMON_IMAGES_LIBS         ${COMMON_IMAGES_LIBS}         )
+SET( OLD_COMMON_LANDMARKS_LIBS      ${COMMON_LANDMARKS_LIBS}      )
+SET( OLD_COMMON_HASH_LIBS           ${COMMON_HASH_LIBS}           )
+###########################################################################################
+
+
+
+###########################################################################################
+FIND_PACKAGE( ITK REQUIRED )
+INCLUDE( ${ITK_USE_FILE} )
+
+# This option makes the itk include directories to
+# be though of as "system" directories in gcc,
+# which means that gcc warnings coming from
+# the ITK headers are ignored. This ITK is not
+# our code, we absolutely want to ignore
+# the warnings that ITK developers haven't fixed.
+#INCLUDE_DIRECTORIES( BEFORE SYSTEM ${ITK_INCLUDE_DIRS} )
+#INCLUDE_DIRECTORIES( SYSTEM ${CMAKE_CURRENT_BINARY_DIR}/ITKIOFactoryRegistration )
+###########################################################################################
+
+
+
+###########################################################################################
+# use our cmake library
+FIND_PACKAGE( CMakeCode REQUIRED )
+INCLUDE( ${CMAKECODE_USE_FILE} )
+###########################################################################################
+
+
+
+###########################################################################################
+# Use the boost libraries
+IF ( BUILD_BOOST_PROJECTS )
+  LIST( APPEND CMAKE_MODULE_PATH "${ccipdCMakeCode_DIR}" )
+  INCLUDE( ccipdUseBoost )
+ENDIF ( BUILD_BOOST_PROJECTS )
+###########################################################################################
+
+
+
+###########################################################################################
+# VTK is a required package sometimes
+IF ( BUILD_VTK_PROJECTS )
+  FIND_PACKAGE( VTK REQUIRED )
+  INCLUDE( ${VTK_USE_FILE} )
+ENDIF ( BUILD_VTK_PROJECTS )
+###########################################################################################
+
+
+  
+###########################################################################################
+# VTK is a required package sometimes
+IF ( BUILD_MEDIALCURVE_PROJECTS )
+  FIND_PACKAGE( MedialCurve REQUIRED )
+  INCLUDE( ${MEDIAL_CURVE_USE_FILE} )
+ENDIF ( BUILD_MEDIALCURVE_PROJECTS )
+###########################################################################################
+
+
+
+###########################################################################################
+# We will use the Preprocessing external project in this project
+IF ( BUILD_TESTING )
+
+  FIND_PACKAGE( Preprocessing REQUIRED )
+  INCLUDE( ${PREPROCESSING_USE_FILE} )
+
+  FIND_PACKAGE( Data REQUIRED )
+  INCLUDE( ${DATA_USE_FILE} )
+  
+ENDIF ( BUILD_TESTING )
+###########################################################################################
+
+
+
+###########################################################################################
+# Add include directories needed to use Common.
+INCLUDE_DIRECTORIES( BEFORE @COMMON_INCLUDE_DIRS@ )
+###########################################################################################
+
+
+###########################################################################################
+# Add link directories needed to use Common.
+LINK_DIRECTORIES( @COMMON_LIBRARY_DIRS@ )
+###########################################################################################
+
+###########################################################################################
+SET( ENABLE_COMMON_CORE           ${OLD_ENABLE_COMMON_CORE}           )
+SET( ENABLE_COMMON_VTK_CONVERSION ${OLD_ENABLE_COMMON_VTK_CONVERSION} )
+SET( ENABLE_COMMON_MATH           ${OLD_ENABLE_COMMON_MATH}           )
+SET( ENABLE_COMMON_IMAGES         ${OLD_ENABLE_COMMON_IMAGES}         )
+SET( ENABLE_COMMON_LANDMARKS      ${OLD_ENABLE_COMMON_LANDMARKS}      )
+SET( ENABLE_COMMON_HASH           ${OLD_ENABLE_COMMON_HASH}           )
+
+SET( COMMON_CORE_LIBS           ${OLD_COMMON_CORE_LIBS}           )
+SET( COMMON_VTK_CONVERSION_LIBS ${OLD_COMMON_VTK_CONVERSION_LIBS} )
+SET( COMMON_MATH_LIBS           ${OLD_COMMON_MATH_LIBS}           )
+SET( COMMON_IMAGES_LIBS         ${OLD_COMMON_IMAGES_LIBS}         )
+SET( COMMON_LANDMARKS_LIBS      ${OLD_COMMON_LANDMARKS_LIBS}      )
+SET( COMMON_HASH_LIBS           ${OLD_COMMON_HASH_LIBS}           )
+
+ENDIF ( NOT USECOMMON_INCLUDED )
+###########################################################################################
+
+

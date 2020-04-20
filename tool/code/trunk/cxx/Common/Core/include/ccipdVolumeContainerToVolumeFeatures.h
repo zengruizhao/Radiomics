@@ -1,0 +1,51 @@
+#ifndef __ccipdVolumeContainerToVolumeFeatures_h
+#define __ccipdVolumeContainerToVolumeFeatures_h
+
+
+
+//////////////////////////////////////////////////////////////////////////////////////////
+#include "ccipdVolumeTypes.h"
+
+#include "ccipdDisableWarningsMacro.h"
+  // itk includes
+  #include <itkVectorImage.h>
+#include "ccipdEnableWarningsMacro.h"
+//////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+namespace ccipd
+{
+
+
+
+//////////////////////////////////////////////////////////////////////////////////////////
+/**
+ * Concatenates multiple images into a vector image.
+ * 
+ * \Note They must all be in the same coordinate frame.
+ * 
+ * \author  Rob Toth
+ * \ingroup Common
+ */
+VolumeFeaturesPointer VolumeContainerToVolumeFeatures(
+  const VolumeConstImagesContainer & images );
+//////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+//////////////////////////////////////////////////////////////////////////////////////////
+/** 
+ * \returns a const output
+ * 
+ * \author  Rob Toth
+ * \ingroup Common
+ */
+VolumeFeaturesConstPointer VolumeContainerToVolumeFeaturesConst(
+  const VolumeConstImagesContainer & images );
+//////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+} // namespace
+#endif // __ccipdVolumeContainerToVolumeFeatures_h

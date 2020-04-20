@@ -1,0 +1,450 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>PickPointsDialog</class>
+ <widget class="QDialog" name="PickPointsDialog">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>524</width>
+    <height>449</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>3D Point Picker</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: rgb(0, 0, 0);</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout">
+   <item>
+    <layout class="QGridLayout" name="gridLayout">
+     <item row="1" column="0">
+      <widget class="QSlider" name="m_SliceSlider">
+       <property name="styleSheet">
+        <string notr="true">QSlider::handle:horizontal {
+     background: rgb(85, 255, 255);
+     border: 1px solid  rgb(0, 0, 200);
+     width: 18px;
+     margin: -2px 0;
+     border-radius: 3px;
+ }
+</string>
+       </property>
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="tickPosition">
+        <enum>QSlider::NoTicks</enum>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="1">
+      <widget class="QLabel" name="label_2">
+       <property name="font">
+        <font>
+         <family>Calibri</family>
+         <pointsize>10</pointsize>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">color: rgb(255, 255, 255);</string>
+       </property>
+       <property name="text">
+        <string>Window:</string>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="1">
+      <widget class="QSlider" name="m_WindowSlider">
+       <property name="styleSheet">
+        <string notr="true">QSlider::handle:horizontal {
+     background: rgb(85, 255, 255);
+     border: 1px solid  rgb(0, 0, 200);
+     width: 18px;
+     margin: -2px 0;
+     border-radius: 3px;
+ }
+</string>
+       </property>
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="tickPosition">
+        <enum>QSlider::NoTicks</enum>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="0">
+      <widget class="QLabel" name="label">
+       <property name="font">
+        <font>
+         <family>Calibri</family>
+         <pointsize>10</pointsize>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">color: rgb(255, 255, 255);</string>
+       </property>
+       <property name="text">
+        <string>Slice:</string>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="2">
+      <widget class="QLabel" name="label_3">
+       <property name="font">
+        <font>
+         <family>Calibri</family>
+         <pointsize>10</pointsize>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">color: rgb(255, 255, 255);</string>
+       </property>
+       <property name="text">
+        <string>Level:</string>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="2">
+      <widget class="QSlider" name="m_LevelSlider">
+       <property name="styleSheet">
+        <string notr="true">QSlider::handle:horizontal {
+     background: rgb(85, 255, 255);
+     border: 1px solid  rgb(0, 0, 200);
+     width: 18px;
+     margin: -2px 0;
+     border-radius: 3px;
+ }
+</string>
+       </property>
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="tickPosition">
+        <enum>QSlider::NoTicks</enum>
+       </property>
+      </widget>
+     </item>
+     <item row="2" column="0">
+      <widget class="QLabel" name="label_4">
+       <property name="font">
+        <font>
+         <family>Calibri</family>
+         <pointsize>10</pointsize>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">color: rgb(255, 255, 255);</string>
+       </property>
+       <property name="text">
+        <string>Landmarks Opacity:</string>
+       </property>
+      </widget>
+     </item>
+     <item row="3" column="0">
+      <widget class="QSlider" name="m_LandmarksOpacitySlider">
+       <property name="styleSheet">
+        <string notr="true">QSlider::handle:horizontal {
+     background: rgb(85, 255, 255);
+     border: 1px solid  rgb(0, 0, 200);
+     width: 18px;
+     margin: -2px 0;
+     border-radius: 3px;
+ }
+</string>
+       </property>
+       <property name="maximum">
+        <number>100</number>
+       </property>
+       <property name="value">
+        <number>50</number>
+       </property>
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="tickPosition">
+        <enum>QSlider::NoTicks</enum>
+       </property>
+      </widget>
+     </item>
+     <item row="2" column="1">
+      <widget class="QLabel" name="label_6">
+       <property name="font">
+        <font>
+         <family>Calibri</family>
+         <pointsize>10</pointsize>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">color: rgb(255, 255, 255);</string>
+       </property>
+       <property name="text">
+        <string>Landmarks Size:</string>
+       </property>
+      </widget>
+     </item>
+     <item row="3" column="1">
+      <widget class="QSlider" name="m_LandmarksSizeSlider">
+       <property name="styleSheet">
+        <string notr="true">QSlider::handle:horizontal {
+     background: rgb(85, 255, 255);
+     border: 1px solid  rgb(0, 0, 200);
+     width: 18px;
+     margin: -2px 0;
+     border-radius: 3px;
+ }
+</string>
+       </property>
+       <property name="value">
+        <number>5</number>
+       </property>
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="tickPosition">
+        <enum>QSlider::NoTicks</enum>
+       </property>
+      </widget>
+     </item>
+     <item row="2" column="2">
+      <widget class="QLabel" name="label_7">
+       <property name="font">
+        <font>
+         <family>Calibri</family>
+         <pointsize>10</pointsize>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">color: rgb(255, 255, 255);</string>
+       </property>
+       <property name="text">
+        <string>Landmarks Color:</string>
+       </property>
+      </widget>
+     </item>
+     <item row="3" column="2">
+      <widget class="QSlider" name="m_LandmarksColorSlider">
+       <property name="styleSheet">
+        <string notr="true">QSlider::handle:horizontal {
+     background: rgb(85, 255, 255);
+     border: 1px solid  rgb(0, 0, 200);
+     width: 18px;
+     margin: -2px 0;
+     border-radius: 3px;
+ }
+</string>
+       </property>
+       <property name="value">
+        <number>5</number>
+       </property>
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="tickPosition">
+        <enum>QSlider::NoTicks</enum>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <widget class="Line" name="line_3">
+     <property name="styleSheet">
+      <string notr="true">background-color: rgb(100, 100, 100);</string>
+     </property>
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QVTKWidget" name="m_VTKOutput">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+       <horstretch>0</horstretch>
+       <verstretch>1</verstretch>
+      </sizepolicy>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="Line" name="line_4">
+     <property name="styleSheet">
+      <string notr="true">background-color: rgb(100, 100, 100);</string>
+     </property>
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QDialogButtonBox" name="buttonBox">
+     <property name="styleSheet">
+      <string notr="true">background-color: rgb(40, 40,40);
+color: rgb(85, 255, 255);</string>
+     </property>
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+     <property name="standardButtons">
+      <set>QDialogButtonBox::Cancel|QDialogButtonBox::Ok</set>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="Line" name="line">
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>QVTKWidget</class>
+   <extends>QWidget</extends>
+   <header>QVTKWidget.h</header>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>buttonBox</sender>
+   <signal>accepted()</signal>
+   <receiver>PickPointsDialog</receiver>
+   <slot>accept()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>227</x>
+     <y>422</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>157</x>
+     <y>274</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>buttonBox</sender>
+   <signal>rejected()</signal>
+   <receiver>PickPointsDialog</receiver>
+   <slot>reject()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>295</x>
+     <y>428</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>286</x>
+     <y>274</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>m_SliceSlider</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>PickPointsDialog</receiver>
+   <slot>SlotUpdateSlice()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>53</x>
+     <y>45</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>80</x>
+     <y>25</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>m_WindowSlider</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>PickPointsDialog</receiver>
+   <slot>SlotUpdateWindowLevel()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>195</x>
+     <y>37</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>219</x>
+     <y>26</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>m_LevelSlider</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>PickPointsDialog</receiver>
+   <slot>SlotUpdateWindowLevel()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>445</x>
+     <y>49</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>377</x>
+     <y>23</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>m_LandmarksOpacitySlider</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>PickPointsDialog</receiver>
+   <slot>SlotUpdateLandmarksOpacity()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>43</x>
+     <y>91</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>346</x>
+     <y>57</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>m_LandmarksSizeSlider</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>PickPointsDialog</receiver>
+   <slot>SlotUpdateLandmarksSize()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>226</x>
+     <y>87</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>465</x>
+     <y>59</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>m_LandmarksColorSlider</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>PickPointsDialog</receiver>
+   <slot>SlotUpdateLandmarksColor()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>388</x>
+     <y>84</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>388</x>
+     <y>100</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>SlotUpdateSlice()</slot>
+  <slot>SlotUpdateWindowLevel()</slot>
+  <slot>SlotUpdateLandmarksOpacity()</slot>
+  <slot>SlotUpdateLandmarksSize()</slot>
+  <slot>SlotUpdateLandmarksColor()</slot>
+ </slots>
+</ui>

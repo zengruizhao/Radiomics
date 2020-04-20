@@ -1,0 +1,58 @@
+#ifndef __ccipdEnableSharedFromThis_hxx
+#define __ccipdEnableSharedFromThis_hxx
+
+
+
+//////////////////////////////////////////////////////////////////////////////////////////
+#include "ccipdEnableSharedFromThis.h"
+//////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+namespace ccipd
+{
+
+
+
+//////////////////////////////////////////////////////////////////////////////////////////
+template< class T >
+typename
+EnableSharedFromThis< T >::Pointer
+EnableSharedFromThis< T >::shared_from_this()
+{
+  try
+    {
+    return std::dynamic_pointer_cast< T >(
+      this->EnableSharedFromThisBase::shared_from_this() );
+    }
+  catch( ... )
+    {
+    return Pointer();
+    }
+}
+//////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+//////////////////////////////////////////////////////////////////////////////////////////
+template< class T >
+typename
+EnableSharedFromThis< T >::ConstPointer
+EnableSharedFromThis< T >::shared_from_this() const
+{
+  try
+    {
+    return std::dynamic_pointer_cast< const T >(
+      this->EnableSharedFromThisBase::shared_from_this() );
+    }
+  catch( ... )
+    {
+    return ConstPointer();
+    }
+}
+//////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+} // namespace ccipd
+#endif // __ccipdEnableSharedFromThis_hxx

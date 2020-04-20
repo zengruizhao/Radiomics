@@ -1,0 +1,74 @@
+#
+# This file sets up include directories, link directories, and
+# compiler settings for a project to use BiasCorrection.  It should not be
+# included directly, but rather through the BiasCorrection_USE_FILE setting
+# obtained from BiasCorrection.cmake.
+#
+# Modeled after UseItkVtkGlue.cmake.in
+# https://farsight-svn.ee.uh.edu/repos/farsight/trunk/ItkVtkGlue/UseItkVtkGlue.cmake.in
+# 
+# -Rob Toth
+
+
+
+###########################################################################################
+# http://ccipd.rutgers.edu/short/n
+IF ( NOT USE_PREPROCESSING_INCLUDED )
+SET( USE_PREPROCESSING_INCLUDED TRUE )
+
+SET( OLD_ENABLE_PREPROCESSING_CORE ${ENABLE_PREPROCESSING_CORE} )
+SET( OLD_PREPROCESSING_CORE_LIBS   ${PREPROCESSING_CORE_LIBS}   )
+###########################################################################################
+
+
+
+###########################################################################################
+# use our ccipd common library
+FIND_PACKAGE( CMakeCode REQUIRED )
+INCLUDE( ${CMAKECODE_USE_FILE} )
+###########################################################################################
+
+
+
+###########################################################################################
+# we need the ccipd data library
+IF ( BUILD_TESTING AND OLD_ENABLE_PREPROCESSING_CORE )
+  FIND_PACKAGE( Data REQUIRED )
+  INCLUDE( ${DATA_USE_FILE} )
+ENDIF()
+###########################################################################################
+
+
+
+###########################################################################################
+# 2012-08-02 This always depends on registration
+# now because of ccipdApplyCartesian* are in registration.
+IF( OLD_ENABLE_PREPROCESSING_CORE )
+  FIND_PACKAGE( Registration REQUIRED )
+  INCLUDE( ${REGISTRATION_USE_FILE} )
+ENDIF()
+###########################################################################################
+
+
+
+###########################################################################################
+# Add include directories needed to use BiasCorrection.
+INCLUDE_DIRECTORIES( BEFORE @PREPROCESSING_INCLUDE_DIRS@ )
+###########################################################################################
+
+
+
+###########################################################################################
+# Add link directories needed to use BiasCorrection.
+LINK_DIRECTORIES( @PREPROCESSING_LIBRARY_DIRS@ )
+###########################################################################################
+
+
+
+###########################################################################################
+SET( ENABLE_PREPROCESSING_CORE ${OLD_ENABLE_PREPROCESSING_CORE} )
+SET( PREPROCESSING_CORE_LIBS   ${OLD_PREPROCESSING_CORE_LIBS}   )
+ENDIF ( NOT USE_PREPROCESSING_INCLUDED )
+###########################################################################################
+
+

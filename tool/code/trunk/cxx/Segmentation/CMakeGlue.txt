@@ -1,0 +1,28 @@
+OPTION (USE_QUICKVIEW "Use the QuickView tool for displaying progress (requires VTK and ItkVtkGlue)." OFF)
+
+IF (USE_QUICKVIEW)
+
+  IF( ITKVtkGlue_LOADED )
+	# ItkVtkGlue was loaded as part of ITK
+	# but requires VTK to be loaded as well.
+	FIND_PACKAGE( VTK REQUIRED )
+	INCLUDE( ${VTK_USE_FILE} )
+	SET( EXTRA_LIBS ${EXTRA_LIBS} ${VTK_LIBRARIES} )
+	SET( ItkVtkGlue_FOUND 1 )
+
+  ELSE()
+  
+	# Hopefully we have ItkVtkGlue compiled separately.  Find it.
+    FIND_PACKAGE( ItkVtkGlue )
+    IF( ItkVtkGlue_FOUND )
+      INCLUDE( ${ItkVtkGlue_USE_FILE} )
+      SET( EXTRA_LIBS ${EXTRA_LIBS} "ItkVtkGlue" ${VTK_LIBRARIES} )
+    ENDIF( ItkVtkGlue_FOUND )
+	
+  ENDIF( ITKVtkGlue_LOADED)
+  
+ELSE()
+
+  SET(ItkVtkGlue_FOUND 0)
+  
+ENDIF (USE_QUICKVIEW)

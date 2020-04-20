@@ -1,0 +1,36 @@
+#ifndef __ccipdMFADrivingLevelsetExtractor_h
+#define __ccipdMFADrivingLevelsetExtractor_h
+
+
+
+//////////////////////////////////////////////////////////////////////////////////////////
+#include "ccipdMFATypes.h"
+//////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+namespace ccipd
+{
+
+
+
+//////////////////////////////////////////////////////////////////////////////////////////
+/**
+ * Create a new Levelset extractor
+ * with only the driving Levelset
+ * features.
+ * 
+ * Returns null if any errors occur.
+ * 
+ * \date    2013-01-21
+ * \author  Rob Toth
+ * \ingroup MFA
+ */
+MFALevelsetExtractorPointer CreateDrivingLevelsetExtractor(
+  const MFADrivingFeaturePreparer & drivingFeatures );
+//////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+} // namespace ccipd
+#endif // __ccipdMFADrivingLevelsetExtractor_h

@@ -1,0 +1,2 @@
+/** Whether or not we are using the Boost packages. */
+#cmakedefine Boost_SERIALIZATION_FOUND

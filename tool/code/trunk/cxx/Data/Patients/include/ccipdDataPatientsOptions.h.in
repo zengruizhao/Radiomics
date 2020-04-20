@@ -1,0 +1,16 @@
+#ifndef __ccipdDataPatientsOptions_h
+#define __ccipdDataPatientsOptions_h
+
+/**
+ * This declares whether we have
+ * found the boost serialization library
+ */
+#cmakedefine Boost_SERIALIZATION_FOUND
+
+/**
+ * This declares whether we have
+ * found the boost data time library
+ */
+#cmakedefine Boost_DATE_TIME_FOUND
+
+#endif // __ccipdDataPatientsOptions_h

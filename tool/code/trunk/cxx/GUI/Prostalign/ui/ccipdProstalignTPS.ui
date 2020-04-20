@@ -1,0 +1,441 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>ProstalignTPS</class>
+ <widget class="QMainWindow" name="ProstalignTPS">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1183</width>
+    <height>726</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Prostalign</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true"/>
+  </property>
+  <property name="unifiedTitleAndToolBarOnMac">
+   <bool>false</bool>
+  </property>
+  <widget class="QWidget" name="centralWidget">
+   <property name="styleSheet">
+    <string notr="true">background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 rgba(255, 255, 255, 255), stop:1 rgba(230, 255, 230, 255));</string>
+   </property>
+   <layout class="QVBoxLayout" name="verticalLayout">
+    <item>
+     <layout class="QHBoxLayout" name="horizontalLayout" stretch="0,0,0">
+      <item>
+       <layout class="QVBoxLayout" name="verticalLayout_2">
+        <item>
+         <layout class="QHBoxLayout" name="horizontalLayout_6">
+          <item>
+           <widget class="QPushButton" name="m_OpenFixedImageButton">
+            <property name="font">
+             <font>
+              <family>Calibri</family>
+              <pointsize>11</pointsize>
+             </font>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">background-color: rgb(56, 115, 113);
+color: rgb(255, 255, 255);</string>
+            </property>
+            <property name="text">
+             <string>Open &amp;Fixed Image</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="m_ResetFixedImageButton">
+            <property name="font">
+             <font>
+              <family>Calibri</family>
+              <pointsize>11</pointsize>
+             </font>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">background-color: rgb(56, 115, 113);
+color: rgb(255, 255, 255);</string>
+            </property>
+            <property name="text">
+             <string>Clear Landmarks</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <spacer name="horizontalSpacer_2">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>40</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <widget class="QVTKWidget" name="m_FixedImageWidget" native="true">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Preferred" vsizetype="Expanding">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="cursor">
+           <cursorShape>CrossCursor</cursorShape>
+          </property>
+          <property name="focusPolicy">
+           <enum>Qt::StrongFocus</enum>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">border-color: rgb(85, 255, 127);</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <widget class="Line" name="line_3">
+        <property name="orientation">
+         <enum>Qt::Vertical</enum>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <layout class="QVBoxLayout" name="verticalLayout_3">
+        <item>
+         <layout class="QHBoxLayout" name="horizontalLayout_7">
+          <item>
+           <widget class="QPushButton" name="m_OpenMovingImageButton">
+            <property name="font">
+             <font>
+              <family>Calibri</family>
+              <pointsize>11</pointsize>
+             </font>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">background-color: rgb(56, 115, 113);
+color: rgb(255, 255, 255);</string>
+            </property>
+            <property name="text">
+             <string>Open &amp;Moving Image</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="m_ResetMovingImageButton">
+            <property name="font">
+             <font>
+              <family>Calibri</family>
+              <pointsize>11</pointsize>
+             </font>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">background-color: rgb(56, 115, 113);
+color: rgb(255, 255, 255);</string>
+            </property>
+            <property name="text">
+             <string>Clear Landmarks</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <spacer name="horizontalSpacer_3">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>40</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <widget class="QVTKWidget" name="m_MovingImageWidget" native="true">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Preferred" vsizetype="Expanding">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="cursor">
+           <cursorShape>CrossCursor</cursorShape>
+          </property>
+          <property name="focusPolicy">
+           <enum>Qt::StrongFocus</enum>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+     </layout>
+    </item>
+    <item>
+     <widget class="Line" name="line">
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <layout class="QHBoxLayout" name="horizontalLayout_4">
+      <item>
+       <spacer name="horizontalSpacer">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeType">
+         <enum>QSizePolicy::Expanding</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>40</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item>
+       <widget class="QPushButton" name="m_RegisterButton">
+        <property name="font">
+         <font>
+          <family>Calibri</family>
+          <pointsize>11</pointsize>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background-color: rgb(63, 127, 101);
+color: rgb(255, 255, 255)</string>
+        </property>
+        <property name="text">
+         <string>&amp;Register</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="m_OptionsButton">
+        <property name="font">
+         <font>
+          <family>Calibri</family>
+          <pointsize>11</pointsize>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background-color: rgb(63, 127, 101);
+color: rgb(255, 255, 255);</string>
+        </property>
+        <property name="text">
+         <string>&amp;Options</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="m_ExitButton">
+        <property name="font">
+         <font>
+          <family>Calibri</family>
+          <pointsize>11</pointsize>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background-color: rgb(53, 53, 53);
+color: rgb(255, 255, 255);</string>
+        </property>
+        <property name="text">
+         <string>E&amp;xit</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+   </layout>
+  </widget>
+  <action name="actionOpenFile">
+   <property name="enabled">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Open File...</string>
+   </property>
+  </action>
+  <action name="actionExit">
+   <property name="text">
+    <string>Exit</string>
+   </property>
+  </action>
+  <action name="actionPrint">
+   <property name="text">
+    <string>Print</string>
+   </property>
+  </action>
+  <action name="actionHelp">
+   <property name="text">
+    <string>Help</string>
+   </property>
+  </action>
+  <action name="actionSave">
+   <property name="text">
+    <string>Save</string>
+   </property>
+  </action>
+  <action name="actionOpen_Fixed">
+   <property name="text">
+    <string>Open &amp;Fixed...</string>
+   </property>
+  </action>
+  <action name="actionOpen_Moving">
+   <property name="text">
+    <string>Open Moving...</string>
+   </property>
+  </action>
+  <action name="actionExit_2">
+   <property name="text">
+    <string>E&amp;xit</string>
+   </property>
+   <property name="menuRole">
+    <enum>QAction::QuitRole</enum>
+   </property>
+  </action>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>QVTKWidget</class>
+   <extends>QWidget</extends>
+   <header>QVTKWidget.h</header>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>m_OpenFixedImageButton</sender>
+   <signal>clicked()</signal>
+   <receiver>ProstalignTPS</receiver>
+   <slot>SlotOpenFixedImage()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>45</x>
+     <y>29</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>73</x>
+     <y>53</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>m_ResetFixedImageButton</sender>
+   <signal>clicked()</signal>
+   <receiver>ProstalignTPS</receiver>
+   <slot>SlotResetFixedImage()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>164</x>
+     <y>31</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>211</x>
+     <y>54</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>m_OpenMovingImageButton</sender>
+   <signal>clicked()</signal>
+   <receiver>ProstalignTPS</receiver>
+   <slot>SlotOpenMovingImage()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>654</x>
+     <y>27</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>669</x>
+     <y>56</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>m_ResetMovingImageButton</sender>
+   <signal>clicked()</signal>
+   <receiver>ProstalignTPS</receiver>
+   <slot>SlotResetMovingImage()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>734</x>
+     <y>29</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>805</x>
+     <y>51</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>m_OptionsButton</sender>
+   <signal>clicked()</signal>
+   <receiver>ProstalignTPS</receiver>
+   <slot>SlotOptions()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>423</x>
+     <y>695</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>479</x>
+     <y>672</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>m_RegisterButton</sender>
+   <signal>clicked()</signal>
+   <receiver>ProstalignTPS</receiver>
+   <slot>SlotRegister()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>519</x>
+     <y>689</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>595</x>
+     <y>653</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>m_ExitButton</sender>
+   <signal>clicked()</signal>
+   <receiver>ProstalignTPS</receiver>
+   <slot>SlotExit()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>600</x>
+     <y>690</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>641</x>
+     <y>671</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>SlotOpenFixedImage()</slot>
+  <slot>SlotOpenMovingImage()</slot>
+  <slot>SlotExit()</slot>
+  <slot>SlotRegister()</slot>
+  <slot>SlotResetFixedImage()</slot>
+  <slot>SlotResetMovingImage()</slot>
+  <slot>SlotOptions()</slot>
+ </slots>
+</ui>

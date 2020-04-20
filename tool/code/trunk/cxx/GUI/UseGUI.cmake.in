@@ -1,0 +1,182 @@
+#
+# This file sets up include directories, link directories, and
+# compiler settings for a project to use Registration.  It should not be
+# included directly, but rather through the Registration_USE_FILE setting
+# obtained from Registration.cmake.
+#
+# Modeled after UseItkVtkGlue.cmake.in
+# https://farsight-svn.ee.uh.edu/repos/farsight/trunk/ItkVtkGlue/UseItkVtkGlue.cmake.in
+# 
+# - Rob Toth
+# - Ahmad Algohary 
+
+
+
+###########################################################################################
+# http://ccipd.rutgers.edu/short/n
+IF ( NOT USEGUI_INCLUDED )
+SET( USEGUI_INCLUDED TRUE )
+###########################################################################################
+
+
+
+###########################################################################################
+# Remember these values!
+SET( OLD_ENABLE_GUI_CORE          ${ENABLE_GUI_CORE}          )
+SET( OLD_ENABLE_GUI_FEM_RENDERING ${ENABLE_GUI_FEM_RENDERING} )
+SET( OLD_ENABLE_GUI_RENDER_MFA    ${ENABLE_GUI_RENDER_MFA}    )
+SET( OLD_ENABLE_GUI_PROSTACAD     ${ENABLE_GUI_PROSTACAD}     )
+SET( OLD_ENABLE_GUI_CAPVIEW       ${ENABLE_GUI_CAPVIEW}       )
+SET( OLD_ENABLE_GUI_PROSTAFUSE    ${ENABLE_GUI_PROSTAFUSE}    )
+
+SET( OLD_GUI_CORE_LIBS            ${GUI_CORE_LIBS}          )
+SET( OLD_GUI_FEM_RENDERING_LIBS   ${GUI_FEM_RENDERING_LIBS} )
+SET( OLD_GUI_RENDER_MFA_LIBS      ${GUI_RENDER_MFA_LIBS}    )
+SET( OLD_GUI_PROSTAFUSE_LIBS      ${GUI_PROSTAFUSE_LIBS}    )
+SET( OLD_GUI_PROSTACAD_LIBS       ${GUI_PROSTACAD_LIBS}     )
+SET( OLD_GUI_CAPVIEW_LIBS         ${GUI_CAPVIEW_LIBS}       )
+###########################################################################################
+
+
+
+###########################################################################################
+# use our ccipd common library
+FIND_PACKAGE( Common REQUIRED )
+INCLUDE( ${COMMON_USE_FILE} )
+
+# use our ccipd classification library
+FIND_PACKAGE( Classification REQUIRED )
+INCLUDE( ${CLASSIFICATION_USE_FILE} )
+###########################################################################################
+
+
+
+###########################################################################################
+IF( OLD_ENABLE_GUI_CORE )
+  
+  IF( BUILD_VTK_PROJECTS )
+    # use our VTK library
+    FIND_PACKAGE( VTK REQUIRED )
+    INCLUDE( ${VTK_USE_FILE} )
+  ENDIF()
+
+  # use our patient data library  
+  FIND_PACKAGE( Data REQUIRED )
+  INCLUDE( ${DATA_USE_FILE} )
+  SET( ENABLE_GUI TRUE )
+  
+  IF( BUILD_TESTING )
+    FIND_PACKAGE( Segmentation REQUIRED )
+    INCLUDE( ${SEGMENTATION_USE_FILE} )
+    SET( ENABLE_GUI TRUE )
+  ENDIF( BUILD_TESTING )
+ 
+ENDIF( OLD_ENABLE_GUI_CORE )
+###########################################################################################
+
+
+
+###########################################################################################
+IF ( OLD_ENABLE_GUI_FEM_RENDERING OR 
+     OLD_ENABLE_GUI_RENDER_MFA OR 
+	 OLD_GUI_PROSTAFUSE_LIBS )
+
+  # use our ccipd registration library
+  FIND_PACKAGE( Registration REQUIRED )
+  INCLUDE( ${REGISTRATION_USE_FILE} )
+
+  # use our ccipd segmentation library
+  FIND_PACKAGE( Segmentation REQUIRED )
+  INCLUDE( ${SEGMENTATION_USE_FILE} )
+
+  # use our ccipd data library
+  FIND_PACKAGE( Data REQUIRED )
+  INCLUDE( ${DATA_USE_FILE} )
+
+ENDIF ()
+###########################################################################################
+
+
+
+###########################################################################################
+IF ( OLD_ENABLE_GUI_PROSTACAD )
+  # use our ccipd registration library
+  FIND_PACKAGE( Classification REQUIRED )
+  INCLUDE( ${CLASSIFICATION_USE_FILE} )
+ENDIF()
+###########################################################################################
+
+
+
+###########################################################################################
+# Some projects need the Qt library for GUI development
+IF ( BUILD_QT_PROJECTS )
+  
+  FIND_PACKAGE(Qt5Widgets QUIET) #example: "Z:/Qt/Qt5.1.0/5.1.0/msvc2012_64/lib/cmake/Qt5Widgets")
+  
+  IF(Qt5Widgets_FOUND)
+	INCLUDE_DIRECTORIES(${Qt5Widgets_INCLUDE_DIRS})
+	#add_definitions(${Qt5Widgets_DEFINITIONS})
+	#set(CMAKE_CXX_FLAGS "${Qt5Widgets_EXECUTABLE_COMPILE_FLAGS}")
+  ELSE(Qt5Widgets_FOUND)
+    FIND_PACKAGE( Qt4 REQUIRED )
+	INCLUDE( ${QT_USE_FILE})
+  ENDIF(Qt5Widgets_FOUND)
+  
+	IF(BUILD_QWT_PROJECTS ) 
+		FIND_PACKAGE(Qwt QUIET)
+		IF(QWT_FOUND)
+			INCLUDE_DIRECTORIES(${QWT_INCLUDE_DIR})
+		ELSE()
+			SET(BUILD_QWT_PROJECTS FALSE)
+		ENDIF(QWT_FOUND)
+	ENDIF()
+
+	IF(BUILD_QXT_PROJECTS )
+  		FIND_PACKAGE(Qxt QUIET)
+  		IF(QXT_FOUND)
+			INCLUDE_DIRECTORIES(${QXT_INCLUDE_DIRS})
+		ELSE()
+			SET(BUILD_QXT_PROJECTS FALSE)
+  		ENDIF(QXT_FOUND)
+	ENDIF()
+
+ENDIF( BUILD_QT_PROJECTS )
+###########################################################################################
+
+
+
+###########################################################################################
+# Add include directories needed to use Registration, Classification.
+INCLUDE_DIRECTORIES( BEFORE @GUI_INCLUDE_DIRS@ )
+INCLUDE_DIRECTORIES( BEFORE @CLASSIFICATION_INCLUDE_DIRS@ )
+###########################################################################################
+
+
+
+###########################################################################################
+# Add link directories needed to use Registration, Classification.
+LINK_DIRECTORIES( @GUI_LIBRARY_DIRS@ )
+LINK_DIRECTORIES( @CLASSIFICATION_LIBRARY_DIRS@ )
+###########################################################################################
+
+
+
+###########################################################################################
+SET( ENABLE_GUI_CORE          ${OLD_ENABLE_GUI_CORE}          )
+SET( ENABLE_GUI_FEM_RENDERING ${OLD_ENABLE_GUI_FEM_RENDERING} )
+SET( ENABLE_GUI_RENDER_MFA    ${OLD_ENABLE_GUI_RENDER_MFA}    )
+SET( ENABLE_GUI_PROSTACAD     ${OLD_ENABLE_GUI_PROSTACAD}     )
+SET( ENABLE_GUI_PROSTAFUSE    ${OLD_ENABLE_GUI_PROSTAFUSE}    )
+SET( ENABLE_GUI_CAPVIEW       ${OLD_ENABLE_GUI_CAPVIEW}       )
+
+SET( GUI_CORE_LIBS          ${OLD_GUI_CORE_LIBS}          )
+SET( GUI_FEM_RENDERING_LIBS ${OLD_GUI_FEM_RENDERING_LIBS} )
+SET( GUI_RENDER_MFA_LIBS    ${OLD_GUI_RENDER_MFA_LIBS}    )
+SET( GUI_RENDER_PROSTACAD   ${OLD_GUI_PROSTACAD_LIBS}     )
+SET( GUI_RENDER_CAPVIEW     ${OLD_GUI_CAPVIEW_LIBS}       )
+SET( GUI_PROSTAFUSE_LIBS    ${OLD_GUI_PROSTAFUSE_LIBS}    )
+
+ENDIF ( NOT USEGUI_INCLUDED )
+###########################################################################################
+

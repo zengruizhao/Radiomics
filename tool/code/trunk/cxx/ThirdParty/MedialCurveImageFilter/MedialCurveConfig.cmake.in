@@ -1,0 +1,30 @@
+#-----------------------------------------------------------------------------
+#
+# MedialCurve.cmake - MedialCurve CMake configuration file for external projects.
+#
+# This file is configured by MedialCurve and used by the UseMedialCurve.cmake module
+# to load MedialCurve's settings for an external project.
+#-----------------------------------------------------------------------------
+# Settings specific to the build tree.
+# 
+# Modeled after ItkVtkGlueConfig.cmake.in
+# https://farsight-svn.ee.uh.edu/repos/farsight/trunk/ItkVtkGlue/ItkVtkGlueConfig.cmake.in
+# 
+# -Rob Toth
+
+# Generate CMake lines that will define the MedialCurve_SOURCE_DIR in the MedialCurveConfig.cmake.
+
+# The "use" file.
+SET ( MEDIAL_CURVE_USE_FILE "@MEDIAL_CURVE_USE_FILE@" )
+
+# Tell other libraries whether we are building data libraries
+SET( ENABLE_MEDIALCURVE @ENABLE_MEDIALCURVE@ )
+
+# Library directory.
+SET( MEDIAL_CURVE_LIBRARY_DIRS @MEDIAL_CURVE_LIBRARY_DIRS@ )
+
+# Libraries
+SET( MEDIAL_CURVE_LIBS @MEDIAL_CURVE_LIBS@ )
+
+# Include directories needed.
+SET ( MEDIAL_CURVE_INCLUDE_DIRS @MEDIAL_CURVE_INCLUDE_DIRS@ )

@@ -1,0 +1,59 @@
+#ifndef __ccipdCalculateMedialAxesDistance_h
+#define __ccipdCalculateMedialAxesDistance_h
+
+
+
+//////////////////////////////////////////////////////////////////////////////////////////
+#include "ccipdDataDLL.h"
+#include "ccipdVolumeTypes.h"
+#include "ccipdLandmarkTypes.h"
+//////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+namespace ccipd
+{
+
+
+
+//////////////////////////////////////////////////////////////////////////////////////////
+/**
+ * \brief computes medial distance by searching the closest point in the other point counted
+ *
+ * \ingroup Evaluation
+ */
+EvaluationValueType CalculateMedialAxesDistance(
+  const VolumeImageType * levelSet1,
+  const VolumeImageType * levelSet2);
+//////////////////////////////////////////////////////////////////////////////////////////
+
+
+  
+//////////////////////////////////////////////////////////////////////////////////////////
+/**
+ * \brief computes medial distance by searching the closest point in the other point counted
+ *
+ * \ingroup Evaluation
+ */
+EvaluationValueType CalculateMedialAxesDistance(
+  const LandmarkSetPointer landmarkSet1,
+  const LandmarkSetPointer landmarkSet2);
+//////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+//////////////////////////////////////////////////////////////////////////////////////////
+/**
+ * \brief compute distance
+ * \param landmarks a vector of landmark points
+  *
+ * \ingroup Evaluation
+ */
+EvaluationValueType CalculateMedialAxesDistance(
+  std::vector<LandmarkSetPointer> & landmarks, EvaluationValueType *sd=NULL);
+//////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+} // namespace
+#endif // __ccipdCalculateMedialAxesDistance_h

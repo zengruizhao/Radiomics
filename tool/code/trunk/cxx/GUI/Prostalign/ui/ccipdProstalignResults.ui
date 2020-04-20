@@ -1,0 +1,462 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>ProstalignResults</class>
+ <widget class="QDialog" name="ProstalignResults">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>711</width>
+    <height>616</height>
+   </rect>
+  </property>
+  <property name="font">
+   <font>
+    <family>Calibri</family>
+    <pointsize>10</pointsize>
+   </font>
+  </property>
+  <property name="windowTitle">
+   <string>Registration Results</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 rgba(220, 220, 220, 255), stop:1 rgba(255, 255, 255, 255));</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout">
+   <item>
+    <layout class="QHBoxLayout" name="horizontalLayout">
+     <item>
+      <layout class="QVBoxLayout" name="verticalLayout_2">
+       <item>
+        <layout class="QHBoxLayout" name="horizontalLayout_3">
+         <item>
+          <widget class="QComboBox" name="leftImageComboBox">
+           <property name="font">
+            <font>
+             <family>Calibri</family>
+             <pointsize>10</pointsize>
+            </font>
+           </property>
+           <property name="currentIndex">
+            <number>3</number>
+           </property>
+           <item>
+            <property name="text">
+             <string>Fixed Image</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Moving Image</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Moved Image</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>(None)</string>
+            </property>
+           </item>
+          </widget>
+         </item>
+         <item>
+          <widget class="QComboBox" name="leftCheckerboardComboBox">
+           <property name="font">
+            <font>
+             <family>Calibri</family>
+             <pointsize>10</pointsize>
+            </font>
+           </property>
+           <item>
+            <property name="text">
+             <string>No Checkerboard</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Horizontal Checkerboard</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Vertical Checkerboard</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Combined Checkerboard</string>
+            </property>
+           </item>
+          </widget>
+         </item>
+         <item>
+          <widget class="Line" name="line">
+           <property name="orientation">
+            <enum>Qt::Vertical</enum>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QComboBox" name="rightImageComboBox">
+           <property name="font">
+            <font>
+             <family>Calibri</family>
+             <pointsize>10</pointsize>
+            </font>
+           </property>
+           <property name="currentIndex">
+            <number>3</number>
+           </property>
+           <item>
+            <property name="text">
+             <string>Fixed Image</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Moving Image</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Moved Image</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>(None)</string>
+            </property>
+           </item>
+          </widget>
+         </item>
+         <item>
+          <widget class="QComboBox" name="rightCheckerboardComboBox">
+           <property name="font">
+            <font>
+             <family>Calibri</family>
+             <pointsize>10</pointsize>
+            </font>
+           </property>
+           <item>
+            <property name="text">
+             <string>No Checkerboard</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Horizontal Checkerboard</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Vertical Checkerboard</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Combined Checkerboard</string>
+            </property>
+           </item>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <widget class="QVTKWidget" name="resultsWidget" native="true">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Preferred" vsizetype="Expanding">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <widget class="Line" name="line_2">
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <layout class="QHBoxLayout" name="m_ButtonHorizontalLayout">
+     <item>
+      <spacer name="horizontalSpacer">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>40</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item>
+      <widget class="QPushButton" name="pushButton">
+       <property name="font">
+        <font>
+         <family>Calibri</family>
+         <pointsize>11</pointsize>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: rgb(0, 38, 0);
+color: rgb(255, 255, 255);</string>
+       </property>
+       <property name="text">
+        <string>&amp;Options</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="m_SaveWarpFieldButton">
+       <property name="font">
+        <font>
+         <family>Calibri</family>
+         <pointsize>11</pointsize>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: rgb(0, 38, 0);
+color: rgb(255, 255, 255);</string>
+       </property>
+       <property name="text">
+        <string>Save &amp;Warp Field</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="m_SaveAnimationButton">
+       <property name="font">
+        <font>
+         <family>Calibri</family>
+         <pointsize>11</pointsize>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: rgb(0, 38, 0);
+color: rgb(255, 255, 255);</string>
+       </property>
+       <property name="text">
+        <string>Save &amp;Animation</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="m_SaveMovedImageButton">
+       <property name="font">
+        <font>
+         <family>Calibri</family>
+         <pointsize>11</pointsize>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: rgb(0, 38, 0);
+color: rgb(255, 255, 255);</string>
+       </property>
+       <property name="text">
+        <string>&amp;Save Moved Image</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="m_CloseButton">
+       <property name="font">
+        <font>
+         <family>Calibri</family>
+         <pointsize>11</pointsize>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: rgb(53, 53, 53);
+color: rgb(255, 255, 255);</string>
+       </property>
+       <property name="text">
+        <string>&amp;Close</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+  </layout>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>QVTKWidget</class>
+   <extends>QWidget</extends>
+   <header>QVTKWidget.h</header>
+  </customwidget>
+ </customwidgets>
+ <tabstops>
+  <tabstop>leftImageComboBox</tabstop>
+  <tabstop>leftCheckerboardComboBox</tabstop>
+  <tabstop>rightImageComboBox</tabstop>
+  <tabstop>rightCheckerboardComboBox</tabstop>
+ </tabstops>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>leftImageComboBox</sender>
+   <signal>currentIndexChanged(QString)</signal>
+   <receiver>ProstalignResults</receiver>
+   <slot>SlotLeftImageComboChanged(QString)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>79</x>
+     <y>23</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>94</x>
+     <y>202</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>rightImageComboBox</sender>
+   <signal>currentIndexChanged(QString)</signal>
+   <receiver>ProstalignResults</receiver>
+   <slot>SlotRightImageComboChanged(QString)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>523</x>
+     <y>30</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>403</x>
+     <y>75</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>leftCheckerboardComboBox</sender>
+   <signal>currentIndexChanged(QString)</signal>
+   <receiver>ProstalignResults</receiver>
+   <slot>SlotLeftCheckerboardComboChanged(QString)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>237</x>
+     <y>22</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>239</x>
+     <y>166</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>rightCheckerboardComboBox</sender>
+   <signal>currentIndexChanged(QString)</signal>
+   <receiver>ProstalignResults</receiver>
+   <slot>SlotRightCheckerboardComboChanged(QString)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>698</x>
+     <y>30</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>517</x>
+     <y>128</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>m_SaveAnimationButton</sender>
+   <signal>clicked()</signal>
+   <receiver>ProstalignResults</receiver>
+   <slot>SlotSaveAnimation()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>486</x>
+     <y>605</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>482</x>
+     <y>492</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>m_CloseButton</sender>
+   <signal>clicked()</signal>
+   <receiver>ProstalignResults</receiver>
+   <slot>accept()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>700</x>
+     <y>605</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>656</x>
+     <y>510</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton</sender>
+   <signal>clicked()</signal>
+   <receiver>ProstalignResults</receiver>
+   <slot>SlotOptions()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>280</x>
+     <y>605</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>281</x>
+     <y>503</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>m_SaveMovedImageButton</sender>
+   <signal>clicked()</signal>
+   <receiver>ProstalignResults</receiver>
+   <slot>SlotSaveMoved()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>535</x>
+     <y>593</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>571</x>
+     <y>465</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>m_SaveWarpFieldButton</sender>
+   <signal>clicked()</signal>
+   <receiver>ProstalignResults</receiver>
+   <slot>SlotSaveWarpField()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>349</x>
+     <y>595</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>366</x>
+     <y>520</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>SlotLeftImageComboChanged(QString)</slot>
+  <slot>SlotRightImageComboChanged(QString)</slot>
+  <slot>SlotLeftCheckerboardComboChanged(QString)</slot>
+  <slot>SlotRightCheckerboardComboChanged(QString)</slot>
+  <slot>SlotSaveAnimation()</slot>
+  <slot>SlotOptions()</slot>
+  <slot>SlotSaveMoved()</slot>
+  <slot>SlotSaveWarpField()</slot>
+ </slots>
+</ui>

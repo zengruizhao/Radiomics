@@ -1,0 +1,29 @@
+#-----------------------------------------------------------------------------
+#
+# Preprocessing.cmake - Preprocessing CMake configuration file for external projects.
+#
+# This file is configured by Preprocessing and used by the UsePreprocessing.cmake module
+# to load Preprocessing's settings for an external project.
+#-----------------------------------------------------------------------------
+# Settings specific to the build tree.
+# 
+# Modeled after ItkVtkGlueConfig.cmake.in
+# https://farsight-svn.ee.uh.edu/repos/farsight/trunk/ItkVtkGlue/ItkVtkGlueConfig.cmake.in
+# 
+# -Rob Toth
+
+# Generate CMake lines that will define the PREPROCESSING_SOURCE_DIR in the PreprocessingConfig.cmake.
+
+# The "use" file.
+SET ( PREPROCESSING_USE_FILE "@PREPROCESSING_USE_FILE@" )
+
+# Library directory.
+SET ( PREPROCESSING_LIBRARY_DIRS @PREPROCESSING_LIBRARY_DIRS@ )
+
+# Libraries
+SET ( PREPROCESSING_CORE_LIBS @PREPROCESSING_CORE_LIBS@ )
+
+SET( ENABLE_PREPROCESSING_CORE @ENABLE_PREPROCESSING_CORE@ )
+
+# Include directories needed.
+SET ( PREPROCESSING_INCLUDE_DIRS @PREPROCESSING_INCLUDE_DIRS )

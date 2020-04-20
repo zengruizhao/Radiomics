@@ -1,0 +1,1354 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>SeguiWindow</class>
+ <widget class="QMainWindow" name="SeguiWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>800</width>
+    <height>600</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Segui™</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">QMenuBar
+{
+  background-color: qlineargradient(
+    x1:0, y1:0, x2:0, y2:1,
+    stop:0 black, stop:1 gray );
+ }
+QSlider::handle:horizontal {
+     background: rgb(85, 255, 255);
+     border: 1px solid  rgb(0, 0, 200);
+     width: 18px;
+     margin: -2px 0;
+     border-radius: 3px;
+ }
+
+ QMenuBar::item {
+     /*spacing: 3px; spacing between menu bar items */
+     /*padding: 1px 4px;*/
+     background: transparent;
+     color: white;
+     /*border-radius: 4px;*/
+ }
+
+QMenuBar::item:selected
+{ /* when selected using mouse or keyboard */
+     background: #a8a8a8;
+ }
+
+QMenuBar::item:pressed
+{
+  background: #888888;
+}
+
+QMenu
+{
+  background-color: black;
+  color: white;
+  margin: 2px; /* some spacing around the menu */
+  border: 1px solid lightgray; /* reserve space for selection border */
+}
+
+QMenu::item
+{
+  padding: 2px 25px 2px 20px;
+  border: 1px solid rgb( 50, 50, 50 );
+}
+
+QMenu::item:selected
+{
+ border-color: darkblue;
+ background: rgba(100, 100, 100, 150);
+ color: rgb(85, 255, 255);
+}
+
+QStatusBar
+{
+  background: black;
+}
+</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(0, 0, 0);
+color: rgb(255, 255, 255);</string>
+   </property>
+   <layout class="QVBoxLayout" name="verticalLayout">
+    <item>
+     <layout class="QHBoxLayout" name="horizontalLayout_4">
+      <property name="sizeConstraint">
+       <enum>QLayout::SetMinimumSize</enum>
+      </property>
+      <item>
+       <widget class="QComboBox" name="m_ImageCombo">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="font">
+         <font>
+          <family>Calibri</family>
+          <pointsize>10</pointsize>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">color: rgb(85, 255, 255);
+border: 1px solid gray;
+border-radius: 3px;
+padding: 1px 18px 1px 3px;
+min-width: 6em;
+</string>
+        </property>
+        <item>
+         <property name="text">
+          <string>Input Volume</string>
+         </property>
+        </item>
+       </widget>
+      </item>
+      <item>
+       <widget class="QCheckBox" name="m_TransformedCheck">
+        <property name="font">
+         <font>
+          <family>Calibri</family>
+          <pointsize>10</pointsize>
+         </font>
+        </property>
+        <property name="layoutDirection">
+         <enum>Qt::RightToLeft</enum>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">color: rgb(85, 255, 255);</string>
+        </property>
+        <property name="text">
+         <string>In MFA reference frame:</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+    <item>
+     <layout class="QGridLayout" name="gridLayout">
+      <item row="0" column="1">
+       <widget class="QLabel" name="label">
+        <property name="font">
+         <font>
+          <family>Calibri</family>
+          <pointsize>10</pointsize>
+         </font>
+        </property>
+        <property name="text">
+         <string>Window:</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="2">
+       <widget class="QLabel" name="label_2">
+        <property name="font">
+         <font>
+          <family>Calibri</family>
+          <pointsize>10</pointsize>
+         </font>
+        </property>
+        <property name="text">
+         <string>Level:</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="3">
+       <widget class="QSlider" name="m_ImageTransparencySlider">
+        <property name="font">
+         <font>
+          <family>Calibri</family>
+          <pointsize>10</pointsize>
+         </font>
+        </property>
+        <property name="toolTip">
+         <string>The opacity of the image</string>
+        </property>
+        <property name="maximum">
+         <number>100</number>
+        </property>
+        <property name="value">
+         <number>100</number>
+        </property>
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="tickPosition">
+         <enum>QSlider::TicksBelow</enum>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="1">
+       <widget class="QSlider" name="m_ImageWindowSlider">
+        <property name="font">
+         <font>
+          <family>Calibri</family>
+          <pointsize>10</pointsize>
+         </font>
+        </property>
+        <property name="toolTip">
+         <string>The &quot;windowing&quot; of the image</string>
+        </property>
+        <property name="maximum">
+         <number>100</number>
+        </property>
+        <property name="value">
+         <number>50</number>
+        </property>
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="tickPosition">
+         <enum>QSlider::TicksBelow</enum>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="3">
+       <widget class="QLabel" name="label_4">
+        <property name="font">
+         <font>
+          <family>Calibri</family>
+          <pointsize>10</pointsize>
+         </font>
+        </property>
+        <property name="text">
+         <string>Image Opacity:</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="0">
+       <widget class="QLabel" name="label_3">
+        <property name="font">
+         <font>
+          <family>Calibri</family>
+          <pointsize>10</pointsize>
+         </font>
+        </property>
+        <property name="text">
+         <string>Slice:</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="2">
+       <widget class="QSlider" name="m_ImageLevelSlider">
+        <property name="font">
+         <font>
+          <family>Calibri</family>
+          <pointsize>10</pointsize>
+         </font>
+        </property>
+        <property name="toolTip">
+         <string>The &quot;level&quot; of the image</string>
+        </property>
+        <property name="maximum">
+         <number>100</number>
+        </property>
+        <property name="value">
+         <number>50</number>
+        </property>
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="tickPosition">
+         <enum>QSlider::TicksBelow</enum>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="0">
+       <widget class="QSlider" name="m_SliceSlider">
+        <property name="font">
+         <font>
+          <family>Calibri</family>
+          <pointsize>10</pointsize>
+         </font>
+        </property>
+        <property name="toolTip">
+         <string>The image slice</string>
+        </property>
+        <property name="maximum">
+         <number>0</number>
+        </property>
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="tickPosition">
+         <enum>QSlider::TicksBelow</enum>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="4">
+       <widget class="QLabel" name="label_5">
+        <property name="font">
+         <font>
+          <family>Calibri</family>
+          <pointsize>10</pointsize>
+         </font>
+        </property>
+        <property name="text">
+         <string>Levelset Opacity:</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="4">
+       <widget class="QSlider" name="m_LevelsetTransparencySlider">
+        <property name="font">
+         <font>
+          <family>Calibri</family>
+          <pointsize>10</pointsize>
+         </font>
+        </property>
+        <property name="toolTip">
+         <string>The opacity of the levelsets</string>
+        </property>
+        <property name="maximum">
+         <number>100</number>
+        </property>
+        <property name="value">
+         <number>50</number>
+        </property>
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="tickPosition">
+         <enum>QSlider::TicksBelow</enum>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+    <item>
+     <widget class="Line" name="line_4">
+      <property name="styleSheet">
+       <string notr="true">background-color: lightgray</string>
+      </property>
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="Line" name="line_2">
+      <property name="font">
+       <font>
+        <family>Calibri</family>
+        <pointsize>10</pointsize>
+       </font>
+      </property>
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QVTKWidget" name="m_OutputVTKWidget" native="true">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Preferred" vsizetype="MinimumExpanding">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="font">
+       <font>
+        <family>Calibri</family>
+        <pointsize>10</pointsize>
+       </font>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="Line" name="line">
+      <property name="font">
+       <font>
+        <family>Calibri</family>
+        <pointsize>10</pointsize>
+       </font>
+      </property>
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="Line" name="line_3">
+      <property name="styleSheet">
+       <string notr="true">background-color: lightgray</string>
+      </property>
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <layout class="QHBoxLayout" name="horizontalLayout">
+      <property name="sizeConstraint">
+       <enum>QLayout::SetMinimumSize</enum>
+      </property>
+      <item>
+       <spacer name="horizontalSpacer">
+        <property name="font">
+         <font>
+          <family>Calibri</family>
+          <pointsize>10</pointsize>
+         </font>
+        </property>
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>40</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item>
+       <widget class="QPushButton" name="pushButton">
+        <property name="font">
+         <font>
+          <family>Calibri</family>
+          <pointsize>10</pointsize>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background-color: rgb(40, 40,40);
+color: rgb(85, 255, 255);</string>
+        </property>
+        <property name="text">
+         <string>&amp;Segment</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="m_ExitButton">
+        <property name="font">
+         <font>
+          <family>Calibri</family>
+          <pointsize>10</pointsize>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background-color: rgb(40, 40,40);
+color: rgb(85, 255, 255);</string>
+        </property>
+        <property name="text">
+         <string>E&amp;xit</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>800</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menu_File">
+    <property name="title">
+     <string>&amp;File</string>
+    </property>
+    <addaction name="ActionNew"/>
+    <addaction name="ActionOption"/>
+    <addaction name="ActionSaveMFASegmenter"/>
+    <addaction name="ActionSaveMFASegmenterAs"/>
+    <addaction name="ActionCloseMFASegmenter"/>
+    <addaction name="separator"/>
+    <addaction name="ActionOpenStudy"/>
+    <addaction name="ActionOpenDICOM"/>
+    <addaction name="separator"/>
+    <addaction name="ActionSaveImage"/>
+    <addaction name="ActionSaveSummedLabels"/>
+    <addaction name="separator"/>
+    <addaction name="ActionExit"/>
+   </widget>
+   <widget class="QMenu" name="menu_Settings">
+    <property name="title">
+     <string>&amp;MFA Segmentation</string>
+    </property>
+    <addaction name="ActionSegmenterOptions"/>
+   </widget>
+   <widget class="QMenu" name="menu_Help">
+    <property name="title">
+     <string>&amp;Help</string>
+    </property>
+    <addaction name="ActionAbout"/>
+   </widget>
+   <widget class="QMenu" name="menu_Levelsets">
+    <property name="title">
+     <string>&amp;Levelsets</string>
+    </property>
+    <addaction name="ActionRandomizeColors"/>
+    <addaction name="ActionClearLevelset"/>
+   </widget>
+   <widget class="QMenu" name="menu_Correction">
+    <property name="title">
+     <string>&amp;Correction</string>
+    </property>
+    <widget class="QMenu" name="menuClear">
+     <property name="title">
+      <string>Clear</string>
+     </property>
+     <addaction name="ActionClearCorrection"/>
+     <addaction name="ActionClearPoints"/>
+     <addaction name="ActionClearCorrectionAndPoints"/>
+    </widget>
+    <widget class="QMenu" name="menuType_Here">
+     <property name="title">
+      <string>Type Here</string>
+     </property>
+    </widget>
+    <addaction name="ActionCorrectSegmentation"/>
+    <addaction name="ActionRegenerateCorrection"/>
+    <addaction name="menuClear"/>
+    <addaction name="separator"/>
+    <addaction name="ActionSetNumberOfFixedPoints"/>
+    <addaction name="ActionSetNumberOfSurfaceAnchorPoints"/>
+    <addaction name="ActionSetForbiddenRadius"/>
+    <addaction name="separator"/>
+    <addaction name="ActionShowFixedPoints"/>
+    <addaction name="ActionHideFixedPoints"/>
+    <addaction name="menuType_Here"/>
+   </widget>
+   <widget class="QMenu" name="menu_Bounding_Box">
+    <property name="title">
+     <string>&amp;Bounding Box</string>
+    </property>
+    <addaction name="ActionSetBoundingBox"/>
+    <addaction name="ActionClearBoundingBox"/>
+    <addaction name="ActionShowBoundingBox"/>
+    <addaction name="ActionHideBoundingBox"/>
+   </widget>
+   <addaction name="menu_File"/>
+   <addaction name="menu_Settings"/>
+   <addaction name="menu_Bounding_Box"/>
+   <addaction name="menu_Correction"/>
+   <addaction name="menu_Levelsets"/>
+   <addaction name="menu_Help"/>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+  <action name="ActionOption">
+   <property name="text">
+    <string>&amp;Open MFA Segmenter...</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+O</string>
+   </property>
+  </action>
+  <action name="ActionExit">
+   <property name="text">
+    <string>E&amp;xit</string>
+   </property>
+   <property name="toolTip">
+    <string>Exit Segui</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Q</string>
+   </property>
+  </action>
+  <action name="ActionAbout">
+   <property name="text">
+    <string>&amp;About</string>
+   </property>
+   <property name="toolTip">
+    <string>About Segui</string>
+   </property>
+  </action>
+  <action name="ActionSegmenterOptions">
+   <property name="text">
+    <string>MFA Segmenter &amp;Options</string>
+   </property>
+   <property name="toolTip">
+    <string>Edit the MFA segmenter options</string>
+   </property>
+  </action>
+  <action name="ActionNew">
+   <property name="text">
+    <string>&amp;New MFA Segmenter</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+N</string>
+   </property>
+  </action>
+  <action name="ActionSaveMFASegmenter">
+   <property name="text">
+    <string>&amp;Save MFA Segmenter</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+S</string>
+   </property>
+  </action>
+  <action name="ActionSaveMFASegmenterAs">
+   <property name="text">
+    <string>Save MFA Segmenter as...</string>
+   </property>
+  </action>
+  <action name="ActionOpenStudy">
+   <property name="text">
+    <string>Open Study to Segment...</string>
+   </property>
+  </action>
+  <action name="ActionCloseMFASegmenter">
+   <property name="text">
+    <string>Close MFA Segmenter</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+W</string>
+   </property>
+  </action>
+  <action name="ActionSaveImage">
+   <property name="text">
+    <string>Save Current &amp;Image...</string>
+   </property>
+  </action>
+  <action name="ActionRandomizeColors">
+   <property name="text">
+    <string>&amp;Randomize Colors</string>
+   </property>
+  </action>
+  <action name="ActionClearLevelset">
+   <property name="text">
+    <string>&amp;Clear Levelset</string>
+   </property>
+  </action>
+  <action name="ActionCorrectSegmentation">
+   <property name="text">
+    <string>&amp;Set Correction Points</string>
+   </property>
+  </action>
+  <action name="ActionClearCorrectionAndPoints">
+   <property name="text">
+    <string>Clear TPS and &amp;Points</string>
+   </property>
+  </action>
+  <action name="ActionSetBoundingBox">
+   <property name="text">
+    <string>Set &amp;Bounding Box</string>
+   </property>
+   <property name="toolTip">
+    <string>Manually define a bounding box from points on the input image.</string>
+   </property>
+  </action>
+  <action name="ActionClearBoundingBox">
+   <property name="text">
+    <string>Clear Bounding Box</string>
+   </property>
+   <property name="toolTip">
+    <string>Remove any manually-input bounding box for this study.</string>
+   </property>
+  </action>
+  <action name="ActionRegenerateCorrection">
+   <property name="text">
+    <string>&amp;Regenerate TPS Correction</string>
+   </property>
+  </action>
+  <action name="ActionShowBoundingBox">
+   <property name="text">
+    <string>Show Bounding Box</string>
+   </property>
+  </action>
+  <action name="ActionHideBoundingBox">
+   <property name="text">
+    <string>Hide Bounding Box</string>
+   </property>
+  </action>
+  <action name="ActionSetNumberOfFixedPoints">
+   <property name="text">
+    <string>Set # of Random Anchor Points</string>
+   </property>
+  </action>
+  <action name="ActionShowFixedPoints">
+   <property name="text">
+    <string>Show Anchor Points</string>
+   </property>
+  </action>
+  <action name="ActionHideFixedPoints">
+   <property name="text">
+    <string>Hide Anchor Points</string>
+   </property>
+  </action>
+  <action name="ActionSetNumberOfSurfaceAnchorPoints">
+   <property name="text">
+    <string>Set # of Surface Anchor Points</string>
+   </property>
+  </action>
+  <action name="ActionSetForbiddenRadius">
+   <property name="text">
+    <string>Set &amp;Forbidden Radius</string>
+   </property>
+  </action>
+  <action name="ActionSaveSummedLabels">
+   <property name="text">
+    <string>Save Summed Label Map</string>
+   </property>
+  </action>
+  <action name="ActionClearCorrection">
+   <property name="text">
+    <string>Clear &amp;TPS</string>
+   </property>
+  </action>
+  <action name="ActionClearPoints">
+   <property name="text">
+    <string>Clear Points</string>
+   </property>
+  </action>
+  <action name="ActionOpenDICOM">
+   <property name="text">
+    <string>Open DICOM To Segment</string>
+   </property>
+  </action>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>QVTKWidget</class>
+   <extends>QWidget</extends>
+   <header>QVTKWidget.h</header>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>ActionOption</sender>
+   <signal>triggered()</signal>
+   <receiver>SeguiWindow</receiver>
+   <slot>SlotOpenMFASegmenter()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>399</x>
+     <y>299</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>ActionExit</sender>
+   <signal>triggered()</signal>
+   <receiver>SeguiWindow</receiver>
+   <slot>SlotExit()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>399</x>
+     <y>299</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>ActionAbout</sender>
+   <signal>triggered()</signal>
+   <receiver>SeguiWindow</receiver>
+   <slot>SlotAbout()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>399</x>
+     <y>299</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>ActionSegmenterOptions</sender>
+   <signal>triggered()</signal>
+   <receiver>SeguiWindow</receiver>
+   <slot>SlotEditMFASegmenter()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>399</x>
+     <y>299</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>ActionNew</sender>
+   <signal>triggered()</signal>
+   <receiver>SeguiWindow</receiver>
+   <slot>SlotNewMFASegmenter()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>399</x>
+     <y>299</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>ActionSaveMFASegmenter</sender>
+   <signal>triggered()</signal>
+   <receiver>SeguiWindow</receiver>
+   <slot>SlotSaveMFASegmenter()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>399</x>
+     <y>299</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>ActionSaveMFASegmenterAs</sender>
+   <signal>triggered()</signal>
+   <receiver>SeguiWindow</receiver>
+   <slot>SlotSaveMFASegmenterAs()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>399</x>
+     <y>299</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>m_ExitButton</sender>
+   <signal>clicked()</signal>
+   <receiver>SeguiWindow</receiver>
+   <slot>SlotExit()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>737</x>
+     <y>549</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>717</x>
+     <y>465</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>ActionOpenStudy</sender>
+   <signal>triggered()</signal>
+   <receiver>SeguiWindow</receiver>
+   <slot>SlotOpenStudy()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>399</x>
+     <y>299</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton</sender>
+   <signal>clicked()</signal>
+   <receiver>SeguiWindow</receiver>
+   <slot>SlotSegment()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>656</x>
+     <y>558</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>618</x>
+     <y>465</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>ActionCloseMFASegmenter</sender>
+   <signal>triggered()</signal>
+   <receiver>SeguiWindow</receiver>
+   <slot>SlotCloseMFASegmenter()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>399</x>
+     <y>299</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>m_LevelsetTransparencySlider</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>SeguiWindow</receiver>
+   <slot>SlotUpdateTransparency()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>789</x>
+     <y>104</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>548</x>
+     <y>120</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>ActionRandomizeColors</sender>
+   <signal>triggered()</signal>
+   <receiver>SeguiWindow</receiver>
+   <slot>SlotRandomizeColors()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>65</x>
+     <y>470</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>m_SliceSlider</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>SeguiWindow</receiver>
+   <slot>SlotUpdateSlice()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>160</x>
+     <y>104</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>127</x>
+     <y>108</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>m_ImageTransparencySlider</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>SeguiWindow</receiver>
+   <slot>SlotUpdateTransparency()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>632</x>
+     <y>104</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>425</x>
+     <y>56</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>m_ImageWindowSlider</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>SeguiWindow</receiver>
+   <slot>SlotUpdateImageWindowLevel()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>317</x>
+     <y>104</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>226</x>
+     <y>173</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>m_ImageLevelSlider</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>SeguiWindow</receiver>
+   <slot>SlotUpdateImageWindowLevel()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>475</x>
+     <y>104</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>392</x>
+     <y>196</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>m_ImageCombo</sender>
+   <signal>currentIndexChanged(int)</signal>
+   <receiver>SeguiWindow</receiver>
+   <slot>SlotUpdateWhichImage()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>44</x>
+     <y>45</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>66</x>
+     <y>60</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>ActionClearLevelset</sender>
+   <signal>triggered()</signal>
+   <receiver>SeguiWindow</receiver>
+   <slot>SlotClearLevelset()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>358</x>
+     <y>556</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>ActionSaveImage</sender>
+   <signal>triggered()</signal>
+   <receiver>SeguiWindow</receiver>
+   <slot>SlotSaveCurrentImage()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>399</x>
+     <y>299</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>m_TransformedCheck</sender>
+   <signal>stateChanged(int)</signal>
+   <receiver>SeguiWindow</receiver>
+   <slot>SlotUpdateWhichImage()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>737</x>
+     <y>38</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>717</x>
+     <y>28</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>ActionCorrectSegmentation</sender>
+   <signal>triggered()</signal>
+   <receiver>SeguiWindow</receiver>
+   <slot>SlotCorrectSegmentation()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>399</x>
+     <y>299</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>ActionClearCorrectionAndPoints</sender>
+   <signal>triggered()</signal>
+   <receiver>SeguiWindow</receiver>
+   <slot>SlotClearCorrectionAndPoints()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>399</x>
+     <y>299</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>ActionRegenerateCorrection</sender>
+   <signal>triggered()</signal>
+   <receiver>SeguiWindow</receiver>
+   <slot>SlotRegenerateCorrection()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>399</x>
+     <y>299</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>ActionClearBoundingBox</sender>
+   <signal>triggered()</signal>
+   <receiver>SeguiWindow</receiver>
+   <slot>SlotClearBoundingBox()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>399</x>
+     <y>299</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>ActionSetBoundingBox</sender>
+   <signal>triggered()</signal>
+   <receiver>SeguiWindow</receiver>
+   <slot>SlotSetBoundingBox()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>399</x>
+     <y>299</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>ActionHideBoundingBox</sender>
+   <signal>triggered()</signal>
+   <receiver>SeguiWindow</receiver>
+   <slot>SlotHideBoundingBox()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>399</x>
+     <y>299</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>ActionShowBoundingBox</sender>
+   <signal>triggered()</signal>
+   <receiver>SeguiWindow</receiver>
+   <slot>SlotShowBoundingBox()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>399</x>
+     <y>299</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>ActionSetNumberOfFixedPoints</sender>
+   <signal>triggered()</signal>
+   <receiver>SeguiWindow</receiver>
+   <slot>SlotSetNumberOfFixedPoints()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>399</x>
+     <y>299</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>ActionShowFixedPoints</sender>
+   <signal>triggered()</signal>
+   <receiver>SeguiWindow</receiver>
+   <slot>SlotShowFixedPoints()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>399</x>
+     <y>299</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>ActionHideFixedPoints</sender>
+   <signal>triggered()</signal>
+   <receiver>SeguiWindow</receiver>
+   <slot>SlotHideFixedPoints()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>399</x>
+     <y>299</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>ActionSetForbiddenRadius</sender>
+   <signal>triggered()</signal>
+   <receiver>SeguiWindow</receiver>
+   <slot>SlotSetForbiddenRadius()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>399</x>
+     <y>299</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>ActionSetNumberOfSurfaceAnchorPoints</sender>
+   <signal>triggered()</signal>
+   <receiver>SeguiWindow</receiver>
+   <slot>SlotSetNumberOfSurfacePoints()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>399</x>
+     <y>299</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>ActionSaveSummedLabels</sender>
+   <signal>triggered()</signal>
+   <receiver>SeguiWindow</receiver>
+   <slot>SlotSaveSummedLabels()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>399</x>
+     <y>299</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>ActionClearCorrection</sender>
+   <signal>triggered()</signal>
+   <receiver>SeguiWindow</receiver>
+   <slot>SlotClearCorrection()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>399</x>
+     <y>299</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>ActionClearPoints</sender>
+   <signal>triggered()</signal>
+   <receiver>SeguiWindow</receiver>
+   <slot>SlotClearCorrectionPoints()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>399</x>
+     <y>299</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>ActionOpenDICOM</sender>
+   <signal>triggered()</signal>
+   <receiver>SeguiWindow</receiver>
+   <slot>SlotOpenDICOM()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>399</x>
+     <y>299</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>SlotOpenMFASegmenter()</slot>
+  <slot>SlotExit()</slot>
+  <slot>SlotAbout()</slot>
+  <slot>SlotEditMFASegmenter()</slot>
+  <slot>SlotNewMFASegmenter()</slot>
+  <slot>SlotSaveMFASegmenter()</slot>
+  <slot>SlotSaveMFASegmenterAs()</slot>
+  <slot>SlotOpenStudy()</slot>
+  <slot>SlotSegment()</slot>
+  <slot>SlotCloseMFASegmenter()</slot>
+  <slot>SlotUpdateTransparency()</slot>
+  <slot>SlotRerender()</slot>
+  <slot>SlotRandomizeColors()</slot>
+  <slot>SlotRerenderStudy()</slot>
+  <slot>SlotUpdateSlice()</slot>
+  <slot>SlotUpdateImageWindowLevel()</slot>
+  <slot>SlotUpdateWhichImage()</slot>
+  <slot>SlotClearLevelset()</slot>
+  <slot>SlotSaveCurrentImage()</slot>
+  <slot>SlotCorrectSegmentation()</slot>
+  <slot>SlotClearCorrection()</slot>
+  <slot>SlotRegenerateCorrection()</slot>
+  <slot>SlotClearBoundingBox()</slot>
+  <slot>SlotSetBoundingBox()</slot>
+  <slot>SlotShowBoundingBox()</slot>
+  <slot>SlotHideBoundingBox()</slot>
+  <slot>SlotSetNumberOfFixedPoints()</slot>
+  <slot>SlotShowFixedPoints()</slot>
+  <slot>SlotHideFixedPoints()</slot>
+  <slot>SlotSetNumberOfSurfacePoints()</slot>
+  <slot>SlotSetForbiddenRadius()</slot>
+  <slot>SlotSaveSummedLabels()</slot>
+  <slot>SlotClearCorrectionAndPoints()</slot>
+  <slot>SlotClearCorrectionPoints()</slot>
+  <slot>SlotOpenDICOM()</slot>
+ </slots>
+</ui>

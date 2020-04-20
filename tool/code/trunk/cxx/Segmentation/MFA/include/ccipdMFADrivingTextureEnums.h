@@ -1,0 +1,34 @@
+#ifndef __ccipdMFADrivingTextureEnums_h
+#define __ccipdMFADrivingTextureEnums_h
+
+
+
+//////////////////////////////////////////////////////////////////////////////////////////
+#include "ccipdFeatureCollectionTypes.h"
+#include "ccipdMFAForwardDeclarations.h"
+//////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+namespace ccipd
+{
+
+
+
+//////////////////////////////////////////////////////////////////////////////////////////
+/** 
+ * Extract the texture enums
+ * used in this driving feature preparer.
+ * 
+ * \date    2013-01-21
+ * \author  Rob Toth
+ * \ingroup MFA
+ */
+TextureFeatureEnumCollection GetDrivingTextureEnums(
+  const MFADrivingFeaturePreparer & drivingFeatures );
+//////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+} // namespace ccipd
+#endif // __ccipdMFADrivingTextureEnums_h

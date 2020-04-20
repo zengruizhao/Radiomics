@@ -1,0 +1,32 @@
+#-----------------------------------------------------------------------------
+#
+# Segmentation.cmake - Segmentation CMake configuration file for external projects.
+#
+# This file is configured by Segmentation and used by the UseSegmentation.cmake module
+# to load Segmentation's settings for an external project.
+#-----------------------------------------------------------------------------
+# Settings specific to the build tree.
+# 
+# Modeled after ItkVtkGlueConfig.cmake.in
+# https://farsight-svn.ee.uh.edu/repos/farsight/trunk/ItkVtkGlue/ItkVtkGlueConfig.cmake.in
+# 
+# -Rob Toth
+
+# Generate CMake lines that will define the Segmentation_SOURCE_DIR in the SegmentationConfig.cmake.
+
+# The library dependencies file.
+#set(Segmentation_LIBRARY_DEPENDS_FILE  @Segmentation_BINARY_DIR@/SegmentationLibraryDepends.cmake)
+
+# The "use" file.
+SET( SEGMENTATION_USE_FILE "@SEGMENTATION_USE_FILE@")
+
+# Library directory.
+SET( Segmentation_LIBRARY_DIRS @Segmentation_LIBRARY_DIRS@ )
+
+# Libraries
+SET( SEGMENTATION_CORE_LIBS @SEGMENTATION_CORE_LIBS@ )
+SET( SEGMENTATION_MFA_LIBS  @SEGMENTATION_MFA_LIBS@  )
+
+# Tell other libraries whether we have enabled the MFA library
+SET( ENABLE_SEGMENTATION_CORE @ENABLE_SEGMENTATION_CORE@ )
+SET( ENABLE_SEGMENTATION_MFA  @ENABLE_SEGMENTATION_MFA@  )

@@ -1,0 +1,3028 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>ProstalignFEM</class>
+ <widget class="QMainWindow" name="ProstalignFEM">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>977</width>
+    <height>874</height>
+   </rect>
+  </property>
+  <property name="font">
+   <font>
+    <family>Calibri</family>
+    <pointsize>10</pointsize>
+   </font>
+  </property>
+  <property name="windowTitle">
+   <string>Prostalign™ FEM</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(255, 250, 200);</string>
+   </property>
+   <layout class="QHBoxLayout" name="horizontalLayout">
+    <item>
+     <widget class="QScrollArea" name="scrollArea">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Preferred" vsizetype="Expanding">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="minimumSize">
+       <size>
+        <width>300</width>
+        <height>0</height>
+       </size>
+      </property>
+      <property name="font">
+       <font>
+        <family>Calibri</family>
+        <pointsize>10</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 rgb(255, 255, 180), stop:0.1 rgb(255, 255, 255), stop:0.9 rgb(255, 255, 255),  stop:1.0 rgb(250, 240, 200) );
+background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 rgba(255, 255, 255, 255), stop:1 rgba(200, 200, 200, 255));
+background-color: rgb(255, 255, 255);</string>
+      </property>
+      <property name="widgetResizable">
+       <bool>true</bool>
+      </property>
+      <widget class="QWidget" name="scrollAreaWidgetContents">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>0</y>
+         <width>298</width>
+         <height>813</height>
+        </rect>
+       </property>
+       <layout class="QVBoxLayout" name="verticalLayout">
+        <item>
+         <widget class="QScrollArea" name="scrollArea_2">
+          <property name="frameShape">
+           <enum>QFrame::NoFrame</enum>
+          </property>
+          <property name="widgetResizable">
+           <bool>true</bool>
+          </property>
+          <widget class="QWidget" name="scrollAreaWidgetContents_2">
+           <property name="geometry">
+            <rect>
+             <x>0</x>
+             <y>0</y>
+             <width>280</width>
+             <height>679</height>
+            </rect>
+           </property>
+           <layout class="QVBoxLayout" name="verticalLayout_9">
+            <item>
+             <widget class="QToolBox" name="toolBox">
+              <property name="font">
+               <font>
+                <family>Calibri</family>
+                <pointsize>10</pointsize>
+                <weight>75</weight>
+                <bold>true</bold>
+                <underline>false</underline>
+               </font>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 rgba(255, 255, 220, 120), stop:1 rgba(255, 240, 190, 200));
+border-color: rgb(0, 0, 0);</string>
+              </property>
+              <property name="currentIndex">
+               <number>6</number>
+              </property>
+              <widget class="QWidget" name="m_PageData">
+               <property name="geometry">
+                <rect>
+                 <x>0</x>
+                 <y>0</y>
+                 <width>262</width>
+                 <height>141</height>
+                </rect>
+               </property>
+               <attribute name="label">
+                <string>DATA</string>
+               </attribute>
+               <layout class="QVBoxLayout" name="verticalLayout_3">
+                <item>
+                 <widget class="QPushButton" name="m_LoadPatientButton">
+                  <property name="font">
+                   <font>
+                    <family>Calibri</family>
+                    <pointsize>10</pointsize>
+                   </font>
+                  </property>
+                  <property name="styleSheet">
+                   <string notr="true">background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 rgba(200, 80, 0, 255), stop:1 rgba(170, 50, 0, 255));
+color: rgb(255, 255, 255);</string>
+                  </property>
+                  <property name="text">
+                   <string>Load Patient</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <layout class="QHBoxLayout" name="horizontalLayout_2">
+                  <item>
+                   <widget class="QLabel" name="label">
+                    <property name="sizePolicy">
+                     <sizepolicy hsizetype="Preferred" vsizetype="Minimum">
+                      <horstretch>0</horstretch>
+                      <verstretch>0</verstretch>
+                     </sizepolicy>
+                    </property>
+                    <property name="font">
+                     <font>
+                      <family>Calibri</family>
+                      <pointsize>10</pointsize>
+                     </font>
+                    </property>
+                    <property name="styleSheet">
+                     <string notr="true">background-color: rgba(255, 255, 255, 0);</string>
+                    </property>
+                    <property name="text">
+                     <string>Fixed Study:</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QComboBox" name="m_FixedStudyCombo">
+                    <property name="sizePolicy">
+                     <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+                      <horstretch>0</horstretch>
+                      <verstretch>0</verstretch>
+                     </sizepolicy>
+                    </property>
+                    <property name="font">
+                     <font>
+                      <family>Calibri</family>
+                      <pointsize>10</pointsize>
+                     </font>
+                    </property>
+                    <property name="styleSheet">
+                     <string notr="true"/>
+                    </property>
+                   </widget>
+                  </item>
+                 </layout>
+                </item>
+                <item>
+                 <layout class="QHBoxLayout" name="horizontalLayout_3">
+                  <item>
+                   <widget class="QLabel" name="label_2">
+                    <property name="font">
+                     <font>
+                      <family>Calibri</family>
+                      <pointsize>10</pointsize>
+                     </font>
+                    </property>
+                    <property name="styleSheet">
+                     <string notr="true">background-color: rgba(255, 255, 255, 0);</string>
+                    </property>
+                    <property name="text">
+                     <string>Moving Study:</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QComboBox" name="m_MovingStudyCombo">
+                    <property name="sizePolicy">
+                     <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+                      <horstretch>0</horstretch>
+                      <verstretch>0</verstretch>
+                     </sizepolicy>
+                    </property>
+                    <property name="font">
+                     <font>
+                      <family>Calibri</family>
+                      <pointsize>10</pointsize>
+                     </font>
+                    </property>
+                   </widget>
+                  </item>
+                 </layout>
+                </item>
+                <item>
+                 <spacer name="verticalSpacer_8">
+                  <property name="orientation">
+                   <enum>Qt::Vertical</enum>
+                  </property>
+                  <property name="sizeHint" stdset="0">
+                   <size>
+                    <width>20</width>
+                    <height>40</height>
+                   </size>
+                  </property>
+                 </spacer>
+                </item>
+               </layout>
+              </widget>
+              <widget class="QWidget" name="m_PageGeneralOptions">
+               <property name="geometry">
+                <rect>
+                 <x>0</x>
+                 <y>0</y>
+                 <width>262</width>
+                 <height>213</height>
+                </rect>
+               </property>
+               <attribute name="label">
+                <string>GENERAL OPTIONS</string>
+               </attribute>
+               <layout class="QVBoxLayout" name="verticalLayout_8">
+                <item>
+                 <widget class="QComboBox" name="m_WhatToRegisterCombo">
+                  <property name="font">
+                   <font>
+                    <family>Calibri</family>
+                    <pointsize>10</pointsize>
+                   </font>
+                  </property>
+                  <property name="toolTip">
+                   <string>Choose what to register.
+
+If you register masks, then the number of pixels in which the mask values are equal will be used.
+Alternatively, if you register the images cropped by mask, then every 0-mask pixel in the image will be replaced with a 0, and any &gt;0 mask pixel will be kept.</string>
+                  </property>
+                  <item>
+                   <property name="text">
+                    <string>Register Images</string>
+                   </property>
+                  </item>
+                  <item>
+                   <property name="text">
+                    <string>Register Images Cropped by Masks</string>
+                   </property>
+                  </item>
+                  <item>
+                   <property name="text">
+                    <string>Register Masks</string>
+                   </property>
+                  </item>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QCheckBox" name="m_StandardizeCheck">
+                  <property name="font">
+                   <font>
+                    <family>Calibri</family>
+                    <pointsize>10</pointsize>
+                   </font>
+                  </property>
+                  <property name="layoutDirection">
+                   <enum>Qt::RightToLeft</enum>
+                  </property>
+                  <property name="styleSheet">
+                   <string notr="true">background-color: rgba(255, 255, 255, 0);</string>
+                  </property>
+                  <property name="text">
+                   <string>Standardize</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="Line" name="line_3">
+                  <property name="orientation">
+                   <enum>Qt::Horizontal</enum>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QCheckBox" name="m_DoRigidCheck">
+                  <property name="font">
+                   <font>
+                    <family>Calibri</family>
+                    <pointsize>10</pointsize>
+                   </font>
+                  </property>
+                  <property name="layoutDirection">
+                   <enum>Qt::RightToLeft</enum>
+                  </property>
+                  <property name="styleSheet">
+                   <string notr="true">background-color: rgba(255, 255, 255, 0);</string>
+                  </property>
+                  <property name="text">
+                   <string>Rigid Registration</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QCheckBox" name="m_DoAffineCheck">
+                  <property name="font">
+                   <font>
+                    <family>Calibri</family>
+                    <pointsize>10</pointsize>
+                   </font>
+                  </property>
+                  <property name="layoutDirection">
+                   <enum>Qt::RightToLeft</enum>
+                  </property>
+                  <property name="styleSheet">
+                   <string notr="true">background-color: rgba(255, 255, 255, 0);</string>
+                  </property>
+                  <property name="text">
+                   <string>Affine Registration</string>
+                  </property>
+                  <property name="checked">
+                   <bool>true</bool>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QCheckBox" name="m_DoFEMCheck">
+                  <property name="font">
+                   <font>
+                    <family>Calibri</family>
+                    <pointsize>10</pointsize>
+                   </font>
+                  </property>
+                  <property name="layoutDirection">
+                   <enum>Qt::RightToLeft</enum>
+                  </property>
+                  <property name="styleSheet">
+                   <string notr="true">background-color: rgba(255, 255, 255, 0);</string>
+                  </property>
+                  <property name="text">
+                   <string>FEM Registration</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="Line" name="line_4">
+                  <property name="orientation">
+                   <enum>Qt::Horizontal</enum>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <layout class="QHBoxLayout" name="m_MaskObjectLayout">
+                  <item>
+                   <spacer name="m_MetricZRadiusLabelSpace_16">
+                    <property name="orientation">
+                     <enum>Qt::Horizontal</enum>
+                    </property>
+                    <property name="sizeHint" stdset="0">
+                     <size>
+                      <width>40</width>
+                      <height>20</height>
+                     </size>
+                    </property>
+                   </spacer>
+                  </item>
+                  <item>
+                   <widget class="QLabel" name="m_MaskObjectLabel">
+                    <property name="font">
+                     <font>
+                      <family>Calibri</family>
+                      <pointsize>10</pointsize>
+                     </font>
+                    </property>
+                    <property name="styleSheet">
+                     <string notr="true">background-color: rgba(255, 255, 255, 0);</string>
+                    </property>
+                    <property name="text">
+                     <string>Mask Object:</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QLineEdit" name="m_MaskObjectText">
+                    <property name="toolTip">
+                     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;When registering masks,&lt;/p&gt;&lt;p&gt;you must choose which one to use&lt;/p&gt;&lt;p&gt;as the metric.&lt;/p&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;p&gt;It should be an object&lt;/p&gt;&lt;p&gt;that both the fixed&lt;/p&gt;&lt;p&gt;and moving studies&lt;/p&gt;&lt;p&gt;have in common.&lt;/p&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;p&gt;The number of pixels&lt;/p&gt;&lt;p&gt;overlapping between the&lt;/p&gt;&lt;p&gt;masks will be maximized&lt;/p&gt;&lt;p&gt;if you choose to&lt;/p&gt;&lt;p&gt;&amp;quot;Register Masks&amp;quot;.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                    </property>
+                   </widget>
+                  </item>
+                 </layout>
+                </item>
+                <item>
+                 <spacer name="verticalSpacer_7">
+                  <property name="orientation">
+                   <enum>Qt::Vertical</enum>
+                  </property>
+                  <property name="sizeHint" stdset="0">
+                   <size>
+                    <width>20</width>
+                    <height>40</height>
+                   </size>
+                  </property>
+                 </spacer>
+                </item>
+               </layout>
+              </widget>
+              <widget class="QWidget" name="page">
+               <property name="geometry">
+                <rect>
+                 <x>0</x>
+                 <y>0</y>
+                 <width>262</width>
+                 <height>125</height>
+                </rect>
+               </property>
+               <attribute name="label">
+                <string>METRIC OPTIONS</string>
+               </attribute>
+               <layout class="QGridLayout" name="gridLayout_5">
+                <item row="2" column="0">
+                 <layout class="QHBoxLayout" name="m_MetricZRadiusLabelLayout_14">
+                  <item>
+                   <spacer name="m_MetricZRadiusLabelSpace_14">
+                    <property name="orientation">
+                     <enum>Qt::Horizontal</enum>
+                    </property>
+                    <property name="sizeHint" stdset="0">
+                     <size>
+                      <width>40</width>
+                      <height>20</height>
+                     </size>
+                    </property>
+                   </spacer>
+                  </item>
+                  <item>
+                   <widget class="QLabel" name="label_13">
+                    <property name="font">
+                     <font>
+                      <family>Calibri</family>
+                      <pointsize>10</pointsize>
+                     </font>
+                    </property>
+                    <property name="styleSheet">
+                     <string notr="true">background-color: rgba(255, 255, 255, 0);</string>
+                    </property>
+                    <property name="text">
+                     <string>MI Histogram Bins:</string>
+                    </property>
+                   </widget>
+                  </item>
+                 </layout>
+                </item>
+                <item row="2" column="1">
+                 <widget class="QSpinBox" name="m_HistogramBinsSpin">
+                  <property name="font">
+                   <font>
+                    <family>Calibri</family>
+                    <pointsize>10</pointsize>
+                   </font>
+                  </property>
+                  <property name="toolTip">
+                   <string>This controls the mutual information # of histogram bins when using images as your input.</string>
+                  </property>
+                  <property name="minimum">
+                   <number>1</number>
+                  </property>
+                  <property name="maximum">
+                   <number>1000</number>
+                  </property>
+                  <property name="singleStep">
+                   <number>10</number>
+                  </property>
+                  <property name="value">
+                   <number>100</number>
+                  </property>
+                 </widget>
+                </item>
+                <item row="3" column="0">
+                 <layout class="QHBoxLayout" name="m_MetricZRadiusLabelLayout_15">
+                  <item>
+                   <spacer name="m_MetricZRadiusLabelSpace_15">
+                    <property name="orientation">
+                     <enum>Qt::Horizontal</enum>
+                    </property>
+                    <property name="sizeHint" stdset="0">
+                     <size>
+                      <width>40</width>
+                      <height>20</height>
+                     </size>
+                    </property>
+                   </spacer>
+                  </item>
+                  <item>
+                   <widget class="QLabel" name="label_16">
+                    <property name="font">
+                     <font>
+                      <family>Calibri</family>
+                      <pointsize>10</pointsize>
+                     </font>
+                    </property>
+                    <property name="styleSheet">
+                     <string notr="true">background-color: rgba(255, 255, 255, 0);</string>
+                    </property>
+                    <property name="text">
+                     <string>Min % of mask counted:</string>
+                    </property>
+                   </widget>
+                  </item>
+                 </layout>
+                </item>
+                <item row="3" column="1">
+                 <widget class="QDoubleSpinBox" name="m_MinPercentPixelsSpin">
+                  <property name="font">
+                   <font>
+                    <family>Calibri</family>
+                    <pointsize>10</pointsize>
+                   </font>
+                  </property>
+                  <property name="toolTip">
+                   <string>When registering masks, set the minimum % of pixels to be within the bounding box for the metric to work.</string>
+                  </property>
+                  <property name="maximum">
+                   <double>1.000000000000000</double>
+                  </property>
+                  <property name="singleStep">
+                   <double>0.100000000000000</double>
+                  </property>
+                  <property name="value">
+                   <double>0.250000000000000</double>
+                  </property>
+                 </widget>
+                </item>
+                <item row="4" column="0">
+                 <spacer name="verticalSpacer_3">
+                  <property name="orientation">
+                   <enum>Qt::Vertical</enum>
+                  </property>
+                  <property name="sizeHint" stdset="0">
+                   <size>
+                    <width>20</width>
+                    <height>40</height>
+                   </size>
+                  </property>
+                 </spacer>
+                </item>
+               </layout>
+              </widget>
+              <widget class="QWidget" name="m_PageBoundingBox">
+               <property name="geometry">
+                <rect>
+                 <x>0</x>
+                 <y>0</y>
+                 <width>262</width>
+                 <height>154</height>
+                </rect>
+               </property>
+               <attribute name="label">
+                <string>BOUNDING BOX</string>
+               </attribute>
+               <layout class="QVBoxLayout" name="verticalLayout_2">
+                <item>
+                 <widget class="QLabel" name="label_6">
+                  <property name="font">
+                   <font>
+                    <family>Calibri</family>
+                    <pointsize>10</pointsize>
+                   </font>
+                  </property>
+                  <property name="styleSheet">
+                   <string notr="true">background-color: rgba(255, 255, 255, 0);</string>
+                  </property>
+                  <property name="text">
+                   <string>From Start Corner (mm):</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <layout class="QHBoxLayout" name="horizontalLayout_12">
+                  <item>
+                   <widget class="QDoubleSpinBox" name="m_FromStartCornerXSpin">
+                    <property name="font">
+                     <font>
+                      <family>Calibri</family>
+                      <pointsize>10</pointsize>
+                     </font>
+                    </property>
+                    <property name="maximum">
+                     <double>999.990000000000009</double>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QDoubleSpinBox" name="m_FromStartCornerYSpin">
+                    <property name="font">
+                     <font>
+                      <family>Calibri</family>
+                      <pointsize>10</pointsize>
+                     </font>
+                    </property>
+                    <property name="maximum">
+                     <double>999.990000000000009</double>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QDoubleSpinBox" name="m_FromStartCornerZSpin">
+                    <property name="font">
+                     <font>
+                      <family>Calibri</family>
+                      <pointsize>10</pointsize>
+                     </font>
+                    </property>
+                    <property name="maximum">
+                     <double>999.990000000000009</double>
+                    </property>
+                   </widget>
+                  </item>
+                 </layout>
+                </item>
+                <item>
+                 <widget class="QLabel" name="label_7">
+                  <property name="font">
+                   <font>
+                    <family>Calibri</family>
+                    <pointsize>10</pointsize>
+                   </font>
+                  </property>
+                  <property name="styleSheet">
+                   <string notr="true">background-color: rgba(255, 255, 255, 0);</string>
+                  </property>
+                  <property name="text">
+                   <string>From End Corner (mm):</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <layout class="QHBoxLayout" name="horizontalLayout_13">
+                  <item>
+                   <widget class="QDoubleSpinBox" name="m_FromEndCornerXSpin">
+                    <property name="font">
+                     <font>
+                      <family>Calibri</family>
+                      <pointsize>10</pointsize>
+                     </font>
+                    </property>
+                    <property name="maximum">
+                     <double>999.990000000000009</double>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QDoubleSpinBox" name="m_FromEndCornerYSpin">
+                    <property name="font">
+                     <font>
+                      <family>Calibri</family>
+                      <pointsize>10</pointsize>
+                     </font>
+                    </property>
+                    <property name="maximum">
+                     <double>999.990000000000009</double>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QDoubleSpinBox" name="m_FromEndCornerZSpin">
+                    <property name="font">
+                     <font>
+                      <family>Calibri</family>
+                      <pointsize>10</pointsize>
+                     </font>
+                    </property>
+                    <property name="maximum">
+                     <double>999.990000000000009</double>
+                    </property>
+                   </widget>
+                  </item>
+                 </layout>
+                </item>
+                <item>
+                 <spacer name="verticalSpacer_4">
+                  <property name="orientation">
+                   <enum>Qt::Vertical</enum>
+                  </property>
+                  <property name="sizeHint" stdset="0">
+                   <size>
+                    <width>20</width>
+                    <height>40</height>
+                   </size>
+                  </property>
+                 </spacer>
+                </item>
+               </layout>
+              </widget>
+              <widget class="QWidget" name="m_PageLinear">
+               <property name="geometry">
+                <rect>
+                 <x>0</x>
+                 <y>0</y>
+                 <width>262</width>
+                 <height>144</height>
+                </rect>
+               </property>
+               <attribute name="label">
+                <string>LINEAR REGISTRATION OPTIONS</string>
+               </attribute>
+               <layout class="QGridLayout" name="gridLayout_4">
+                <item row="0" column="0">
+                 <layout class="QHBoxLayout" name="horizontalLayout_20">
+                  <item>
+                   <spacer name="horizontalSpacer_7">
+                    <property name="orientation">
+                     <enum>Qt::Horizontal</enum>
+                    </property>
+                    <property name="sizeHint" stdset="0">
+                     <size>
+                      <width>40</width>
+                      <height>20</height>
+                     </size>
+                    </property>
+                   </spacer>
+                  </item>
+                  <item>
+                   <widget class="QLabel" name="label_14">
+                    <property name="font">
+                     <font>
+                      <family>Calibri</family>
+                      <pointsize>10</pointsize>
+                     </font>
+                    </property>
+                    <property name="styleSheet">
+                     <string notr="true">background-color: rgba(255, 255, 255, 0);</string>
+                    </property>
+                    <property name="text">
+                     <string>Display Probability:</string>
+                    </property>
+                   </widget>
+                  </item>
+                 </layout>
+                </item>
+                <item row="0" column="1">
+                 <widget class="QDoubleSpinBox" name="m_AffineDisplayProbabilitySpin">
+                  <property name="font">
+                   <font>
+                    <family>Calibri</family>
+                   </font>
+                  </property>
+                  <property name="minimum">
+                   <double>0.000000000000000</double>
+                  </property>
+                  <property name="maximum">
+                   <double>1.000000000000000</double>
+                  </property>
+                  <property name="singleStep">
+                   <double>0.050000000000000</double>
+                  </property>
+                  <property name="value">
+                   <double>0.050000000000000</double>
+                  </property>
+                 </widget>
+                </item>
+                <item row="3" column="0">
+                 <spacer name="verticalSpacer_2">
+                  <property name="orientation">
+                   <enum>Qt::Vertical</enum>
+                  </property>
+                  <property name="sizeHint" stdset="0">
+                   <size>
+                    <width>20</width>
+                    <height>40</height>
+                   </size>
+                  </property>
+                 </spacer>
+                </item>
+                <item row="1" column="1">
+                 <widget class="QPushButton" name="m_GradientDescentButton">
+                  <property name="sizePolicy">
+                   <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+                    <horstretch>0</horstretch>
+                    <verstretch>0</verstretch>
+                   </sizepolicy>
+                  </property>
+                  <property name="font">
+                   <font>
+                    <family>Calibri</family>
+                    <pointsize>10</pointsize>
+                   </font>
+                  </property>
+                  <property name="toolTip">
+                   <string>The gradient descent optimizer is used when you have images (cropped or uncropped) and are using linear registration.</string>
+                  </property>
+                  <property name="styleSheet">
+                   <string notr="true">background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 rgba(200, 80, 0, 255), stop:1 rgba(170, 50, 0, 255));
+color: rgb(255, 255, 255);</string>
+                  </property>
+                  <property name="text">
+                   <string>Options</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="1" column="0">
+                 <layout class="QHBoxLayout" name="horizontalLayout_37">
+                  <item>
+                   <spacer name="horizontalSpacer_21">
+                    <property name="orientation">
+                     <enum>Qt::Horizontal</enum>
+                    </property>
+                    <property name="sizeHint" stdset="0">
+                     <size>
+                      <width>40</width>
+                      <height>20</height>
+                     </size>
+                    </property>
+                   </spacer>
+                  </item>
+                  <item>
+                   <widget class="QLabel" name="label_33">
+                    <property name="font">
+                     <font>
+                      <family>Calibri</family>
+                      <pointsize>10</pointsize>
+                     </font>
+                    </property>
+                    <property name="styleSheet">
+                     <string notr="true">background-color: rgba(255, 255, 255, 0);</string>
+                    </property>
+                    <property name="text">
+                     <string>Gradient Descent (Images):</string>
+                    </property>
+                   </widget>
+                  </item>
+                 </layout>
+                </item>
+                <item row="2" column="0">
+                 <layout class="QHBoxLayout" name="horizontalLayout_25">
+                  <item>
+                   <spacer name="horizontalSpacer_12">
+                    <property name="orientation">
+                     <enum>Qt::Horizontal</enum>
+                    </property>
+                    <property name="sizeHint" stdset="0">
+                     <size>
+                      <width>40</width>
+                      <height>20</height>
+                     </size>
+                    </property>
+                   </spacer>
+                  </item>
+                  <item>
+                   <widget class="QLabel" name="label_20">
+                    <property name="font">
+                     <font>
+                      <family>Calibri</family>
+                      <pointsize>10</pointsize>
+                     </font>
+                    </property>
+                    <property name="styleSheet">
+                     <string notr="true">background-color: rgba(255, 255, 255, 0);</string>
+                    </property>
+                    <property name="text">
+                     <string>Particle Swarm (Masks):</string>
+                    </property>
+                   </widget>
+                  </item>
+                 </layout>
+                </item>
+                <item row="2" column="1">
+                 <widget class="QPushButton" name="m_ParticleSwarmLinearButton">
+                  <property name="sizePolicy">
+                   <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+                    <horstretch>0</horstretch>
+                    <verstretch>0</verstretch>
+                   </sizepolicy>
+                  </property>
+                  <property name="font">
+                   <font>
+                    <family>Calibri</family>
+                    <pointsize>10</pointsize>
+                   </font>
+                  </property>
+                  <property name="toolTip">
+                   <string>The particle swarm optimizer is used for the FEM, and used for the linear registration when you register masks.</string>
+                  </property>
+                  <property name="styleSheet">
+                   <string notr="true">background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 rgba(200, 80, 0, 255), stop:1 rgba(170, 50, 0, 255));
+color: rgb(255, 255, 255);</string>
+                  </property>
+                  <property name="text">
+                   <string>Options</string>
+                  </property>
+                 </widget>
+                </item>
+               </layout>
+              </widget>
+              <widget class="QWidget" name="m_PageFEMRegistration">
+               <property name="geometry">
+                <rect>
+                 <x>0</x>
+                 <y>0</y>
+                 <width>262</width>
+                 <height>205</height>
+                </rect>
+               </property>
+               <attribute name="label">
+                <string>FEM REGISTRATION OPTIONS</string>
+               </attribute>
+               <layout class="QGridLayout" name="gridLayout_3">
+                <item row="6" column="0">
+                 <layout class="QHBoxLayout" name="m_MaterialsLabelLayout">
+                  <item>
+                   <spacer name="m_WhichMetricLabelSpace_2">
+                    <property name="orientation">
+                     <enum>Qt::Horizontal</enum>
+                    </property>
+                    <property name="sizeHint" stdset="0">
+                     <size>
+                      <width>40</width>
+                      <height>20</height>
+                     </size>
+                    </property>
+                   </spacer>
+                  </item>
+                  <item>
+                   <widget class="QLabel" name="m_MaterialsLabel">
+                    <property name="font">
+                     <font>
+                      <family>Calibri</family>
+                      <pointsize>10</pointsize>
+                     </font>
+                    </property>
+                    <property name="styleSheet">
+                     <string notr="true">background-color: rgba(255, 255, 255, 0);</string>
+                    </property>
+                    <property name="text">
+                     <string>Physical Materials:</string>
+                    </property>
+                   </widget>
+                  </item>
+                 </layout>
+                </item>
+                <item row="3" column="0">
+                 <layout class="QHBoxLayout" name="horizontalLayout_24">
+                  <item>
+                   <spacer name="horizontalSpacer_11">
+                    <property name="orientation">
+                     <enum>Qt::Horizontal</enum>
+                    </property>
+                    <property name="sizeHint" stdset="0">
+                     <size>
+                      <width>40</width>
+                      <height>20</height>
+                     </size>
+                    </property>
+                   </spacer>
+                  </item>
+                  <item>
+                   <widget class="QLabel" name="label_19">
+                    <property name="font">
+                     <font>
+                      <family>Calibri</family>
+                      <pointsize>10</pointsize>
+                     </font>
+                    </property>
+                    <property name="styleSheet">
+                     <string notr="true">background-color: rgba(255, 255, 255, 0);</string>
+                    </property>
+                    <property name="text">
+                     <string>FEM Transform:</string>
+                    </property>
+                   </widget>
+                  </item>
+                 </layout>
+                </item>
+                <item row="1" column="0">
+                 <layout class="QHBoxLayout" name="horizontalLayout_21">
+                  <item>
+                   <spacer name="horizontalSpacer_8">
+                    <property name="orientation">
+                     <enum>Qt::Horizontal</enum>
+                    </property>
+                    <property name="sizeHint" stdset="0">
+                     <size>
+                      <width>40</width>
+                      <height>20</height>
+                     </size>
+                    </property>
+                   </spacer>
+                  </item>
+                  <item>
+                   <widget class="QLabel" name="label_15">
+                    <property name="font">
+                     <font>
+                      <family>Calibri</family>
+                      <pointsize>10</pointsize>
+                     </font>
+                    </property>
+                    <property name="styleSheet">
+                     <string notr="true">background-color: rgba(255, 255, 255, 0);</string>
+                    </property>
+                    <property name="text">
+                     <string>Display Probability:</string>
+                    </property>
+                   </widget>
+                  </item>
+                 </layout>
+                </item>
+                <item row="1" column="1">
+                 <layout class="QHBoxLayout" name="horizontalLayout_35">
+                  <item>
+                   <widget class="QDoubleSpinBox" name="m_FEMDisplayProbabilitySpin">
+                    <property name="font">
+                     <font>
+                      <family>Calibri</family>
+                      <pointsize>10</pointsize>
+                     </font>
+                    </property>
+                    <property name="minimum">
+                     <double>0.000000000000000</double>
+                    </property>
+                    <property name="maximum">
+                     <double>1.000000000000000</double>
+                    </property>
+                    <property name="singleStep">
+                     <double>0.050000000000000</double>
+                    </property>
+                    <property name="value">
+                     <double>0.500000000000000</double>
+                    </property>
+                   </widget>
+                  </item>
+                 </layout>
+                </item>
+                <item row="3" column="1">
+                 <layout class="QHBoxLayout" name="horizontalLayout_38">
+                  <item>
+                   <widget class="QPushButton" name="m_FEMTransformButton">
+                    <property name="sizePolicy">
+                     <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+                      <horstretch>0</horstretch>
+                      <verstretch>0</verstretch>
+                     </sizepolicy>
+                    </property>
+                    <property name="font">
+                     <font>
+                      <family>Calibri</family>
+                      <pointsize>10</pointsize>
+                     </font>
+                    </property>
+                    <property name="styleSheet">
+                     <string notr="true">background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 rgba(200, 80, 0, 255), stop:1 rgba(170, 50, 0, 255));
+color: rgb(255, 255, 255);</string>
+                    </property>
+                    <property name="text">
+                     <string>Options</string>
+                    </property>
+                   </widget>
+                  </item>
+                 </layout>
+                </item>
+                <item row="6" column="1">
+                 <layout class="QHBoxLayout" name="horizontalLayout_42">
+                  <item>
+                   <widget class="QPushButton" name="m_MaterialsButton">
+                    <property name="sizePolicy">
+                     <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+                      <horstretch>0</horstretch>
+                      <verstretch>0</verstretch>
+                     </sizepolicy>
+                    </property>
+                    <property name="font">
+                     <font>
+                      <family>Calibri</family>
+                      <pointsize>10</pointsize>
+                     </font>
+                    </property>
+                    <property name="styleSheet">
+                     <string notr="true">background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 rgba(200, 80, 0, 255), stop:1 rgba(170, 50, 0, 255));
+color: rgb(255, 255, 255);</string>
+                    </property>
+                    <property name="text">
+                     <string>&amp;Edit</string>
+                    </property>
+                   </widget>
+                  </item>
+                 </layout>
+                </item>
+                <item row="8" column="0">
+                 <spacer name="verticalSpacer_5">
+                  <property name="orientation">
+                   <enum>Qt::Vertical</enum>
+                  </property>
+                  <property name="sizeHint" stdset="0">
+                   <size>
+                    <width>20</width>
+                    <height>40</height>
+                   </size>
+                  </property>
+                 </spacer>
+                </item>
+                <item row="7" column="0">
+                 <layout class="QHBoxLayout" name="horizontalLayout_26">
+                  <item>
+                   <spacer name="horizontalSpacer_13">
+                    <property name="orientation">
+                     <enum>Qt::Horizontal</enum>
+                    </property>
+                    <property name="sizeHint" stdset="0">
+                     <size>
+                      <width>40</width>
+                      <height>20</height>
+                     </size>
+                    </property>
+                   </spacer>
+                  </item>
+                  <item>
+                   <widget class="QLabel" name="label_21">
+                    <property name="font">
+                     <font>
+                      <family>Calibri</family>
+                      <pointsize>10</pointsize>
+                     </font>
+                    </property>
+                    <property name="styleSheet">
+                     <string notr="true">background-color: rgba(255, 255, 255, 0);</string>
+                    </property>
+                    <property name="text">
+                     <string>Particle Swarm:</string>
+                    </property>
+                   </widget>
+                  </item>
+                 </layout>
+                </item>
+                <item row="7" column="1">
+                 <widget class="QPushButton" name="m_ParticleSwarmFEMButton">
+                  <property name="sizePolicy">
+                   <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+                    <horstretch>0</horstretch>
+                    <verstretch>0</verstretch>
+                   </sizepolicy>
+                  </property>
+                  <property name="font">
+                   <font>
+                    <family>Calibri</family>
+                    <pointsize>10</pointsize>
+                   </font>
+                  </property>
+                  <property name="toolTip">
+                   <string>The particle swarm optimizer is used for the FEM, and used for the linear registration when you register masks.</string>
+                  </property>
+                  <property name="styleSheet">
+                   <string notr="true">background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 rgba(200, 80, 0, 255), stop:1 rgba(170, 50, 0, 255));
+color: rgb(255, 255, 255);</string>
+                  </property>
+                  <property name="text">
+                   <string>Options</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="2" column="0">
+                 <layout class="QHBoxLayout" name="m_MaskObjectLayout_4">
+                  <item>
+                   <spacer name="m_MetricZRadiusLabelSpace_19">
+                    <property name="orientation">
+                     <enum>Qt::Horizontal</enum>
+                    </property>
+                    <property name="sizeHint" stdset="0">
+                     <size>
+                      <width>40</width>
+                      <height>20</height>
+                     </size>
+                    </property>
+                   </spacer>
+                  </item>
+                  <item>
+                   <widget class="QLabel" name="m_FEMMaskObjectLabel">
+                    <property name="font">
+                     <font>
+                      <family>Calibri</family>
+                      <pointsize>10</pointsize>
+                     </font>
+                    </property>
+                    <property name="styleSheet">
+                     <string notr="true">background-color: rgba(255, 255, 255, 0);</string>
+                    </property>
+                    <property name="text">
+                     <string>FEM Mask Object:</string>
+                    </property>
+                   </widget>
+                  </item>
+                 </layout>
+                </item>
+                <item row="2" column="1">
+                 <layout class="QHBoxLayout" name="m_MaskObjectLayout_5">
+                  <item>
+                   <widget class="QLineEdit" name="m_FEMMaskObjectText">
+                    <property name="toolTip">
+                     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;When registering masks,&lt;/p&gt;&lt;p&gt;you must choose which one to use&lt;/p&gt;&lt;p&gt;as the metric.&lt;/p&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;p&gt;It should be an object&lt;/p&gt;&lt;p&gt;that both the fixed&lt;/p&gt;&lt;p&gt;and moving studies&lt;/p&gt;&lt;p&gt;have in common.&lt;/p&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;p&gt;The number of pixels&lt;/p&gt;&lt;p&gt;overlapping between the&lt;/p&gt;&lt;p&gt;masks will be maximized&lt;/p&gt;&lt;p&gt;if you choose to&lt;/p&gt;&lt;p&gt;&amp;quot;Register Masks&amp;quot;.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                    </property>
+                   </widget>
+                  </item>
+                 </layout>
+                </item>
+               </layout>
+              </widget>
+              <widget class="QWidget" name="m_PageFEMRendering">
+               <property name="geometry">
+                <rect>
+                 <x>0</x>
+                 <y>0</y>
+                 <width>262</width>
+                 <height>312</height>
+                </rect>
+               </property>
+               <attribute name="label">
+                <string>FEM RENDERING OPTIONS</string>
+               </attribute>
+               <layout class="QGridLayout" name="gridLayout">
+                <item row="8" column="1">
+                 <widget class="QPushButton" name="m_LoadsSpheresColorButton">
+                  <property name="sizePolicy">
+                   <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+                    <horstretch>0</horstretch>
+                    <verstretch>0</verstretch>
+                   </sizepolicy>
+                  </property>
+                  <property name="font">
+                   <font>
+                    <family>Calibri</family>
+                    <pointsize>10</pointsize>
+                   </font>
+                  </property>
+                  <property name="styleSheet">
+                   <string notr="true">background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 rgba(200, 80, 0, 255), stop:1 rgba(170, 50, 0, 255));
+color: rgb(255, 255, 255);</string>
+                  </property>
+                  <property name="text">
+                   <string>&amp;Edit</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="9" column="0">
+                 <layout class="QHBoxLayout" name="m_MaterialsLabelLayout_5">
+                  <item>
+                   <spacer name="m_WhichMetricLabelSpace_6">
+                    <property name="orientation">
+                     <enum>Qt::Horizontal</enum>
+                    </property>
+                    <property name="sizeHint" stdset="0">
+                     <size>
+                      <width>40</width>
+                      <height>20</height>
+                     </size>
+                    </property>
+                   </spacer>
+                  </item>
+                  <item>
+                   <widget class="QLabel" name="m_MaterialsLabel_5">
+                    <property name="font">
+                     <font>
+                      <family>Calibri</family>
+                      <pointsize>10</pointsize>
+                     </font>
+                    </property>
+                    <property name="styleSheet">
+                     <string notr="true">background-color: rgba(255, 255, 255, 0);</string>
+                    </property>
+                    <property name="text">
+                     <string>Arrows Color:</string>
+                    </property>
+                   </widget>
+                  </item>
+                 </layout>
+                </item>
+                <item row="1" column="0">
+                 <layout class="QHBoxLayout" name="horizontalLayout_22">
+                  <item>
+                   <spacer name="horizontalSpacer_9">
+                    <property name="orientation">
+                     <enum>Qt::Horizontal</enum>
+                    </property>
+                    <property name="sizeHint" stdset="0">
+                     <size>
+                      <width>40</width>
+                      <height>20</height>
+                     </size>
+                    </property>
+                   </spacer>
+                  </item>
+                  <item>
+                   <widget class="QLabel" name="label_17">
+                    <property name="font">
+                     <font>
+                      <family>Calibri</family>
+                      <pointsize>10</pointsize>
+                     </font>
+                    </property>
+                    <property name="styleSheet">
+                     <string notr="true">background-color: rgba(255, 255, 255, 0);</string>
+                    </property>
+                    <property name="text">
+                     <string>Landmarks Opac.:</string>
+                    </property>
+                   </widget>
+                  </item>
+                 </layout>
+                </item>
+                <item row="8" column="0">
+                 <layout class="QHBoxLayout" name="m_MaterialsLabelLayout_4">
+                  <item>
+                   <spacer name="m_WhichMetricLabelSpace_5">
+                    <property name="orientation">
+                     <enum>Qt::Horizontal</enum>
+                    </property>
+                    <property name="sizeHint" stdset="0">
+                     <size>
+                      <width>40</width>
+                      <height>20</height>
+                     </size>
+                    </property>
+                   </spacer>
+                  </item>
+                  <item>
+                   <widget class="QLabel" name="m_MaterialsLabel_4">
+                    <property name="font">
+                     <font>
+                      <family>Calibri</family>
+                      <pointsize>10</pointsize>
+                     </font>
+                    </property>
+                    <property name="styleSheet">
+                     <string notr="true">background-color: rgba(255, 255, 255, 0);</string>
+                    </property>
+                    <property name="text">
+                     <string>Loads Color:</string>
+                    </property>
+                   </widget>
+                  </item>
+                 </layout>
+                </item>
+                <item row="7" column="1">
+                 <widget class="QPushButton" name="m_TrianglesEdgeColorButton">
+                  <property name="sizePolicy">
+                   <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+                    <horstretch>0</horstretch>
+                    <verstretch>0</verstretch>
+                   </sizepolicy>
+                  </property>
+                  <property name="font">
+                   <font>
+                    <family>Calibri</family>
+                    <pointsize>10</pointsize>
+                   </font>
+                  </property>
+                  <property name="styleSheet">
+                   <string notr="true">background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 rgba(200, 80, 0, 255), stop:1 rgba(170, 50, 0, 255));
+color: rgb(255, 255, 255);</string>
+                  </property>
+                  <property name="text">
+                   <string>&amp;Edit</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="3" column="0">
+                 <layout class="QHBoxLayout" name="m_ElementYSpacingLabelLayout_3">
+                  <item>
+                   <spacer name="m_ElementYSpacingSpace_3">
+                    <property name="orientation">
+                     <enum>Qt::Horizontal</enum>
+                    </property>
+                    <property name="sizeHint" stdset="0">
+                     <size>
+                      <width>40</width>
+                      <height>20</height>
+                     </size>
+                    </property>
+                   </spacer>
+                  </item>
+                  <item>
+                   <widget class="QLabel" name="m_ElementYSpacingLabel_2">
+                    <property name="font">
+                     <font>
+                      <family>Calibri</family>
+                      <pointsize>10</pointsize>
+                     </font>
+                    </property>
+                    <property name="styleSheet">
+                     <string notr="true">background-color: rgba(255, 255, 255, 0);</string>
+                    </property>
+                    <property name="text">
+                     <string>Loads Opacity:</string>
+                    </property>
+                   </widget>
+                  </item>
+                 </layout>
+                </item>
+                <item row="9" column="1">
+                 <widget class="QPushButton" name="m_LoadsArrowsColorButton">
+                  <property name="sizePolicy">
+                   <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+                    <horstretch>0</horstretch>
+                    <verstretch>0</verstretch>
+                   </sizepolicy>
+                  </property>
+                  <property name="font">
+                   <font>
+                    <family>Calibri</family>
+                    <pointsize>10</pointsize>
+                   </font>
+                  </property>
+                  <property name="styleSheet">
+                   <string notr="true">background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 rgba(200, 80, 0, 255), stop:1 rgba(170, 50, 0, 255));
+color: rgb(255, 255, 255);</string>
+                  </property>
+                  <property name="text">
+                   <string>&amp;Edit</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="3" column="1">
+                 <widget class="QSlider" name="m_LoadsSpheresOpacitySlider">
+                  <property name="styleSheet">
+                   <string notr="true">background-color: rgba(0, 0, 0, 0);</string>
+                  </property>
+                  <property name="maximum">
+                   <number>1000</number>
+                  </property>
+                  <property name="singleStep">
+                   <number>1</number>
+                  </property>
+                  <property name="pageStep">
+                   <number>100</number>
+                  </property>
+                  <property name="value">
+                   <number>1000</number>
+                  </property>
+                  <property name="orientation">
+                   <enum>Qt::Horizontal</enum>
+                  </property>
+                 </widget>
+                </item>
+                <item row="4" column="0">
+                 <layout class="QHBoxLayout" name="m_ElementZSpacingLabelLayout_3">
+                  <item>
+                   <spacer name="m_ElementZSpacingSpace_3">
+                    <property name="orientation">
+                     <enum>Qt::Horizontal</enum>
+                    </property>
+                    <property name="sizeHint" stdset="0">
+                     <size>
+                      <width>40</width>
+                      <height>20</height>
+                     </size>
+                    </property>
+                   </spacer>
+                  </item>
+                  <item>
+                   <widget class="QLabel" name="m_ElementZSpacingLabel_2">
+                    <property name="font">
+                     <font>
+                      <family>Calibri</family>
+                      <pointsize>10</pointsize>
+                     </font>
+                    </property>
+                    <property name="styleSheet">
+                     <string notr="true">background-color: rgba(255, 255, 255, 0);</string>
+                    </property>
+                    <property name="text">
+                     <string>Arrows Opacity:</string>
+                    </property>
+                   </widget>
+                  </item>
+                 </layout>
+                </item>
+                <item row="6" column="1">
+                 <widget class="QPushButton" name="m_TrianglesFaceColorButton">
+                  <property name="sizePolicy">
+                   <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+                    <horstretch>0</horstretch>
+                    <verstretch>0</verstretch>
+                   </sizepolicy>
+                  </property>
+                  <property name="font">
+                   <font>
+                    <family>Calibri</family>
+                    <pointsize>10</pointsize>
+                   </font>
+                  </property>
+                  <property name="styleSheet">
+                   <string notr="true">background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 rgba(200, 80, 0, 255), stop:1 rgba(170, 50, 0, 255));
+color: rgb(255, 255, 255);</string>
+                  </property>
+                  <property name="text">
+                   <string>&amp;Edit</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="5" column="0">
+                 <layout class="QHBoxLayout" name="m_MaterialsLabelLayout_2">
+                  <item>
+                   <spacer name="m_WhichMetricLabelSpace_3">
+                    <property name="orientation">
+                     <enum>Qt::Horizontal</enum>
+                    </property>
+                    <property name="sizeHint" stdset="0">
+                     <size>
+                      <width>40</width>
+                      <height>20</height>
+                     </size>
+                    </property>
+                   </spacer>
+                  </item>
+                  <item>
+                   <widget class="QLabel" name="m_MaterialsLabel_2">
+                    <property name="font">
+                     <font>
+                      <family>Calibri</family>
+                      <pointsize>10</pointsize>
+                     </font>
+                    </property>
+                    <property name="styleSheet">
+                     <string notr="true">background-color: rgba(255, 255, 255, 0);</string>
+                    </property>
+                    <property name="text">
+                     <string>Landmarks Color:</string>
+                    </property>
+                   </widget>
+                  </item>
+                 </layout>
+                </item>
+                <item row="4" column="1">
+                 <widget class="QSlider" name="m_LoadsArrowsOpacitySlider">
+                  <property name="styleSheet">
+                   <string notr="true">background-color: rgba(0, 0, 0, 0);</string>
+                  </property>
+                  <property name="maximum">
+                   <number>1000</number>
+                  </property>
+                  <property name="singleStep">
+                   <number>1</number>
+                  </property>
+                  <property name="pageStep">
+                   <number>100</number>
+                  </property>
+                  <property name="value">
+                   <number>1000</number>
+                  </property>
+                  <property name="orientation">
+                   <enum>Qt::Horizontal</enum>
+                  </property>
+                 </widget>
+                </item>
+                <item row="5" column="1">
+                 <widget class="QPushButton" name="m_LandmarksColorButton">
+                  <property name="sizePolicy">
+                   <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+                    <horstretch>0</horstretch>
+                    <verstretch>0</verstretch>
+                   </sizepolicy>
+                  </property>
+                  <property name="font">
+                   <font>
+                    <family>Calibri</family>
+                    <pointsize>10</pointsize>
+                   </font>
+                  </property>
+                  <property name="styleSheet">
+                   <string notr="true">background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 rgba(200, 80, 0, 255), stop:1 rgba(170, 50, 0, 255));
+color: rgb(255, 255, 255);</string>
+                  </property>
+                  <property name="text">
+                   <string>&amp;Edit</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="2" column="0">
+                 <layout class="QHBoxLayout" name="m_ElementXSpacingLabelLayout_3">
+                  <item>
+                   <spacer name="m_ElementXSpacingSpace_3">
+                    <property name="orientation">
+                     <enum>Qt::Horizontal</enum>
+                    </property>
+                    <property name="sizeHint" stdset="0">
+                     <size>
+                      <width>40</width>
+                      <height>20</height>
+                     </size>
+                    </property>
+                   </spacer>
+                  </item>
+                  <item>
+                   <widget class="QLabel" name="m_ElementXSpacingLabel_2">
+                    <property name="font">
+                     <font>
+                      <family>Calibri</family>
+                      <pointsize>10</pointsize>
+                     </font>
+                    </property>
+                    <property name="styleSheet">
+                     <string notr="true">background-color: rgba(255, 255, 255, 0);</string>
+                    </property>
+                    <property name="text">
+                     <string>Triangles Opacity:</string>
+                    </property>
+                   </widget>
+                  </item>
+                 </layout>
+                </item>
+                <item row="7" column="0">
+                 <layout class="QHBoxLayout" name="m_MaterialsLabelLayout_6">
+                  <item>
+                   <spacer name="m_WhichMetricLabelSpace_7">
+                    <property name="orientation">
+                     <enum>Qt::Horizontal</enum>
+                    </property>
+                    <property name="sizeHint" stdset="0">
+                     <size>
+                      <width>40</width>
+                      <height>20</height>
+                     </size>
+                    </property>
+                   </spacer>
+                  </item>
+                  <item>
+                   <widget class="QLabel" name="m_MaterialsLabel_6">
+                    <property name="font">
+                     <font>
+                      <family>Calibri</family>
+                      <pointsize>10</pointsize>
+                     </font>
+                    </property>
+                    <property name="styleSheet">
+                     <string notr="true">background-color: rgba(255, 255, 255, 0);</string>
+                    </property>
+                    <property name="text">
+                     <string>Edges Color:</string>
+                    </property>
+                   </widget>
+                  </item>
+                 </layout>
+                </item>
+                <item row="1" column="1">
+                 <widget class="QSlider" name="m_LandmarksOpacitySlider">
+                  <property name="styleSheet">
+                   <string notr="true">background-color: rgba(0, 0, 0, 0);</string>
+                  </property>
+                  <property name="maximum">
+                   <number>1000</number>
+                  </property>
+                  <property name="singleStep">
+                   <number>1</number>
+                  </property>
+                  <property name="pageStep">
+                   <number>100</number>
+                  </property>
+                  <property name="value">
+                   <number>900</number>
+                  </property>
+                  <property name="orientation">
+                   <enum>Qt::Horizontal</enum>
+                  </property>
+                 </widget>
+                </item>
+                <item row="6" column="0">
+                 <layout class="QHBoxLayout" name="m_MaterialsLabelLayout_3">
+                  <item>
+                   <spacer name="m_WhichMetricLabelSpace_4">
+                    <property name="orientation">
+                     <enum>Qt::Horizontal</enum>
+                    </property>
+                    <property name="sizeHint" stdset="0">
+                     <size>
+                      <width>40</width>
+                      <height>20</height>
+                     </size>
+                    </property>
+                   </spacer>
+                  </item>
+                  <item>
+                   <widget class="QLabel" name="m_MaterialsLabel_3">
+                    <property name="font">
+                     <font>
+                      <family>Calibri</family>
+                      <pointsize>10</pointsize>
+                     </font>
+                    </property>
+                    <property name="styleSheet">
+                     <string notr="true">background-color: rgba(255, 255, 255, 0);</string>
+                    </property>
+                    <property name="text">
+                     <string>Triangles Color:</string>
+                    </property>
+                   </widget>
+                  </item>
+                 </layout>
+                </item>
+                <item row="2" column="1">
+                 <widget class="QSlider" name="m_TrianglesOpacitySlider">
+                  <property name="styleSheet">
+                   <string notr="true">background-color: rgba(0, 0, 0, 0);</string>
+                  </property>
+                  <property name="maximum">
+                   <number>1000</number>
+                  </property>
+                  <property name="singleStep">
+                   <number>1</number>
+                  </property>
+                  <property name="pageStep">
+                   <number>100</number>
+                  </property>
+                  <property name="value">
+                   <number>500</number>
+                  </property>
+                  <property name="orientation">
+                   <enum>Qt::Horizontal</enum>
+                  </property>
+                 </widget>
+                </item>
+                <item row="10" column="1">
+                 <layout class="QHBoxLayout" name="horizontalLayout_32">
+                  <item>
+                   <widget class="QDoubleSpinBox" name="m_ArrowsScaleMantissaSpin">
+                    <property name="font">
+                     <font>
+                      <family>Calibri</family>
+                      <pointsize>10</pointsize>
+                     </font>
+                    </property>
+                    <property name="decimals">
+                     <number>1</number>
+                    </property>
+                    <property name="minimum">
+                     <double>0.100000000000000</double>
+                    </property>
+                    <property name="maximum">
+                     <double>9.900000000000000</double>
+                    </property>
+                    <property name="singleStep">
+                     <double>1.000000000000000</double>
+                    </property>
+                    <property name="value">
+                     <double>1.000000000000000</double>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QLabel" name="label_27">
+                    <property name="font">
+                     <font>
+                      <family>Calibri</family>
+                      <pointsize>10</pointsize>
+                     </font>
+                    </property>
+                    <property name="styleSheet">
+                     <string notr="true">background-color: rgba(255, 255, 255, 0);</string>
+                    </property>
+                    <property name="text">
+                     <string>e</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QDoubleSpinBox" name="m_ArrowsScaleExponentSpin">
+                    <property name="font">
+                     <font>
+                      <family>Calibri</family>
+                      <pointsize>10</pointsize>
+                     </font>
+                    </property>
+                    <property name="decimals">
+                     <number>0</number>
+                    </property>
+                    <property name="minimum">
+                     <double>-99.000000000000000</double>
+                    </property>
+                    <property name="maximum">
+                     <double>99.000000000000000</double>
+                    </property>
+                    <property name="singleStep">
+                     <double>1.000000000000000</double>
+                    </property>
+                    <property name="value">
+                     <double>0.000000000000000</double>
+                    </property>
+                   </widget>
+                  </item>
+                 </layout>
+                </item>
+                <item row="10" column="0">
+                 <layout class="QHBoxLayout" name="m_MaterialsLabelLayout_7">
+                  <item>
+                   <spacer name="m_WhichMetricLabelSpace_8">
+                    <property name="orientation">
+                     <enum>Qt::Horizontal</enum>
+                    </property>
+                    <property name="sizeHint" stdset="0">
+                     <size>
+                      <width>40</width>
+                      <height>20</height>
+                     </size>
+                    </property>
+                   </spacer>
+                  </item>
+                  <item>
+                   <widget class="QLabel" name="m_MaterialsLabel_7">
+                    <property name="font">
+                     <font>
+                      <family>Calibri</family>
+                      <pointsize>10</pointsize>
+                     </font>
+                    </property>
+                    <property name="styleSheet">
+                     <string notr="true">background-color: rgba(255, 255, 255, 0);</string>
+                    </property>
+                    <property name="text">
+                     <string>Arrows Scale:</string>
+                    </property>
+                   </widget>
+                  </item>
+                 </layout>
+                </item>
+                <item row="11" column="0">
+                 <spacer name="verticalSpacer_6">
+                  <property name="orientation">
+                   <enum>Qt::Vertical</enum>
+                  </property>
+                  <property name="sizeHint" stdset="0">
+                   <size>
+                    <width>20</width>
+                    <height>40</height>
+                   </size>
+                  </property>
+                 </spacer>
+                </item>
+               </layout>
+              </widget>
+             </widget>
+            </item>
+            <item>
+             <spacer name="verticalSpacer">
+              <property name="orientation">
+               <enum>Qt::Vertical</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>20</width>
+                <height>40</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+           </layout>
+          </widget>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="m_ResetCameraButton">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="font">
+           <font>
+            <family>Calibri</family>
+            <pointsize>10</pointsize>
+           </font>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 rgba(200, 80, 0, 255), stop:1 rgba(170, 50, 0, 255));
+color: rgb(255, 255, 255);</string>
+          </property>
+          <property name="text">
+           <string>Reset &amp;GUI Camera</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="m_RegisterButton">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="font">
+           <font>
+            <family>Calibri</family>
+            <pointsize>10</pointsize>
+           </font>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 rgba(200, 80, 0, 255), stop:1 rgba(170, 50, 0, 255));
+color: rgb(255, 255, 255);</string>
+          </property>
+          <property name="text">
+           <string>&amp;Register</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="m_SaveButton">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="font">
+           <font>
+            <family>Calibri</family>
+            <pointsize>10</pointsize>
+           </font>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 rgba(200, 80, 0, 255), stop:1 rgba(170, 50, 0, 255));
+color: rgb(255, 255, 255);</string>
+          </property>
+          <property name="text">
+           <string>&amp;Save Result...</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="m_ExitButton">
+          <property name="font">
+           <font>
+            <family>Calibri</family>
+            <pointsize>10</pointsize>
+           </font>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 rgba(80, 80, 80, 255), stop:1 rgba(0, 0, 0, 255));
+color: rgb(255, 255, 255);</string>
+          </property>
+          <property name="text">
+           <string>E&amp;xit</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </widget>
+    </item>
+    <item>
+     <layout class="QVBoxLayout" name="verticalLayout_4">
+      <item>
+       <layout class="QHBoxLayout" name="horizontalLayout_7">
+        <item>
+         <layout class="QVBoxLayout" name="verticalLayout_5">
+          <item>
+           <layout class="QHBoxLayout" name="horizontalLayout_8">
+            <item>
+             <widget class="QComboBox" name="m_Image1Combo">
+              <property name="font">
+               <font>
+                <family>Calibri</family>
+                <pointsize>10</pointsize>
+               </font>
+              </property>
+              <property name="currentIndex">
+               <number>1</number>
+              </property>
+              <item>
+               <property name="text">
+                <string>(None)</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>Fixed Image</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>Moving Image</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>Moved Image</string>
+               </property>
+              </item>
+             </widget>
+            </item>
+            <item>
+             <widget class="QComboBox" name="m_Image1BlindsCombo">
+              <property name="font">
+               <font>
+                <family>Calibri</family>
+                <pointsize>10</pointsize>
+               </font>
+              </property>
+              <item>
+               <property name="text">
+                <string>Full Image</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>Vertical Blinds</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>Horizontal Blinds</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>Checkerboard Blinds</string>
+               </property>
+              </item>
+             </widget>
+            </item>
+            <item>
+             <widget class="QSpinBox" name="m_Image1BlindsSpin">
+              <property name="enabled">
+               <bool>false</bool>
+              </property>
+              <property name="font">
+               <font>
+                <family>Calibri</family>
+                <pointsize>10</pointsize>
+               </font>
+              </property>
+              <property name="minimum">
+               <number>2</number>
+              </property>
+              <property name="singleStep">
+               <number>4</number>
+              </property>
+              <property name="value">
+               <number>16</number>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+          <item>
+           <widget class="QSlider" name="m_Image1SliceSlider">
+            <property name="font">
+             <font>
+              <family>Calibri</family>
+              <pointsize>10</pointsize>
+             </font>
+            </property>
+            <property name="maximum">
+             <number>0</number>
+            </property>
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="tickPosition">
+             <enum>QSlider::TicksBelow</enum>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QSlider" name="m_Image1TransparencySlider">
+            <property name="styleSheet">
+             <string notr="true"/>
+            </property>
+            <property name="maximum">
+             <number>100</number>
+            </property>
+            <property name="value">
+             <number>100</number>
+            </property>
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <layout class="QHBoxLayout" name="horizontalLayout_10">
+            <item>
+             <widget class="QSlider" name="m_Image1WindowSlider">
+              <property name="maximum">
+               <number>0</number>
+              </property>
+              <property name="singleStep">
+               <number>1</number>
+              </property>
+              <property name="value">
+               <number>0</number>
+              </property>
+              <property name="orientation">
+               <enum>Qt::Horizontal</enum>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QSlider" name="m_Image1LevelSlider">
+              <property name="maximum">
+               <number>0</number>
+              </property>
+              <property name="value">
+               <number>0</number>
+              </property>
+              <property name="orientation">
+               <enum>Qt::Horizontal</enum>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <widget class="Line" name="line_2">
+          <property name="font">
+           <font>
+            <family>Calibri</family>
+            <pointsize>10</pointsize>
+           </font>
+          </property>
+          <property name="orientation">
+           <enum>Qt::Vertical</enum>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <layout class="QVBoxLayout" name="verticalLayout_6">
+          <item>
+           <layout class="QHBoxLayout" name="horizontalLayout_9">
+            <item>
+             <widget class="QComboBox" name="m_Image2Combo">
+              <property name="font">
+               <font>
+                <family>Calibri</family>
+                <pointsize>10</pointsize>
+               </font>
+              </property>
+              <property name="currentIndex">
+               <number>3</number>
+              </property>
+              <item>
+               <property name="text">
+                <string>(None)</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>Fixed Image</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>Moving Image</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>Moved Image</string>
+               </property>
+              </item>
+             </widget>
+            </item>
+            <item>
+             <widget class="QComboBox" name="m_Image2BlindsCombo">
+              <property name="font">
+               <font>
+                <family>Calibri</family>
+                <pointsize>10</pointsize>
+               </font>
+              </property>
+              <item>
+               <property name="text">
+                <string>Full Image</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>Vertical Blinds</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>Horizontal Blinds</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>Checkerboard Blinds</string>
+               </property>
+              </item>
+             </widget>
+            </item>
+            <item>
+             <widget class="QSpinBox" name="m_Image2BlindsSpin">
+              <property name="enabled">
+               <bool>false</bool>
+              </property>
+              <property name="font">
+               <font>
+                <family>Calibri</family>
+                <pointsize>10</pointsize>
+               </font>
+              </property>
+              <property name="minimum">
+               <number>2</number>
+              </property>
+              <property name="singleStep">
+               <number>4</number>
+              </property>
+              <property name="value">
+               <number>16</number>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+          <item>
+           <widget class="QSlider" name="m_Image2SliceSlider">
+            <property name="font">
+             <font>
+              <family>Calibri</family>
+              <pointsize>10</pointsize>
+             </font>
+            </property>
+            <property name="maximum">
+             <number>0</number>
+            </property>
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="tickPosition">
+             <enum>QSlider::TicksBelow</enum>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QSlider" name="m_Image2TransparencySlider">
+            <property name="maximum">
+             <number>100</number>
+            </property>
+            <property name="value">
+             <number>100</number>
+            </property>
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <layout class="QHBoxLayout" name="horizontalLayout_11">
+            <item>
+             <widget class="QSlider" name="m_Image2WindowSlider">
+              <property name="maximum">
+               <number>0</number>
+              </property>
+              <property name="singleStep">
+               <number>1</number>
+              </property>
+              <property name="value">
+               <number>0</number>
+              </property>
+              <property name="orientation">
+               <enum>Qt::Horizontal</enum>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QSlider" name="m_Image2LevelSlider">
+              <property name="maximum">
+               <number>0</number>
+              </property>
+              <property name="value">
+               <number>0</number>
+              </property>
+              <property name="orientation">
+               <enum>Qt::Horizontal</enum>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+         </layout>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <widget class="Line" name="line">
+        <property name="font">
+         <font>
+          <family>Calibri</family>
+          <pointsize>10</pointsize>
+         </font>
+        </property>
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QVTKWidget" name="m_OutputVTKWidget">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Preferred" vsizetype="Expanding">
+          <horstretch>4</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>977</width>
+     <height>21</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>QVTKWidget</class>
+   <extends>QWidget</extends>
+   <header>QVTKWidget.h</header>
+  </customwidget>
+ </customwidgets>
+ <tabstops>
+  <tabstop>m_LoadPatientButton</tabstop>
+  <tabstop>m_FixedStudyCombo</tabstop>
+  <tabstop>m_MovingStudyCombo</tabstop>
+  <tabstop>m_WhatToRegisterCombo</tabstop>
+  <tabstop>m_StandardizeCheck</tabstop>
+  <tabstop>m_DoRigidCheck</tabstop>
+  <tabstop>m_DoAffineCheck</tabstop>
+  <tabstop>m_DoFEMCheck</tabstop>
+  <tabstop>m_MaskObjectText</tabstop>
+  <tabstop>m_HistogramBinsSpin</tabstop>
+  <tabstop>m_MinPercentPixelsSpin</tabstop>
+  <tabstop>m_FromStartCornerXSpin</tabstop>
+  <tabstop>m_FromStartCornerYSpin</tabstop>
+  <tabstop>m_FromStartCornerZSpin</tabstop>
+  <tabstop>m_FromEndCornerXSpin</tabstop>
+  <tabstop>m_FromEndCornerYSpin</tabstop>
+  <tabstop>m_FromEndCornerZSpin</tabstop>
+  <tabstop>m_AffineDisplayProbabilitySpin</tabstop>
+  <tabstop>m_GradientDescentButton</tabstop>
+  <tabstop>m_ParticleSwarmLinearButton</tabstop>
+  <tabstop>m_FEMDisplayProbabilitySpin</tabstop>
+  <tabstop>m_FEMMaskObjectText</tabstop>
+  <tabstop>m_FEMTransformButton</tabstop>
+  <tabstop>m_MaterialsButton</tabstop>
+  <tabstop>m_ParticleSwarmFEMButton</tabstop>
+  <tabstop>m_LandmarksOpacitySlider</tabstop>
+  <tabstop>m_TrianglesOpacitySlider</tabstop>
+  <tabstop>m_LoadsSpheresOpacitySlider</tabstop>
+  <tabstop>m_LoadsArrowsOpacitySlider</tabstop>
+  <tabstop>m_LandmarksColorButton</tabstop>
+  <tabstop>m_TrianglesFaceColorButton</tabstop>
+  <tabstop>m_TrianglesEdgeColorButton</tabstop>
+  <tabstop>m_LoadsSpheresColorButton</tabstop>
+  <tabstop>m_LoadsArrowsColorButton</tabstop>
+  <tabstop>m_ArrowsScaleMantissaSpin</tabstop>
+  <tabstop>m_ArrowsScaleExponentSpin</tabstop>
+  <tabstop>m_ResetCameraButton</tabstop>
+  <tabstop>m_RegisterButton</tabstop>
+  <tabstop>m_SaveButton</tabstop>
+  <tabstop>m_ExitButton</tabstop>
+  <tabstop>m_Image1Combo</tabstop>
+  <tabstop>m_Image1BlindsCombo</tabstop>
+  <tabstop>m_Image1BlindsSpin</tabstop>
+  <tabstop>m_Image1SliceSlider</tabstop>
+  <tabstop>m_Image1TransparencySlider</tabstop>
+  <tabstop>m_Image1WindowSlider</tabstop>
+  <tabstop>m_Image1LevelSlider</tabstop>
+  <tabstop>m_Image2Combo</tabstop>
+  <tabstop>m_Image2BlindsCombo</tabstop>
+  <tabstop>m_Image2BlindsSpin</tabstop>
+  <tabstop>m_Image2SliceSlider</tabstop>
+  <tabstop>m_Image2TransparencySlider</tabstop>
+  <tabstop>m_Image2WindowSlider</tabstop>
+  <tabstop>m_Image2LevelSlider</tabstop>
+  <tabstop>scrollArea_2</tabstop>
+  <tabstop>scrollArea</tabstop>
+ </tabstops>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>m_ExitButton</sender>
+   <signal>clicked()</signal>
+   <receiver>ProstalignFEM</receiver>
+   <slot>SlotExit()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>112</x>
+     <y>834</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>170</x>
+     <y>467</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>m_LoadPatientButton</sender>
+   <signal>clicked()</signal>
+   <receiver>ProstalignFEM</receiver>
+   <slot>SlotLoadPatient()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>249</x>
+     <y>109</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>161</x>
+     <y>400</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>m_RegisterButton</sender>
+   <signal>clicked()</signal>
+   <receiver>ProstalignFEM</receiver>
+   <slot>SlotRegister()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>120</x>
+     <y>776</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>158</x>
+     <y>429</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>m_FixedStudyCombo</sender>
+   <signal>currentIndexChanged(int)</signal>
+   <receiver>ProstalignFEM</receiver>
+   <slot>SlotChangeFixedStudy(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>210</x>
+     <y>142</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>247</x>
+     <y>365</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>m_MovingStudyCombo</sender>
+   <signal>currentIndexChanged(int)</signal>
+   <receiver>ProstalignFEM</receiver>
+   <slot>SlotChangeMovingStudy(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>222</x>
+     <y>184</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>241</x>
+     <y>328</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>m_Image1SliceSlider</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>ProstalignFEM</receiver>
+   <slot>SlotChangeImage1Slice(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>585</x>
+     <y>78</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>553</x>
+     <y>197</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>m_Image2SliceSlider</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>ProstalignFEM</receiver>
+   <slot>SlotChangeImage2Slice(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>890</x>
+     <y>78</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>856</x>
+     <y>245</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>m_Image1TransparencySlider</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>ProstalignFEM</receiver>
+   <slot>SlotChangeImage1Transparency(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>430</x>
+     <y>99</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>357</x>
+     <y>223</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>m_Image2TransparencySlider</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>ProstalignFEM</receiver>
+   <slot>SlotChangeImage2Transparency(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>890</x>
+     <y>100</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>678</x>
+     <y>284</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>m_Image1Combo</sender>
+   <signal>currentIndexChanged(QString)</signal>
+   <receiver>ProstalignFEM</receiver>
+   <slot>SlotChangeImage1(QString)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>427</x>
+     <y>53</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>383</x>
+     <y>535</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>m_Image2Combo</sender>
+   <signal>currentIndexChanged(QString)</signal>
+   <receiver>ProstalignFEM</receiver>
+   <slot>SlotChangeImage2(QString)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>699</x>
+     <y>50</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>745</x>
+     <y>576</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>m_ResetCameraButton</sender>
+   <signal>clicked()</signal>
+   <receiver>ProstalignFEM</receiver>
+   <slot>SlotResetGUI()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>91</x>
+     <y>747</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>67</x>
+     <y>412</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>m_Image1BlindsCombo</sender>
+   <signal>currentIndexChanged(QString)</signal>
+   <receiver>ProstalignFEM</receiver>
+   <slot>SlotChangeImage1Blinds()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>532</x>
+     <y>50</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>533</x>
+     <y>160</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>m_Image2BlindsCombo</sender>
+   <signal>currentIndexChanged(QString)</signal>
+   <receiver>ProstalignFEM</receiver>
+   <slot>SlotChangeImage2Blinds()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>837</x>
+     <y>50</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>804</x>
+     <y>185</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>m_Image1WindowSlider</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>ProstalignFEM</receiver>
+   <slot>SlotChangeImage1WindowLevel()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>438</x>
+     <y>123</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>512</x>
+     <y>390</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>m_Image1LevelSlider</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>ProstalignFEM</receiver>
+   <slot>SlotChangeImage1WindowLevel()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>584</x>
+     <y>123</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>504</x>
+     <y>370</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>m_Image2WindowSlider</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>ProstalignFEM</receiver>
+   <slot>SlotChangeImage2WindowLevel()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>743</x>
+     <y>123</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>521</x>
+     <y>561</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>m_Image2LevelSlider</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>ProstalignFEM</receiver>
+   <slot>SlotChangeImage2WindowLevel()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>889</x>
+     <y>123</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>518</x>
+     <y>578</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>m_Image1BlindsSpin</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>ProstalignFEM</receiver>
+   <slot>SlotChangeImage1Blinds()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>631</x>
+     <y>54</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>541</x>
+     <y>175</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>m_Image2BlindsSpin</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>ProstalignFEM</receiver>
+   <slot>SlotChangeImage2Blinds()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>963</x>
+     <y>54</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>805</x>
+     <y>199</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>m_SaveButton</sender>
+   <signal>clicked()</signal>
+   <receiver>ProstalignFEM</receiver>
+   <slot>SlotSaveResults()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>140</x>
+     <y>805</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>289</x>
+     <y>626</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>m_MaterialsButton</sender>
+   <signal>clicked()</signal>
+   <receiver>ProstalignFEM</receiver>
+   <slot>SlotEditMaterials()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>279</x>
+     <y>314</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>371</x>
+     <y>414</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>m_LandmarksOpacitySlider</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>ProstalignFEM</receiver>
+   <slot>SlotChangeLandmarksTransparency()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>277</x>
+     <y>280</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>337</x>
+     <y>196</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>m_TrianglesOpacitySlider</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>ProstalignFEM</receiver>
+   <slot>SlotChangeTrianglesTransparency()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>277</x>
+     <y>308</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>334</x>
+     <y>246</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>m_LoadsSpheresOpacitySlider</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>ProstalignFEM</receiver>
+   <slot>SlotChangeLoadsSpheresTransparency()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>277</x>
+     <y>336</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>335</x>
+     <y>278</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>m_LoadsArrowsOpacitySlider</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>ProstalignFEM</receiver>
+   <slot>SlotChangeLoadsArrowsTransparency()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>277</x>
+     <y>364</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>336</x>
+     <y>309</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>m_LandmarksColorButton</sender>
+   <signal>clicked()</signal>
+   <receiver>ProstalignFEM</receiver>
+   <slot>SlotChangeLandmarksColor()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>277</x>
+     <y>395</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>339</x>
+     <y>341</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>m_TrianglesFaceColorButton</sender>
+   <signal>clicked()</signal>
+   <receiver>ProstalignFEM</receiver>
+   <slot>SlotChangeTrianglesFaceColor()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>277</x>
+     <y>424</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>335</x>
+     <y>371</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>m_TrianglesEdgeColorButton</sender>
+   <signal>clicked()</signal>
+   <receiver>ProstalignFEM</receiver>
+   <slot>SlotChangeTrianglesEdgeColor()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>277</x>
+     <y>453</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>337</x>
+     <y>397</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>m_LoadsSpheresColorButton</sender>
+   <signal>clicked()</signal>
+   <receiver>ProstalignFEM</receiver>
+   <slot>SlotChangeLoadsSpheresColor()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>277</x>
+     <y>482</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>339</x>
+     <y>429</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>m_LoadsArrowsColorButton</sender>
+   <signal>clicked()</signal>
+   <receiver>ProstalignFEM</receiver>
+   <slot>SlotChangeLoadsArrowsColor()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>277</x>
+     <y>511</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>336</x>
+     <y>456</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>m_ArrowsScaleMantissaSpin</sender>
+   <signal>valueChanged(double)</signal>
+   <receiver>ProstalignFEM</receiver>
+   <slot>SlotChangeArrowsScale()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>212</x>
+     <y>537</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>567</x>
+     <y>515</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>m_ArrowsScaleExponentSpin</sender>
+   <signal>valueChanged(double)</signal>
+   <receiver>ProstalignFEM</receiver>
+   <slot>SlotChangeArrowsScale()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>279</x>
+     <y>537</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>569</x>
+     <y>505</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>m_FEMTransformButton</sender>
+   <signal>clicked()</signal>
+   <receiver>ProstalignFEM</receiver>
+   <slot>SlotFEMTransformOptions()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>279</x>
+     <y>283</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>6</x>
+     <y>352</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>m_ParticleSwarmLinearButton</sender>
+   <signal>clicked()</signal>
+   <receiver>ProstalignFEM</receiver>
+   <slot>SlotParticleSwarmLinearOptions()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>244</x>
+     <y>282</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>302</x>
+     <y>332</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>m_GradientDescentButton</sender>
+   <signal>clicked()</signal>
+   <receiver>ProstalignFEM</receiver>
+   <slot>SlotGradientDescentOptions()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>253</x>
+     <y>253</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>161</x>
+     <y>196</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>m_ParticleSwarmFEMButton</sender>
+   <signal>clicked()</signal>
+   <receiver>ProstalignFEM</receiver>
+   <slot>SlotParticleSwarmFEMOptions()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>236</x>
+     <y>330</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>310</x>
+     <y>439</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>SlotExit()</slot>
+  <slot>SlotLoadPatient()</slot>
+  <slot>SlotRegister()</slot>
+  <slot>SlotChangeFixedStudy(int)</slot>
+  <slot>SlotChangeMovingStudy(int)</slot>
+  <slot>SlotChangeMovingSlice(int)</slot>
+  <slot>SlotChangeImage1Slice(int)</slot>
+  <slot>SlotChangeImage2Slice(int)</slot>
+  <slot>SlotChangeImage1Transparency(int)</slot>
+  <slot>SlotChangeImage2Transparency(int)</slot>
+  <slot>SlotChangeImage1(QString)</slot>
+  <slot>SlotChangeImage2(QString)</slot>
+  <slot>SlotResetGUI()</slot>
+  <slot>SlotChangeImage1Blinds()</slot>
+  <slot>SlotChangeImage2Blinds()</slot>
+  <slot>SlotChangeImage1WindowLevel()</slot>
+  <slot>SlotChangeImage2WindowLevel()</slot>
+  <slot>SlotSaveResults()</slot>
+  <slot>SlotEditMaterials()</slot>
+  <slot>SlotChangeLandmarksTransparency()</slot>
+  <slot>SlotChangeTrianglesTransparency()</slot>
+  <slot>SlotChangeLoadsSpheresTransparency()</slot>
+  <slot>SlotChangeLoadsArrowsTransparency()</slot>
+  <slot>SlotChangeLandmarksColor()</slot>
+  <slot>SlotChangeTrianglesFaceColor()</slot>
+  <slot>SlotChangeTrianglesEdgeColor()</slot>
+  <slot>SlotChangeLoadsSpheresColor()</slot>
+  <slot>SlotChangeLoadsArrowsColor()</slot>
+  <slot>SlotChangeArrowsScale()</slot>
+  <slot>SlotGradientDescentOptions()</slot>
+  <slot>SlotFEMTransformOptions()</slot>
+  <slot>SlotParticleSwarmFEMOptions()</slot>
+  <slot>SlotParticleSwarmLinearOptions()</slot>
+ </slots>
+</ui>

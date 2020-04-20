@@ -1,0 +1,38 @@
+#ifndef __ccipdDuplicateImage_h
+#define __ccipdDuplicateImage_h
+
+
+/**
+ * Simple wrapper to dupcliate our common image types.
+ */
+
+
+
+//////////////////////////////////////////////////////////////////////////////////////////
+#include "ccipdVolumeTypes.h"
+//////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+namespace ccipd
+{
+
+
+
+
+//////////////////////////////////////////////////////////////////////////////////////////
+/**
+ * This actually performs the duplication of any image.
+ * Include the .hxx file if you want to use this for non-standard image types.
+ * 
+ * \author  Rob Toth
+ * \ingroup Common
+ */
+template< class ImageType >
+typename ImageType::Pointer DuplicateImage( const ImageType * const image );
+//////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+} // namespace
+#endif // __ccipdDuplicateImage_h

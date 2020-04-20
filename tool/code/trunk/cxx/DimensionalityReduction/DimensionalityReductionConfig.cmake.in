@@ -1,0 +1,26 @@
+#-----------------------------------------------------------------------------
+#
+# DimensionalityReduction.cmake - DimensionalityReduction CMake configuration file for external projects.
+#
+# This file is configured by DimensionalityReduction and used by the UseDimensionalityReduction.cmake module
+# to load DimensionalityReduction's settings for an external project.
+#-----------------------------------------------------------------------------
+# Settings specific to the build tree.
+# -Rob Toth
+
+# The "use" file.
+SET( DIMENSIONALITY_REDUCTION_USE_FILE "@DIMENSIONALITY_REDUCTION_USE_FILE@")
+
+# Library directory.
+SET( DIMENSIONALITY_REDUCTION_LIBRARY_DIRS @DIMENSIONALITY_REDUCTION_LIBRARY_DIRS@ )
+
+# Libraries
+SET( DIMENSIONALITY_REDUCTION_CORE_LIBS @DIMENSIONALITY_REDUCTION_CORE_LIBS@ )
+SET( DIMENSIONALITY_REDUCTION_SIM_LIBS  @DIMENSIONALITY_REDUCTION_SIM_LIBS@  )
+
+# Tell other libraries whether we have enabled the DimensionalityReduction library
+SET( ENABLE_DIMENSIONALITY_REDUCTION_CORE @ENABLE_DIMENSIONALITY_REDUCTION_CORE@ )
+SET( ENABLE_DIMENSIONALITY_REDUCTION_SIM  @ENABLE_DIMENSIONALITY_REDUCTION_SIM@  )
+
+# Include directories needed.
+SET( DIMENSIONALITY_REDUCTION_INCLUDE_DIRS @DIMENSIONALITY_REDUCTION_INCLUDE_DIRS@ )

@@ -1,0 +1,117 @@
+
+
+
+//////////////////////////////////////////////////////////////////////////////////////////
+// ccipd include
+#include "ccipdStudyCache.hxx"
+#include "ccipdStudyImageCache.h"
+
+#include "ccipdDisableWarningsMacro.h"
+  // itk includes
+  #include <itkImage.h>
+#include "ccipdEnableWarningsMacro.h"
+//////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+namespace ccipd
+{
+  
+#ifdef Boost_SERIALIZATION_FOUND  
+template
+void StudyCache< StudyImageCache::CachedObjectType >::
+serialize< boost::archive::xml_iarchive >(
+  boost::archive::xml_iarchive & archive,
+  const unsigned int version );
+#endif
+
+//////////////////////////////////////////////////////////////////////////////////////////
+StudyImageCache::StudyImageCache()
+{
+} // constructor
+//////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+//////////////////////////////////////////////////////////////////////////////////////////
+StudyImageCache::~StudyImageCache()
+{
+} // destructor
+//////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+//////////////////////////////////////////////////////////////////////////////////////////
+StudyImageCache::ImageConstPointer StudyImageCache::GetImage(
+  const StudyConstPointer & study )
+{
+  return this->Superclass::GetCachedObject( study );
+}
+//////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+//////////////////////////////////////////////////////////////////////////////////////////
+StudyImageCache::ImageConstPointer StudyImageCache::GetImage(
+  const StudyConstPointer & study ) const
+{
+  return this->Superclass::GetCachedObject( study );
+}
+//////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+//////////////////////////////////////////////////////////////////////////////////////////
+StudyImageCache::CachedObjectType StudyImageCache::CalculateObject(
+  const Study & study ) const
+{
+  return this->CalculateImage( study );
+}
+//////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+//////////////////////////////////////////////////////////////////////////////////////////
+#ifdef Boost_SERIALIZATION_FOUND
+
+ccipdSerializationImplementationHeadingMacro( StudyImageCache )
+{
+
+  if ( version < 1 )
+    return;
+
+  // now, serialize
+  archive
+    & BOOST_SERIALIZATION_BASE_OBJECT_NVP( Superclass );
+    
+} // serialize
+
+ccipdSerializationXMLMacro( StudyImageCache )
+
+
+#endif // Boost_SERIALIZATION_FOUND
+
+} // namespace ccipd
+
+
+#ifdef Boost_SERIALIZATION_FOUND
+
+template
+struct boost::serialization::version<
+  ccipd::StudyCache< ccipd::StudyImageCache::CachedObjectType > >;
+
+template
+struct boost::serialization::tracking_level<
+  ccipd::StudyCache< ccipd::StudyImageCache::CachedObjectType > >;
+
+template
+void ccipd::StudyCache< ccipd::StudyImageCache::CachedObjectType >::
+serialize< boost::archive::xml_oarchive >(
+  boost::archive::xml_oarchive & archive,
+  const unsigned int version );
+
+#endif // Boost_SERIALIZATION_FOUND
+//////////////////////////////////////////////////////////////////////////////////////////
+
+
+

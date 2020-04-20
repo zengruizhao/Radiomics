@@ -1,0 +1,25 @@
+<RCC>
+    <qresource prefix="/resources">
+        <file>exit.png</file>
+        <file>Exit1.png</file>
+        <file>Exit2.png</file>
+        <file>Exit3.png</file>
+        <file>Heatmap1.png</file>
+        <file>Heatmap2.png</file>
+        <file>Heatmap3.png</file>
+        <file>help.chm</file>
+        <file>LoadImage1.png</file>
+        <file>LoadImage2.png</file>
+        <file>LoadMask1.png</file>
+        <file>LoadMask2.png</file>
+        <file>LoadMAsk3.png</file>
+        <file>MainWindow1.ico</file>
+        <file>MainWindow2.png</file>
+        <file>Reset1.png</file>
+        <file>Reset2.png</file>
+        <file>ResetCamera1.png</file>
+        <file>ResetCamera2.png</file>
+        <file>ResetCamera3.png</file>
+        <file>Save1.png</file>
+    </qresource>
+</RCC>

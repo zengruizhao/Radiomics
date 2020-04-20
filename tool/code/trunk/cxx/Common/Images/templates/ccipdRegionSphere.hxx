@@ -1,0 +1,164 @@
+#ifndef __ccipdRegionSphere_hxx
+#define __ccipdRegionSphere_hxx
+
+
+
+//////////////////////////////////////////////////////////////////////////////////////////////////
+
+// ccipd includes
+#include "ccipdRegionSphere.h"
+#include "ccipdRegionCube.h"
+#include "ccipdFactory.hxx"
+
+// itk includes
+#include "ccipdDisableWarningsMacro.h"
+#include <itkImageBase.h>
+#include "ccipdEnableWarningsMacro.h"
+
+//////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+namespace ccipd
+{
+
+
+
+//////////////////////////////////////////////////////////////////////////////////////////////////
+template< unsigned int TDimension >
+class RegionSphere< TDimension >::SecretData
+{
+
+public:
+  SecretData(); ///< Constructor
+
+  typedef RegionSphere< TDimension >                     EncapsulatingClass;
+  typedef typename EncapsulatingClass::ImageRegionType   ImageRegionType;
+  typedef typename EncapsulatingClass::LengthType        LengthType;
+  typedef typename EncapsulatingClass::PointType         PointType;
+  typedef typename EncapsulatingClass::ImageConstPointer ImageConstPointer;
+
+  PointType
+    m_Centroid;
+
+  /// Displacement from the centroid in each dimension
+  LengthType
+    m_Radius;
+
+  typedef RegionCube < TDimension > CubeType;
+
+  /// Use a cube for assistance
+  typename CubeType::Pointer
+    m_Cube;
+
+}; // class SecretData
+//////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+//////////////////////////////////////////////////////////////////////////////////////////////////
+template< unsigned int TDimension >
+RegionSphere< TDimension >::RegionSphere() :
+ccipdNewPIMPLMacro
+{
+}
+//////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+//////////////////////////////////////////////////////////////////////////////////////////////////
+template< unsigned int TDimension >
+RegionSphere< TDimension >::SecretData::SecretData() :
+m_Radius( 0 ),
+m_Cube( CubeType::New() )
+{
+  this->m_Centroid.Fill( 0 );
+}
+//////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+//////////////////////////////////////////////////////////////////////////////////////////////////
+template< unsigned int TDimension >
+RegionSphere< TDimension >::~RegionSphere()
+{
+}
+//////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+//////////////////////////////////////////////////////////////////////////////////////////////////
+template< unsigned int TDimension >
+bool RegionSphere< TDimension >::IncludePointInShape( const PointType & point ) const
+{
+  
+  // first check it's within our cube
+  if ( !this->m_SecretData->m_Cube->IncludePointInShape( point ) )
+    return false;
+
+  // now check the radius
+
+  const PointType & centroid = this->m_SecretData->m_Centroid;
+
+  const LengthType
+    radius = this->m_SecretData->m_Radius,
+    radiusSquared = radius * radius;
+
+  const auto distanceSquared = 
+    point.SquaredEuclideanDistanceTo( centroid );
+
+  return distanceSquared <= radiusSquared;
+
+} // IncludePointInShape
+//////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+//////////////////////////////////////////////////////////////////////////////////////////////////
+template< unsigned int TDimension >
+void RegionSphere< TDimension >::SetRadius( const LengthType variable )
+{
+  ccipdSetBodyMacro( Radius )
+
+  this->m_SecretData->m_Cube->SetHalfCubeLength( variable );
+
+} // SetRadius
+//////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+//////////////////////////////////////////////////////////////////////////////////////////////////
+template< unsigned int TDimension >
+void RegionSphere< TDimension >::SetImage( const ImageConstPointer image )
+{
+  this->Superclass::SetImage( image );
+  this->m_SecretData->m_Cube->SetImage( image );
+}
+//////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+//////////////////////////////////////////////////////////////////////////////////////////////////
+template< unsigned int TDimension >
+void RegionSphere< TDimension >::SetCentroid( const PointType & variable )
+{
+  ccipdSetBodyMacro( Centroid )
+  this->m_SecretData->m_Cube->SetCentroid( variable );
+}
+//////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+//////////////////////////////////////////////////////////////////////////////////////////////////
+template< unsigned int TDimension >
+typename RegionSphere< TDimension >::ImageRegionType
+RegionSphere< TDimension >::GetMaximumRegion() const
+{
+  return this->m_SecretData->m_Cube->GetMaximumRegion();
+}
+//////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+} // namespace ccipd
+#endif // __ccipdRegionSphere_hxx

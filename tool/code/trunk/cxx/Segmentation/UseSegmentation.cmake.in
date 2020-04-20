@@ -1,0 +1,95 @@
+#
+# This file sets up include directories, link directories, and
+# compiler settings for a project to use Segmentation.  It should not be
+# included directly, but rather through the Segmentation_USE_FILE setting
+# obtained from Segmentation.cmake.
+#
+# Modeled after UseItkVtkGlue.cmake.in
+# https://farsight-svn.ee.uh.edu/repos/farsight/trunk/ItkVtkGlue/UseItkVtkGlue.cmake.in
+# 
+# -Rob Toth
+
+
+
+###########################################################################################
+# http://ccipd.rutgers.edu/short/n
+IF ( NOT USESEGMENTATION_INCLUDED )
+SET( USESEGMENTATION_INCLUDED TRUE )
+
+SET( OLD_ENABLE_SEGMENTATION_CORE ${ENABLE_SEGMENTATION_CORE} )
+SET( OLD_ENABLE_SEGMENTATION_MFA  ${ENABLE_SEGMENTATION_MFA}  )
+
+SET( OLD_SEGMENTATION_CORE_LIBS ${SEGMENTATION_CORE_LIBS} )
+SET( OLD_SEGMENTATION_MFA_LIBS  ${SEGMENTATION_MFA_LIBS}  )
+
+###########################################################################################
+
+
+
+###########################################################################################
+FIND_PACKAGE( CMakeCode REQUIRED )
+INCLUDE( ${CMAKECODE_USE_FILE} )
+###########################################################################################
+
+
+
+###########################################################################################
+IF( OLD_ENABLE_SEGMENTATION_CORE )
+  FIND_PACKAGE( Data REQUIRED )
+  INCLUDE( ${DATA_USE_FILE} )
+ENDIF()
+###########################################################################################
+
+
+
+###########################################################################################
+IF( OLD_ENABLE_SEGMENTATION_CORE OR OLD_ENABLE_SEGMENTATION_MFA )
+  FIND_PACKAGE( Registration REQUIRED )
+  INCLUDE( ${REGISTRATION_USE_FILE} )
+ENDIF()
+###########################################################################################
+
+
+
+###########################################################################################
+IF( OLD_ENABLE_SEGMENTATION_MFA )
+
+  FIND_PACKAGE( Common REQUIRED )
+  INCLUDE( ${COMMON_USE_FILE} )
+  
+  FIND_PACKAGE( Preprocessing REQUIRED )
+  INCLUDE( ${PREPROCESSING_USE_FILE} )
+
+  FIND_PACKAGE( DimensionalityReduction REQUIRED )
+  INCLUDE( ${DIMENSIONALITY_REDUCTION_USE_FILE} )
+
+ENDIF()
+###########################################################################################
+
+
+
+###########################################################################################
+# Add include directories needed to use Segmentation.
+INCLUDE_DIRECTORIES( BEFORE @SEGMENTATION_INCLUDE_DIRS@ )
+###########################################################################################
+
+
+
+###########################################################################################
+# Add link directories needed to use Segmentation.
+LINK_DIRECTORIES( @SEGMENTATION_LIBRARY_DIRS@ )
+###########################################################################################
+
+
+
+###########################################################################################
+SET( ENABLE_SEGMENTATION_CORE ${OLD_ENABLE_SEGMENTATION_CORE} )
+SET( ENABLE_SEGMENTATION_MFA  ${OLD_ENABLE_SEGMENTATION_MFA}  )
+
+SET( SEGMENTATION_CORE_LIBS ${OLD_SEGMENTATION_CORE_LIBS} )
+SET( SEGMENTATION_MFA_LIBS  ${OLD_SEGMENTATION_MFA_LIBS}  )
+
+ENDIF ( NOT USESEGMENTATION_INCLUDED )
+###########################################################################################
+
+

@@ -1,0 +1,39 @@
+#-----------------------------------------------------------------------------
+#
+# Data.cmake - Data CMake configuration file for external projects.
+#
+# This file is configured by Data and used by the UseData.cmake module
+# to load Data's settings for an external project.
+#-----------------------------------------------------------------------------
+# Settings specific to the build tree.
+# 
+# Modeled after ItkVtkGlueConfig.cmake.in
+# https://farsight-svn.ee.uh.edu/repos/farsight/trunk/ItkVtkGlue/ItkVtkGlueConfig.cmake.in
+# 
+# -Rob Toth
+
+# Generate CMake lines that will define the Data_SOURCE_DIR in the DataConfig.cmake.
+
+# The library dependencies file.
+SET ( DATA_LIBRARY_DEPENDS_FILE  @Data_BINARY_DIR_CONFIG@/DataLibraryDepends.cmake )
+
+# The "use" file.
+SET ( DATA_USE_FILE "@DATA_USE_FILE@" )
+
+# Library directory.
+SET ( DATA_LIBRARY_DIRS @DATA_LIBRARY_DIRS@ )
+
+# Tell other libraries whether we are building data libraries
+SET( ENABLE_DATA_CORE             @ENABLE_DATA_CORE@         )
+SET( ENABLE_DATA_EVALUATION       @ENABLE_DATA_EVALUATION@   )
+SET( ENABLE_DATA_PATIENTS         @ENABLE_DATA_PATIENTS@     )
+SET( ENABLE_DATA_VALIDATION       @ENABLE_DATA_VALIDATION@   )
+
+# Libraries
+SET( DATA_CORE_LIBS             @DATA_CORE_LIBS@             )
+SET( DATA_EVALUATION_LIBS       @DATA_EVALUATION_LIBS@       )
+SET( DATA_PATIENTS_LIBS         @DATA_PATIENTS_LIBS@         )
+SET( DATA_VALIDATION_LIBS       @DATA_VALIDATION_LIBS@       )
+
+# Include directories needed.
+SET ( DATA_INCLUDE_DIRS @DATA_INCLUDE_DIRS@ )

@@ -1,0 +1,887 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>ProstaFuseWindow</class>
+ <widget class="QMainWindow" name="ProstaFuseWindow">
+  <property name="enabled">
+   <bool>true</bool>
+  </property>
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1183</width>
+    <height>726</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>ProstaFuse</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true"/>
+  </property>
+  <property name="unifiedTitleAndToolBarOnMac">
+   <bool>false</bool>
+  </property>
+  <widget class="QWidget" name="centralWidget">
+   <property name="styleSheet">
+    <string notr="true">background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 rgba(255, 255, 255, 255), stop:1 rgba(230, 255, 230, 255));</string>
+   </property>
+   <layout class="QVBoxLayout" name="verticalLayout">
+    <item>
+     <layout class="QHBoxLayout" name="horizontalLayout" stretch="0,0,0">
+      <item>
+       <layout class="QVBoxLayout" name="verticalLayout_2">
+        <item>
+         <layout class="QHBoxLayout" name="horizontalLayout_6">
+          <item>
+           <widget class="QPushButton" name="m_OpenFixedTRUSButton">
+            <property name="font">
+             <font>
+              <family>Calibri</family>
+              <pointsize>11</pointsize>
+             </font>
+            </property>
+            <property name="cursor">
+             <cursorShape>ArrowCursor</cursorShape>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">background-color: rgb(63, 127, 101);
+color: rgb(255, 255, 255)</string>
+            </property>
+            <property name="text">
+             <string>Load &amp;Fixed TRUS</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="m_SaveFixedTRUSButton">
+            <property name="font">
+             <font>
+              <family>Calibri</family>
+              <pointsize>11</pointsize>
+             </font>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">background-color: rgb(63, 127, 101);
+color: rgb(255, 255, 255)</string>
+            </property>
+            <property name="text">
+             <string>Save &amp;Fixed TRUS</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <spacer name="horizontalSpacer_2">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>40</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <layout class="QHBoxLayout" name="horizontalLayout_8">
+          <item>
+           <widget class="QLabel" name="label">
+            <property name="font">
+             <font>
+              <family>Calibri</family>
+              <pointsize>10</pointsize>
+             </font>
+            </property>
+            <property name="text">
+             <string>    Slice:   </string>
+            </property>
+            <property name="indent">
+             <number>4</number>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QSlider" name="m_FixedSliceSlider">
+            <property name="font">
+             <font>
+              <family>Calibri</family>
+              <pointsize>10</pointsize>
+             </font>
+            </property>
+            <property name="maximum">
+             <number>0</number>
+            </property>
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="tickPosition">
+             <enum>QSlider::TicksBelow</enum>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <widget class="QGroupBox" name="groupBox">
+          <property name="font">
+           <font>
+            <family>Calibri</family>
+            <pointsize>10</pointsize>
+           </font>
+          </property>
+          <property name="title">
+           <string>Fixed Image Intensity</string>
+          </property>
+          <layout class="QHBoxLayout" name="horizontalLayout_12">
+           <property name="margin">
+            <number>1</number>
+           </property>
+           <item>
+            <widget class="QLabel" name="label_2">
+             <property name="font">
+              <font>
+               <family>Calibri</family>
+               <pointsize>8</pointsize>
+              </font>
+             </property>
+             <property name="text">
+              <string>    Window:   </string>
+             </property>
+             <property name="indent">
+              <number>4</number>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QSlider" name="m_FixedWindowSlider">
+             <property name="font">
+              <font>
+               <family>Calibri</family>
+               <pointsize>10</pointsize>
+              </font>
+             </property>
+             <property name="maximum">
+              <number>255</number>
+             </property>
+             <property name="orientation">
+              <enum>Qt::Horizontal</enum>
+             </property>
+             <property name="tickPosition">
+              <enum>QSlider::TicksBelow</enum>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="label_4">
+             <property name="font">
+              <font>
+               <family>Calibri</family>
+               <pointsize>8</pointsize>
+              </font>
+             </property>
+             <property name="text">
+              <string>    Level:   </string>
+             </property>
+             <property name="indent">
+              <number>4</number>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QSlider" name="m_FixedLevelSlider">
+             <property name="font">
+              <font>
+               <family>Calibri</family>
+               <pointsize>10</pointsize>
+              </font>
+             </property>
+             <property name="maximum">
+              <number>255</number>
+             </property>
+             <property name="orientation">
+              <enum>Qt::Horizontal</enum>
+             </property>
+             <property name="tickPosition">
+              <enum>QSlider::TicksBelow</enum>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item>
+         <layout class="QHBoxLayout" name="horizontalLayout_9">
+          <item>
+           <widget class="QVTKWidget" name="m_FixedImageWidget" native="true">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Preferred" vsizetype="Expanding">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="minimumSize">
+             <size>
+              <width>20</width>
+              <height>40</height>
+             </size>
+            </property>
+            <property name="cursor">
+             <cursorShape>CrossCursor</cursorShape>
+            </property>
+            <property name="focusPolicy">
+             <enum>Qt::StrongFocus</enum>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">border-color: rgb(85, 255, 127);</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <widget class="Line" name="line_3">
+        <property name="orientation">
+         <enum>Qt::Vertical</enum>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <layout class="QVBoxLayout" name="verticalLayout_3">
+        <item>
+         <layout class="QHBoxLayout" name="horizontalLayout_7">
+          <item>
+           <widget class="QPushButton" name="m_OpenMovingMRIButton">
+            <property name="enabled">
+             <bool>true</bool>
+            </property>
+            <property name="font">
+             <font>
+              <family>Calibri</family>
+              <pointsize>11</pointsize>
+             </font>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">background-color: rgb(63, 127, 101);
+color: rgb(255, 255, 255)</string>
+            </property>
+            <property name="text">
+             <string>Load &amp;Moving MRI</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="m_SaveMovingMRIButton">
+            <property name="font">
+             <font>
+              <family>Calibri</family>
+              <pointsize>11</pointsize>
+             </font>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">background-color: rgb(63, 127, 101);
+color: rgb(255, 255, 255)</string>
+            </property>
+            <property name="text">
+             <string>Save Moving MRI</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <spacer name="horizontalSpacer_3">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>40</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <layout class="QHBoxLayout" name="horizontalLayout_10">
+          <item>
+           <widget class="QLabel" name="label_3">
+            <property name="font">
+             <font>
+              <family>Calibri</family>
+              <pointsize>10</pointsize>
+             </font>
+            </property>
+            <property name="text">
+             <string>    Slice:   </string>
+            </property>
+            <property name="indent">
+             <number>4</number>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QSlider" name="m_MovingSliceSlider">
+            <property name="font">
+             <font>
+              <family>Calibri</family>
+              <pointsize>10</pointsize>
+             </font>
+            </property>
+            <property name="maximum">
+             <number>0</number>
+            </property>
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="tickPosition">
+             <enum>QSlider::TicksBelow</enum>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <widget class="QGroupBox" name="groupBox_2">
+          <property name="font">
+           <font>
+            <family>Calibri</family>
+            <pointsize>10</pointsize>
+           </font>
+          </property>
+          <property name="title">
+           <string>Moving Image Intensity</string>
+          </property>
+          <layout class="QHBoxLayout" name="horizontalLayout_14">
+           <property name="margin">
+            <number>1</number>
+           </property>
+           <item>
+            <widget class="QLabel" name="label_5">
+             <property name="font">
+              <font>
+               <family>Calibri</family>
+               <pointsize>8</pointsize>
+              </font>
+             </property>
+             <property name="text">
+              <string>    Window:   </string>
+             </property>
+             <property name="indent">
+              <number>4</number>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QSlider" name="m_MovingWindowSlider">
+             <property name="font">
+              <font>
+               <family>Calibri</family>
+               <pointsize>10</pointsize>
+              </font>
+             </property>
+             <property name="maximum">
+              <number>255</number>
+             </property>
+             <property name="orientation">
+              <enum>Qt::Horizontal</enum>
+             </property>
+             <property name="tickPosition">
+              <enum>QSlider::TicksBelow</enum>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="label_6">
+             <property name="font">
+              <font>
+               <family>Calibri</family>
+               <pointsize>8</pointsize>
+              </font>
+             </property>
+             <property name="text">
+              <string>    Level:   </string>
+             </property>
+             <property name="indent">
+              <number>4</number>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QSlider" name="m_MovingLevelSlider">
+             <property name="font">
+              <font>
+               <family>Calibri</family>
+               <pointsize>10</pointsize>
+              </font>
+             </property>
+             <property name="maximum">
+              <number>255</number>
+             </property>
+             <property name="orientation">
+              <enum>Qt::Horizontal</enum>
+             </property>
+             <property name="tickPosition">
+              <enum>QSlider::TicksBelow</enum>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item>
+         <layout class="QHBoxLayout" name="horizontalLayout_11"/>
+        </item>
+        <item>
+         <widget class="QVTKWidget" name="m_MovingImageWidget" native="true">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Preferred" vsizetype="Expanding">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="cursor">
+           <cursorShape>CrossCursor</cursorShape>
+          </property>
+          <property name="focusPolicy">
+           <enum>Qt::StrongFocus</enum>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+     </layout>
+    </item>
+    <item>
+     <widget class="Line" name="line">
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <layout class="QHBoxLayout" name="horizontalLayout_4">
+      <item>
+       <widget class="QPushButton" name="m_LoadTransformButton">
+        <property name="font">
+         <font>
+          <family>Calibri</family>
+          <pointsize>11</pointsize>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background-color: rgb(63, 127, 101);
+color: rgb(255, 255, 255)</string>
+        </property>
+        <property name="text">
+         <string>Load &amp;Transform</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="m_ApplyTransformButton">
+        <property name="font">
+         <font>
+          <family>Calibri</family>
+          <pointsize>11</pointsize>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background-color: rgb(63, 127, 101);
+color: rgb(255, 255, 255)</string>
+        </property>
+        <property name="text">
+         <string>&amp;Apply Transform</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <spacer name="horizontalSpacer">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeType">
+         <enum>QSizePolicy::Expanding</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>40</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item>
+       <widget class="QPushButton" name="m_OptionsButton">
+        <property name="font">
+         <font>
+          <family>Calibri</family>
+          <pointsize>11</pointsize>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background-color: rgb(63, 127, 101);
+color: rgb(255, 255, 255);</string>
+        </property>
+        <property name="text">
+         <string>&amp;Options</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="m_AboutButton">
+        <property name="font">
+         <font>
+          <family>Calibri</family>
+          <pointsize>11</pointsize>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background-color: rgb(63, 127, 101);
+color: rgb(255, 255, 255);</string>
+        </property>
+        <property name="text">
+         <string>A&amp;bout</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="m_ExitButton">
+        <property name="font">
+         <font>
+          <family>Calibri</family>
+          <pointsize>11</pointsize>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background-color: rgb(53, 53, 53);
+color: rgb(255, 255, 255);</string>
+        </property>
+        <property name="text">
+         <string>E&amp;xit</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+   </layout>
+  </widget>
+  <action name="actionOpenFile">
+   <property name="enabled">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Open File...</string>
+   </property>
+  </action>
+  <action name="actionExit">
+   <property name="text">
+    <string>Exit</string>
+   </property>
+  </action>
+  <action name="actionPrint">
+   <property name="text">
+    <string>Print</string>
+   </property>
+  </action>
+  <action name="actionHelp">
+   <property name="text">
+    <string>Help</string>
+   </property>
+  </action>
+  <action name="actionSave">
+   <property name="text">
+    <string>Save</string>
+   </property>
+  </action>
+  <action name="actionOpen_Fixed">
+   <property name="text">
+    <string>Open &amp;Fixed...</string>
+   </property>
+  </action>
+  <action name="actionOpen_Moving">
+   <property name="text">
+    <string>Open Moving...</string>
+   </property>
+  </action>
+  <action name="actionExit_2">
+   <property name="text">
+    <string>E&amp;xit</string>
+   </property>
+   <property name="menuRole">
+    <enum>QAction::QuitRole</enum>
+   </property>
+  </action>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>QVTKWidget</class>
+   <extends>QWidget</extends>
+   <header>QVTKWidget.h</header>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>m_OpenFixedTRUSButton</sender>
+   <signal>clicked()</signal>
+   <receiver>ProstaFuseWindow</receiver>
+   <slot>SlotOpenFixedTRUS()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>45</x>
+     <y>29</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>73</x>
+     <y>53</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>m_OpenMovingMRIButton</sender>
+   <signal>clicked()</signal>
+   <receiver>ProstaFuseWindow</receiver>
+   <slot>SlotOpenMovingMRI()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>654</x>
+     <y>27</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>669</x>
+     <y>56</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>m_OptionsButton</sender>
+   <signal>clicked()</signal>
+   <receiver>ProstaFuseWindow</receiver>
+   <slot>SlotOptions()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>1010</x>
+     <y>715</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>479</x>
+     <y>672</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>m_ExitButton</sender>
+   <signal>clicked()</signal>
+   <receiver>ProstaFuseWindow</receiver>
+   <slot>SlotExit()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>1172</x>
+     <y>715</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>641</x>
+     <y>671</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>m_SaveFixedTRUSButton</sender>
+   <signal>clicked()</signal>
+   <receiver>ProstaFuseWindow</receiver>
+   <slot>SlotSaveFixedTRUS()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>193</x>
+     <y>24</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>591</x>
+     <y>362</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>m_SaveMovingMRIButton</sender>
+   <signal>clicked()</signal>
+   <receiver>ProstaFuseWindow</receiver>
+   <slot>SlotSaveMovingMRI()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>788</x>
+     <y>24</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>591</x>
+     <y>362</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>m_LoadTransformButton</sender>
+   <signal>clicked()</signal>
+   <receiver>ProstaFuseWindow</receiver>
+   <slot>SlotLoadTransform()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>61</x>
+     <y>702</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>591</x>
+     <y>362</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>m_ApplyTransformButton</sender>
+   <signal>clicked()</signal>
+   <receiver>ProstaFuseWindow</receiver>
+   <slot>SlotApplyTransform()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>175</x>
+     <y>702</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>591</x>
+     <y>362</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>m_FixedLevelSlider</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>ProstaFuseWindow</receiver>
+   <slot>SlotChangeFixedLevel()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>471</x>
+     <y>105</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>591</x>
+     <y>362</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>m_FixedWindowSlider</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>ProstaFuseWindow</receiver>
+   <slot>SlotChangeFixedWindow()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>195</x>
+     <y>105</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>591</x>
+     <y>362</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>m_MovingLevelSlider</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>ProstaFuseWindow</receiver>
+   <slot>SlotChangeMovingLevel()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>1060</x>
+     <y>105</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>591</x>
+     <y>362</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>m_MovingWindowSlider</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>ProstaFuseWindow</receiver>
+   <slot>SlotChangeMovingWindow()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>784</x>
+     <y>105</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>591</x>
+     <y>362</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>m_FixedSliceSlider</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>ProstaFuseWindow</receiver>
+   <slot>SlotChangeFixedImageSlice(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>327</x>
+     <y>59</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>591</x>
+     <y>362</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>m_MovingSliceSlider</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>ProstaFuseWindow</receiver>
+   <slot>SlotChangeMovingImageSlice(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>916</x>
+     <y>59</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>591</x>
+     <y>362</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>m_AboutButton</sender>
+   <signal>clicked()</signal>
+   <receiver>ProstaFuseWindow</receiver>
+   <slot>SlotShowAbout()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>1054</x>
+     <y>702</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>591</x>
+     <y>362</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>SlotOpenFixedTRUS()</slot>
+  <slot>SlotOpenMovingMRI()</slot>
+  <slot>SlotExit()</slot>
+  <slot>SlotOptions()</slot>
+  <slot>SlotApplyTransform()</slot>
+  <slot>SlotSaveFixedTRUS()</slot>
+  <slot>SlotSaveMovingMRI()</slot>
+  <slot>SlotLoadTransform()</slot>
+  <slot>SlotChangeMovingImageSlice(int)</slot>
+  <slot>SlotChangeFixedImageSlice(int)</slot>
+  <slot>SlotChangeMovingLevel()</slot>
+  <slot>SlotChangeFixedLevel()</slot>
+  <slot>SlotChangeMovingWindow()</slot>
+  <slot>SlotChangeFixedWindow()</slot>
+  <slot>SlotShowAbout()</slot>
+ </slots>
+</ui>

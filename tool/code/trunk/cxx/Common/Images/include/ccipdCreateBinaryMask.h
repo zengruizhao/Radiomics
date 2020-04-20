@@ -1,0 +1,34 @@
+#ifndef __ccipdCreateBinaryMask_h
+#define __ccipdCreateBinaryMask_h
+
+
+
+//////////////////////////////////////////////////////////////////////////////////////////
+#include "ccipdITKForwardDeclarations.h"
+//////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+namespace ccipd
+{
+
+
+
+//////////////////////////////////////////////////////////////////////////////////////////
+/**
+ * This helper function will
+ * ensure that the mask
+ * only contains 1's or 0's.
+ * 
+ * Any non-zero value is
+ * changed to a 1.
+ */
+template< typename TPixelType, unsigned int TDimension >
+itk::SmartPointer< itk::Image< TPixelType, TDimension > >
+CreateBinaryMask( const itk::Image< TPixelType, TDimension > * const mask );
+//////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+} // namespace ccipd
+#endif // __ccipdCreateBinaryMask_h

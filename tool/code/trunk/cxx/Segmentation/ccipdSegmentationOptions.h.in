@@ -1,0 +1,12 @@
+/* Whether or not we are using the ItkVtkGlue
+ * 
+ * If CMake was able to find the package,
+ * then this preprocessor symbol will be defined.
+ */
+
+#cmakedefine ItkVtkGlue_FOUND
+#cmakedefine ENABLE_GUI_CORE
+
+/* Whether or not we are using the Boost packages. */
+#cmakedefine Boost_PROGRAM_OPTIONS_FOUND
+#cmakedefine Boost_SERIALIZATION_FOUND

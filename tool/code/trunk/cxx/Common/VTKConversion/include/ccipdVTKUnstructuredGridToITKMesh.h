@@ -1,0 +1,33 @@
+#ifndef __ccipdVTKUnstructuredGridToITKMesh_h
+#define __ccipdVTKUnstructuredGridToITKMesh_h
+
+
+
+//////////////////////////////////////////////////////////////////////////////////////////
+#include "ccipdVTKForwardDeclarations.h"
+#include "ccipdMeshTypes.h"
+//////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+namespace ccipd
+{
+
+
+
+//////////////////////////////////////////////////////////////////////////////////////////
+/**
+ * This will extract the tetrahedrons from a VTK unstructured grid and
+ * store them in an ITK mesh.
+ * 
+ * \author  Rob Toth
+ * \ingroup VTKConversion
+ */
+VolumeMeshPointer ConvertVTKUnstructuredGridToITKMesh(
+  const vtkUnstructuredGridPointer grid );
+//////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+} // namespace ccipd
+#endif // __ccipdVTKUnstructuredGridToITKMesh_h

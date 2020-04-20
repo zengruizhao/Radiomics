@@ -1,0 +1,33 @@
+
+
+
+///////////////////////////////////////////////////////////////////////////
+
+// ccipd includes
+#include "ccipdCore.h"
+#include "ccipdSplitRegion.hxx"
+#include "ccipdVolumeTypes.h"
+
+#include "ccipdDisableWarningsMacro.h"
+  // itk includes
+  #include <itkImageRegion.h>
+#include "ccipdEnableWarningsMacro.h"
+///////////////////////////////////////////////////////////////////////////
+
+
+
+namespace ccipd
+{
+
+
+
+///////////////////////////////////////////////////////////////////////////
+// compile it for our volume types
+template
+VolumeRegionsContainer SplitRegion< VolumeDimension >(
+  const VolumeRegionType &, const unsigned int );
+///////////////////////////////////////////////////////////////////////////
+
+
+
+} // namespace ccipd

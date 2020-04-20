@@ -1,0 +1,34 @@
+#ifndef __ccipdMFADrivingLevelsetObjects_h
+#define __ccipdMFADrivingLevelsetObjects_h
+
+
+
+//////////////////////////////////////////////////////////////////////////////////////////
+#include "ccipdPatientTypes.h"
+#include "ccipdMFAForwardDeclarations.h"
+//////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+namespace ccipd
+{
+
+
+
+//////////////////////////////////////////////////////////////////////////////////////////
+/** 
+ * Extract the levelset objects
+ * used in this driving feature preparer.
+ * 
+ * \date    2013-01-21
+ * \author  Rob Toth
+ * \ingroup MFA
+ */
+MaskObjectCollectionType GetDrivingLevelsetObjects(
+  const MFADrivingFeaturePreparer & drivingFeatures );
+//////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+} // namespace ccipd
+#endif // __ccipdMFADrivingLevelsetObjects_h

@@ -1,0 +1,36 @@
+#ifndef __ccipdMFADrivingTextureExtractor_h
+#define __ccipdMFADrivingTextureExtractor_h
+
+
+
+//////////////////////////////////////////////////////////////////////////////////////////
+#include "ccipdMFATypes.h"
+//////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+namespace ccipd
+{
+
+
+
+//////////////////////////////////////////////////////////////////////////////////////////
+/**
+ * Create a new texture extractor
+ * with only the driving texture
+ * features.
+ * 
+ * Returns null if any errors occur.
+ * 
+ * \date    2013-01-21
+ * \author  Rob Toth
+ * \ingroup MFA
+ */
+MFATextureExtractorPointer CreateDrivingTextureExtractor(
+  const MFADrivingFeaturePreparer & drivingFeatures );
+//////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+} // namespace ccipd
+#endif // __ccipdMFADrivingTextureExtractor_h

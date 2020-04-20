@@ -1,0 +1,68 @@
+#
+# This file sets up include directories, link directories, and
+# compiler settings for a project to use DimensionalityReduction.  It should not be
+# included directly, but rather through the DimensionalityReduction_USE_FILE setting
+# obtained from DimensionalityReduction.cmake.
+#
+# -Rob Toth
+
+
+
+###########################################################################################
+IF ( NOT USEDIMENSIONALITYREDUCTION_INCLUDED )
+SET( USEDIMENSIONALITYREDUCTION_INCLUDED TRUE )
+
+SET( OLD_ENABLE_DIMENSIONALITY_REDUCTION_CORE ${ENABLE_DIMENSIONALITY_REDUCTION_CORE} )
+SET( OLD_DIMENSIONALITY_REDUCTION_CORE_LIBS   ${DIMENSIONALITY_REDUCTION_CORE_LIBS}   )
+
+SET( OLD_ENABLE_DIMENSIONALITY_REDUCTION_SIM  ${ENABLE_DIMENSIONALITY_REDUCTION_SIM}  )
+SET( OLD_DIMENSIONALITY_REDUCTION_SIM_LIBS    ${DIMENSIONALITY_REDUCTION_SIM_LIBS}    )
+###########################################################################################
+
+
+
+###########################################################################################
+FIND_PACKAGE( CMakeCode REQUIRED )
+INCLUDE( ${CMAKECODE_USE_FILE} )
+###########################################################################################
+
+
+
+###########################################################################################
+IF( OLD_ENABLE_DIMENSIONALITY_REDUCTION_SIM )
+    FIND_PACKAGE( Common REQUIRED )
+  INCLUDE( ${COMMON_USE_FILE} )
+  
+  FIND_PACKAGE( Data REQUIRED )
+  INCLUDE( ${DATA_USE_FILE} )
+  
+  FIND_PACKAGE( Registration REQUIRED )
+  INCLUDE( ${REGISTRATION_USE_FILE} )
+ENDIF()
+###########################################################################################
+
+
+
+###########################################################################################
+# Add include directories needed to use DimensionalityReduction.
+INCLUDE_DIRECTORIES( BEFORE @DIMENSIONALITY_REDUCTION_INCLUDE_DIRS@ )
+###########################################################################################
+
+
+
+###########################################################################################
+# Add link directories needed to use Segmentation.
+LINK_DIRECTORIES( @DIMENSIONALITY_REDUCTION_LIBRARY_DIRS@ )
+###########################################################################################
+
+
+
+###########################################################################################
+SET( ENABLE_DIMENSIONALITY_REDUCTION_CORE ${OLD_ENABLE_DIMENSIONALITY_REDUCTION_CORE} )
+SET( ENABLE_DIMENSIONALITY_REDUCTION_SIM  ${OLD_ENABLE_DIMENSIONALITY_REDUCTION_SIM}  )
+
+SET( DIMENSIONALITY_REDUCTION_CORE_LIBS   ${OLD_DIMENSIONALITY_REDUCTION_CORE_LIBS}   )
+SET( DIMENSIONALITY_REDUCTION_SIM_LIBS    ${OLD_DIMENSIONALITY_REDUCTION_SIM_LIBS}    )
+ENDIF ( NOT USEDIMENSIONALITYREDUCTION_INCLUDED )
+###########################################################################################
+

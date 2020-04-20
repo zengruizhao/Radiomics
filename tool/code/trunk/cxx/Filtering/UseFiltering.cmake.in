@@ -1,0 +1,102 @@
+#
+# This file sets up include directories, link directories, and
+# compiler settings for a project to use Filtering.  It should not be
+# included directly, but rather through the Filtering_USE_FILE setting
+# obtained from Filtering.cmake.
+#
+# Modeled after UseItkVtkGlue.cmake.in
+# https://farsight-svn.ee.uh.edu/repos/farsight/trunk/ItkVtkGlue/UseItkVtkGlue.cmake.in
+# 
+# - Rob Toth
+# - Ahmad Algohary
+
+
+
+###########################################################################################
+# http://ccipd.rutgers.edu/short/n
+IF ( NOT USEFILTERING_INCLUDED )
+SET( USEFILTERING_INCLUDED TRUE )
+
+SET( OLD_ENABLE_FILTERING_CORE               ${ENABLE_FILTERING_CORE}             )
+SET( OLD_ENABLE_FILTERING_DCE               ${ENABLE_FILTERING_DCE}               )
+SET( OLD_ENABLE_FILTERING_FEATURE_COLLECTION ${ENABLE_FILTERING_FEATURE_COLLECTION} )
+
+SET( OLD_FILTERING_CORE_LIBS               ${FILTERING_CORE_LIBS}               )
+SET( OLD_FILTERING_DCE_LIBS               ${FILTERING_DCE_LIBS}               )
+SET( OLD_FILTERING_FEATURE_COLLECTION_LIBS ${FILTERING_FEATURE_COLLECTION_LIBS} )
+
+###########################################################################################
+
+
+
+###########################################################################################
+IF( OLD_ENABLE_FILTERING_CORE OR OLD_ENABLE_FILTERING_DCE)
+  FIND_PACKAGE( ITK REQUIRED )
+  INCLUDE( ${ITK_USE_FILE} )
+ENDIF()
+###########################################################################################
+
+
+
+###########################################################################################
+IF( ENABLE_FILTERING_CORE OR ENABLE_FILTERING_DCE OR ENABLE_FILTERING_FEATURE_COLLECTION )
+  FIND_PACKAGE( Common REQUIRED )
+  INCLUDE( ${COMMON_USE_FILE} )
+ENDIF()
+###########################################################################################
+
+
+
+###########################################################################################
+IF( BUILD_TESTING AND
+  ( OLD_ENABLE_FILTERING_FEATURE_COLLECTION OR OLD_ENABLE_FILTERING_CORE ) )
+  FIND_PACKAGE( Data REQUIRED )
+  INCLUDE( ${DATA_USE_FILE} )
+ENDIF()
+###########################################################################################
+
+
+
+###########################################################################################
+IF( OLD_ENABLE_FILTERING_FEATURE_COLLECTION )
+  FIND_PACKAGE( Registration REQUIRED )
+  INCLUDE( ${REGISTRATION_USE_FILE} )
+ENDIF()
+###########################################################################################
+
+
+
+###########################################################################################
+FIND_PACKAGE( CMakeCode REQUIRED )
+INCLUDE( ${CMAKECODE_USE_FILE} )
+###########################################################################################
+
+
+
+###########################################################################################
+# Add include directories needed to use Filtering.
+INCLUDE_DIRECTORIES( BEFORE @FILTERING_INCLUDE_DIRS@ )
+###########################################################################################
+
+
+
+###########################################################################################
+# Add link directories needed to use Filtering.
+LINK_DIRECTORIES( @FILTERING_LIBRARY_DIRS@ )
+###########################################################################################
+
+
+
+###########################################################################################
+SET( ENABLE_FILTERING_CORE               ${OLD_ENABLE_FILTERING_CORE}               )
+SET( ENABLE_FILTERING_DCE              ${OLD_ENABLE_FILTERING_DCE}               )
+SET( ENABLE_FILTERING_FEATURE_COLLECTION ${OLD_ENABLE_FILTERING_FEATURE_COLLECTION} )
+
+SET( FILTERING_CORE_LIBS               ${OLD_FILTERING_CORE_LIBS}               )
+SET( FILTERING_DCE_LIBS               ${OLD_FILTERING_DCE_LIBS}               )
+SET( FILTERING_FEATURE_COLLECTION_LIBS ${OLD_FILTERING_FEATURE_COLLECTION_LIBS} )
+
+ENDIF ( NOT USEFILTERING_INCLUDED )
+###########################################################################################
+
+

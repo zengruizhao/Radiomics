@@ -1,0 +1,85 @@
+
+
+
+
+//////////////////////////////////////////////////////////////////////////////////////////
+
+// ccipd includes
+#include "ccipdProstalignResultsOptions.h"
+
+#ifdef _MSC_VER
+#pragma warning( push, 0 )
+#endif // _MSC_VER
+
+// Qt includes
+#include "ui_ccipdProstalignResultsOptions.h"
+
+#ifdef _MSC_VER
+#pragma warning( pop )
+#endif // _MSC_VER
+
+//////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+namespace ccipd
+{
+  
+
+
+//////////////////////////////////////////////////////////////////////////////////////////
+ProstalignResultsOptions::ProstalignResultsOptions(
+    const NumberOfBlindsType initialHorizontalBlinds,
+    const NumberOfBlindsType initialVerticalBlinds ) :
+ui( new Ui_ProstalignResultsOptions )
+{
+
+  // set up the user interface
+  this->ui->setupUi( this );
+
+  // set up the options
+  this->ui->m_HorizontalBlindsSpin->setValue(
+    static_cast< int >( initialHorizontalBlinds ) );
+  this->ui->m_VerticalBlindsSpin->setValue(
+    static_cast< int >( initialVerticalBlinds ) );
+
+} // Constructor
+//////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+//////////////////////////////////////////////////////////////////////////////////////////
+ProstalignResultsOptions::NumberOfBlindsType
+ProstalignResultsOptions::GetHorizontalBlinds() const
+{
+
+  return static_cast< NumberOfBlindsType >(
+    this->ui->m_HorizontalBlindsSpin->value() );
+
+} // GetHorizontalBlinds
+//////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+//////////////////////////////////////////////////////////////////////////////////////////
+ProstalignResultsOptions::NumberOfBlindsType
+ProstalignResultsOptions::GetVerticalBlinds() const
+{
+
+  return static_cast< NumberOfBlindsType >(
+    this->ui->m_VerticalBlindsSpin->value() );
+
+} // GetHorizontalBlinds
+//////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+//////////////////////////////////////////////////////////////////////////////////////////
+ProstalignResultsOptions::~ProstalignResultsOptions()
+{
+} // Destructor
+//////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+} // namespace ccipd

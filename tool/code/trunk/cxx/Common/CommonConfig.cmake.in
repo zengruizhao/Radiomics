@@ -1,0 +1,37 @@
+#-----------------------------------------------------------------------------
+#
+# Common.cmake - Common CMake configuration file for external projects.
+#
+# This file is configured by Common and used by the UseCommon.cmake module
+# to load Common's SETtings for an external project.
+#-----------------------------------------------------------------------------
+# Settings specific to the build tree.
+# 
+# Modeled after ItkVtkGlueConfig.cmake.in
+# https://farsight-svn.ee.uh.edu/repos/farsight/trunk/ItkVtkGlue/ItkVtkGlueConfig.cmake.in
+# 
+# -Rob Toth
+
+# Generate CMake lines that will define the Common_SOURCE_DIR in the CommonConfig.cmake.
+
+# The "use" file.
+SET ( COMMON_USE_FILE "@COMMON_USE_FILE@" )
+
+# Library directory.
+SET ( COMMON_LIBRARY_DIRS @COMMON_LIBRARY_DIRS@ )
+
+# Libraries
+SET( COMMON_CORE_LIBS           @COMMON_CORE_LIBS@           )
+SET( COMMON_VTK_CONVERSION_LIBS @COMMON_VTK_CONVERSION_LIBS@ )
+SET( COMMON_MATH_LIBS           @COMMON_MATH_LIBS@           )
+SET( COMMON_IMAGES_LIBS         @COMMON_IMAGES_LIBS@         )
+SET( COMMON_LANDMARKS_LIBS      @COMMON_LANDMARKS_LIBS@      )
+SET( COMMON_HASH_LIBS           @COMMON_HASH_LIBS@           )
+
+# Which libraries are enabled
+SET( ENABLE_COMMON_CORE           @ENABLE_COMMON_CORE@           )
+SET( ENABLE_COMMON_VTK_CONVERSION @ENABLE_COMMON_VTK_CONVERSION@ )
+SET( ENABLE_COMMON_MATH           @ENABLE_COMMON_MATH@           )
+SET( ENABLE_COMMON_IMAGES         @ENABLE_COMMON_IMAGES@         )
+SET( ENABLE_COMMON_LANDMARKS      @ENABLE_COMMON_LANDMARKS@      )
+SET( ENABLE_COMMON_HASH           @ENABLE_COMMON_HASH@           )

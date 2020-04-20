@@ -1,0 +1,18 @@
+cmake_minimum_required(VERSION 2.6)
+cmake_policy(VERSION 2.6)
+
+FIND_PACKAGE(ITK)
+IF(ITK_FOUND)
+  INCLUDE(${ITK_USE_FILE})
+ELSE(ITK_FOUND)
+  MESSAGE(FATAL_ERROR
+          "Cannot build without ITK.  Please set ITK_DIR.")
+ENDIF(ITK_FOUND)
+
+ADD_SUBDIRECTORY(src)
+INCLUDE_DIRECTORIES(
+      ${PROJECT_SOURCE_DIR}/src
+)
+ENABLE_TESTING()
+ADD_SUBDIRECTORY(test)
+

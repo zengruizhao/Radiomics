@@ -1,0 +1,3 @@
+Code in this directory is no longer supported and will likely not work as expected.
+Please use the folders in the main directory instead - 'grey','gabor','haralick',etc.
+If unclear on how to use, please RTFM or check with Satish/Ahmad.

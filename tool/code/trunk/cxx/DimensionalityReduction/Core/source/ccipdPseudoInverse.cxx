@@ -1,0 +1,39 @@
+
+
+
+/**
+ * This file instantiates the templated functions
+ * for our commonly used data types.
+ */
+
+
+
+//////////////////////////////////////////////////////////////////////////////////////////
+#include "ccipdPseudoInverse.hxx"
+
+#ifdef _MSC_VER
+#pragma warning( disable: 4714 ) // inlining
+#endif // _MSC_VER
+//////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+namespace ccipd
+{
+
+
+
+//////////////////////////////////////////////////////////////////////////////////////////
+template EigenMatrixPointerF
+CalculatePseudoInverse< InternalPixelType >(
+  const EigenMatrixTypeF & );
+
+template EigenMatrixPointerF
+CalculatePseudoInverse< InternalPixelType >(
+  const EigenMatrixTypeF &,
+  const EigenVectorTypeF & );
+//////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+} // namespace

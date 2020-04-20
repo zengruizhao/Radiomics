@@ -1,0 +1,68 @@
+#
+# This file sets up include directories, link directories, and
+# compiler settings for a project to use Classification.  It should not be
+# included directly, but rather through the Classification_USE_FILE setting
+# obtained from Classification.cmake.
+#
+# Modeled after UseItkVtkGlue.cmake.in
+# https://farsight-svn.ee.uh.edu/repos/farsight/trunk/ItkVtkGlue/UseItkVtkGlue.cmake.in
+# 
+#
+# - Ahmad 05/17/2013
+# - Ahmad 10/15/2013 Classification Validation Added
+
+
+
+###########################################################################################
+# http://ccipd.rutgers.edu/short/n
+IF ( NOT USE_CLASSIFICATION_INCLUDED )
+
+	SET( USE_CLASSIFICATION_INCLUDED TRUE )
+
+###########################################################################################
+	
+	SET( OLD_ENABLE_CLASSIFICATION_CORE ${ENABLE_CLASSIFICATION_CORE})
+	SET( OLD_CLASSIFICATION_CORE_LIBS   ${CLASSIFICATION_CORE_LIBS}  )
+
+	SET( OLD_ENABLE_CLASSIFICATION_VALIDATION ${ENABLE_CLASSIFICATION_VALIDATION})
+	SET( OLD_CLASSIFICATION_VALIDATION_LIBS   ${CLASSIFICATION_VALIDATION_LIBS}  )
+###########################################################################################
+
+
+
+###########################################################################################
+	FIND_PACKAGE( CMakeCode REQUIRED )
+	INCLUDE( ${CMAKECODE_USE_FILE} )
+###########################################################################################
+
+
+
+###########################################################################################
+	# This always depends on Common Math
+	IF( ENABLE_CLASSIFICATION_CORE OR BUILD_TESTING)
+		FIND_PACKAGE( Common REQUIRED )
+		INCLUDE( ${COMMON_USE_FILE} )
+	ENDIF(ENABLE_CLASSIFICATION_CORE OR BUILD_TESTING)
+###########################################################################################
+
+
+
+###########################################################################################
+	# Add include directories needed to use Classification.
+	INCLUDE_DIRECTORIES( BEFORE @CLASSIFICATION_INCLUDE_DIRS@       )
+
+	# Add link directories needed to use Classification.
+	LINK_DIRECTORIES( @CLASSIFICATION_LIBRARY_DIRS@       )
+
+###########################################################################################
+	SET( ENABLE_CLASSIFICATION_CORE       ${OLD_ENABLE_CLASSIFICATION_CORE}       )
+	SET( ENABLE_CLASSIFICATION_VALIDATION ${OLD_ENABLE_CLASSIFICATION_VALIDATION} )
+		
+	SET( CLASSIFICATION_CORE_LIBS       ${OLD_CLASSIFICATION_CORE_LIBS}       )
+	SET( CLASSIFICATION_VALIDATION_LIBS ${OLD_CLASSIFICATION_VALIDATION_LIBS} )
+	
+	
+ENDIF ( NOT USE_CLASSIFICATION_INCLUDED )
+###########################################################################################
+
+

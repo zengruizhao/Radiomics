@@ -1,0 +1,47 @@
+
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////////
+
+// ccipd includes
+#include "ccipdProstaCADMainWindow.h" // for a GUI
+
+#ifdef _MSC_VER
+#pragma warning( push, 0 )
+#endif // _MSC_VER
+
+// Qt includes
+#include <QApplication>
+
+#ifdef _MSC_VER
+#pragma warning( pop )
+#endif // _MSC_VER
+////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+int main( int argc, char * argv[] )
+{
+
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////////
+  // QT Stuff
+  QApplication app( argc, argv );
+ 
+  QCoreApplication::setOrganizationName("CCIPD");
+  QCoreApplication::setOrganizationDomain("ccipd.case.edu");
+  QCoreApplication::setApplicationName("ProstaCAD");
+
+
+
+
+  ccipd::ProstaCADMainWindow mainGUI;
+  mainGUI.show();
+ 
+  return app.exec();
+////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+} // main

@@ -1,0 +1,43 @@
+#-----------------------------------------------------------------------------
+#
+# GUI.cmake - GUI CMake configuration file for external projects.
+#
+# This file is configured by GUI and used by the UseGUI.cmake module
+# to load GUI's settings for an external project.
+#-----------------------------------------------------------------------------
+# Settings specific to the build tree.
+# 
+# Modeled after ItkVtkGlueConfig.cmake.in
+# https://farsight-svn.ee.uh.edu/repos/farsight/trunk/ItkVtkGlue/ItkVtkGlueConfig.cmake.in
+# 
+# -Rob Toth
+
+# Generate CMake lines that will define the GUI_SOURCE_DIR in the GUIConfig.cmake.
+
+# The library dependencies file.
+#SET( GUI_LIBRARY_DEPENDS_FILE  @GUI_BINARY_DIR@/GUILibraryDepends.cmake )
+
+# The "use" file.
+SET( GUI_USE_FILE "@GUI_USE_FILE@" )
+
+# Library directory.
+SET( GUI_LIBRARY_DIRS @GUI_LIBRARY_DIRS@ )
+
+# Libraries
+SET( GUI_CORE_LIBS            @GUI_CORE_LIBS@          )
+SET( GUI_FEM_RENDERING_LIBS   @GUI_FEM_RENDERING_LIBS@ )
+SET( GUI_RENDER_MFA_LIBS      @GUI_RENDER_MFA_LIBS@    )
+SET( GUI_PROSTACAD_LIBS       @GUI_PROSTACAD_LIBS@     )
+SET( GUI_CAPVIEW_LIBS         @GUI_CAPVIEW_LIBS@       )
+SET( GUI_PROSTAFUSE_LIBS      @GUI_PROSTAFUSE_LIBS@    )
+
+# Tell other applications which libraries we are building
+SET( ENABLE_GUI_CORE            @ENABLE_GUI_CORE@          )
+SET( ENABLE_GUI_FEM_RENDERING   @ENABLE_GUI_FEM_RENDERING@ )
+SET( ENABLE_GUI_RENDER_MFA      @ENABLE_GUI_RENDER_MFA@    )
+SET( ENABLE_GUI_PROSTACAD       @ENABLE_GUI_PROSTACAD@     )
+SET( ENABLE_GUI_CAPVIEW         @ENABLE_GUI_CAPVIEW@       )
+SET( ENABLE_GUI_PROSTAFUSE      @ENABLE_GUI_PROSTAFUSE@    )
+
+# Include directories needed.
+SET( GUI_INCLUDE_DIRS @GUI_INCLUDE_DIRS@ )

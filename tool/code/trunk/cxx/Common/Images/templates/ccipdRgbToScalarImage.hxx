@@ -1,0 +1,26 @@
+
+
+//////////////////////////////////////////////////////////////////////////////////////////
+
+// ccipd includes
+#include "ccipdCore.h"
+#include "ccipdBoundingBoxCreation.h"
+
+// itk includes
+#include "ccipdDisableWarningsMacro.h"
+#include <itkImageBase.h>
+#include <itkPointSet.h>
+#include "ccipdEnableWarningsMacro.h"
+
+//////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+namespace ccipd
+{
+
+
+
+
+
+} // namespace ccipd

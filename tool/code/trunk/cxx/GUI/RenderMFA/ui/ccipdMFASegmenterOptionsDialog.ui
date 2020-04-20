@@ -1,0 +1,635 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MFASegmenterOptionsDialog</class>
+ <widget class="QDialog" name="MFASegmenterOptionsDialog">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>577</width>
+    <height>542</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MFA Segmenter Options</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout">
+   <item>
+    <widget class="QGroupBox" name="groupBox_2">
+     <property name="title">
+      <string>General MFA Options</string>
+     </property>
+     <layout class="QGridLayout" name="gridLayout" columnstretch="1,0">
+      <item row="3" column="0">
+       <layout class="QHBoxLayout" name="horizontalLayout_8">
+        <item>
+         <spacer name="horizontalSpacer_7">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+          <property name="sizeType">
+           <enum>QSizePolicy::Expanding</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>40</width>
+            <height>20</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+        <item>
+         <widget class="QLabel" name="m_SegmentationObjectLabel_3">
+          <property name="text">
+           <string>Extrapolation (mm):</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item row="1" column="0">
+       <layout class="QHBoxLayout" name="horizontalLayout_3">
+        <item>
+         <spacer name="horizontalSpacer_2">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+          <property name="sizeType">
+           <enum>QSizePolicy::Expanding</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>40</width>
+            <height>20</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+        <item>
+         <widget class="QLabel" name="m_SegmentationObjectLabel">
+          <property name="text">
+           <string>Segmentation Object:</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item row="0" column="1">
+       <layout class="QHBoxLayout" name="horizontalLayout">
+        <item>
+         <widget class="QLineEdit" name="m_TrainedModelText">
+          <property name="readOnly">
+           <bool>true</bool>
+          </property>
+          <property name="placeholderText">
+           <string>Click &quot;Open&quot;</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="m_TrainedModelButton">
+          <property name="text">
+           <string>&amp;Open</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item row="0" column="0">
+       <layout class="QHBoxLayout" name="horizontalLayout_2">
+        <item>
+         <spacer name="horizontalSpacer">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+          <property name="sizeType">
+           <enum>QSizePolicy::Expanding</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>50</width>
+            <height>20</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+        <item>
+         <widget class="QLabel" name="m_TrainedModelLabel">
+          <property name="text">
+           <string>Trained MFA Model:</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item row="2" column="1">
+       <widget class="QCheckBox" name="m_VerboseCheck">
+        <property name="text">
+         <string/>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="0">
+       <layout class="QHBoxLayout" name="horizontalLayout_6">
+        <item>
+         <spacer name="horizontalSpacer_6">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+          <property name="sizeType">
+           <enum>QSizePolicy::Expanding</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>40</width>
+            <height>20</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+        <item>
+         <widget class="QLabel" name="m_SegmentationObjectLabel_2">
+          <property name="text">
+           <string>Verbose:</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item row="1" column="1">
+       <widget class="QLineEdit" name="m_SegmentationObjectText">
+        <property name="placeholderText">
+         <string>Leave blank to segment all objects.</string>
+        </property>
+       </widget>
+      </item>
+      <item row="3" column="1">
+       <layout class="QHBoxLayout" name="horizontalLayout_9">
+        <item>
+         <widget class="QDoubleSpinBox" name="m_ExtrapolationSpin">
+          <property name="maximum">
+           <double>999.000000000000000</double>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <spacer name="horizontalSpacer_8">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>40</width>
+            <height>20</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+       </layout>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item>
+    <widget class="QGroupBox" name="groupBox">
+     <property name="title">
+      <string>Registration Options</string>
+     </property>
+     <layout class="QVBoxLayout" name="verticalLayout_2">
+      <item>
+       <layout class="QHBoxLayout" name="horizontalLayout_7">
+        <item>
+         <widget class="QLabel" name="label_3">
+          <property name="text">
+           <string>Multi-Resolution Framework:</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <spacer name="horizontalSpacer_5">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>40</width>
+            <height>20</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+        <item>
+         <widget class="QPushButton" name="m_AddAlgorithmButton">
+          <property name="maximumSize">
+           <size>
+            <width>50</width>
+            <height>100</height>
+           </size>
+          </property>
+          <property name="text">
+           <string>+</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="m_RemoveAlgorithmButton">
+          <property name="maximumSize">
+           <size>
+            <width>50</width>
+            <height>100</height>
+           </size>
+          </property>
+          <property name="text">
+           <string>-</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <widget class="ccipd::MFAAlgorithmTableWidget" name="m_RegistrationOptionsTable">
+        <property name="selectionMode">
+         <enum>QAbstractItemView::SingleSelection</enum>
+        </property>
+        <column>
+         <property name="text">
+          <string>Transform</string>
+         </property>
+        </column>
+        <column>
+         <property name="text">
+          <string>Interpolator</string>
+         </property>
+        </column>
+        <column>
+         <property name="text">
+          <string>% Pixels</string>
+         </property>
+        </column>
+        <column>
+         <property name="text">
+          <string>Use NCC</string>
+         </property>
+        </column>
+        <column>
+         <property name="text">
+          <string>Particles</string>
+         </property>
+        </column>
+        <column>
+         <property name="text">
+          <string>Iterations</string>
+         </property>
+        </column>
+        <column>
+         <property name="text">
+          <string>Display %</string>
+         </property>
+        </column>
+        <column>
+         <property name="text">
+          <string>Use Variance Weights</string>
+         </property>
+        </column>
+        <column>
+         <property name="text">
+          <string>Likelihood Type</string>
+         </property>
+        </column>
+        <column>
+         <property name="text">
+          <string>BB Mantissa</string>
+         </property>
+        </column>
+        <column>
+         <property name="text">
+          <string>BB Exponent</string>
+         </property>
+        </column>
+        <column>
+         <property name="text">
+          <string>Known Points Mantissa</string>
+         </property>
+        </column>
+        <column>
+         <property name="text">
+          <string>Known Points Exponent</string>
+         </property>
+        </column>
+        <column>
+         <property name="text">
+          <string>Max Eigenvectors</string>
+         </property>
+        </column>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item>
+    <widget class="QGroupBox" name="groupBox_3">
+     <property name="title">
+      <string>Feature Options</string>
+     </property>
+     <layout class="QGridLayout" name="gridLayout_2">
+      <item row="0" column="1">
+       <layout class="QHBoxLayout" name="horizontalLayout_5">
+        <item>
+         <widget class="QLabel" name="label_2">
+          <property name="text">
+           <string>Levelset Features:</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <spacer name="horizontalSpacer_4">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>40</width>
+            <height>20</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+        <item>
+         <widget class="QPushButton" name="m_AddLevelstButton">
+          <property name="maximumSize">
+           <size>
+            <width>50</width>
+            <height>100</height>
+           </size>
+          </property>
+          <property name="text">
+           <string>+</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="m_RemoveLevelsetButton">
+          <property name="maximumSize">
+           <size>
+            <width>50</width>
+            <height>100</height>
+           </size>
+          </property>
+          <property name="text">
+           <string>-</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item row="0" column="0">
+       <layout class="QHBoxLayout" name="horizontalLayout_4">
+        <item>
+         <widget class="QLabel" name="label">
+          <property name="text">
+           <string>Texture Features:</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <spacer name="horizontalSpacer_3">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>40</width>
+            <height>20</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+        <item>
+         <widget class="QPushButton" name="m_AddTextureButton">
+          <property name="maximumSize">
+           <size>
+            <width>50</width>
+            <height>100</height>
+           </size>
+          </property>
+          <property name="text">
+           <string>+</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="m_RemoveTextureButton">
+          <property name="maximumSize">
+           <size>
+            <width>50</width>
+            <height>100</height>
+           </size>
+          </property>
+          <property name="text">
+           <string>-</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item row="1" column="1">
+       <widget class="QListWidget" name="m_LevelsetList"/>
+      </item>
+      <item row="1" column="0">
+       <widget class="QListWidget" name="m_TextureList"/>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item>
+    <widget class="Line" name="line">
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QDialogButtonBox" name="m_ButtonBox">
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+     <property name="standardButtons">
+      <set>QDialogButtonBox::Cancel|QDialogButtonBox::Ok</set>
+     </property>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>ccipd::MFAAlgorithmTableWidget</class>
+   <extends>QTableWidget</extends>
+   <header>ccipdMFAAlgorithmTableWidget.h</header>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>m_ButtonBox</sender>
+   <signal>accepted()</signal>
+   <receiver>MFASegmenterOptionsDialog</receiver>
+   <slot>accept()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>257</x>
+     <y>455</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>157</x>
+     <y>274</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>m_ButtonBox</sender>
+   <signal>rejected()</signal>
+   <receiver>MFASegmenterOptionsDialog</receiver>
+   <slot>reject()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>325</x>
+     <y>455</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>286</x>
+     <y>274</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>m_AddLevelstButton</sender>
+   <signal>clicked()</signal>
+   <receiver>MFASegmenterOptionsDialog</receiver>
+   <slot>SlotAddLevelset()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>499</x>
+     <y>311</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>533</x>
+     <y>245</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>m_RemoveLevelsetButton</sender>
+   <signal>clicked()</signal>
+   <receiver>MFASegmenterOptionsDialog</receiver>
+   <slot>SlotRemoveLevelset()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>555</x>
+     <y>311</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>573</x>
+     <y>258</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>m_AddTextureButton</sender>
+   <signal>clicked()</signal>
+   <receiver>MFASegmenterOptionsDialog</receiver>
+   <slot>SlotAddTexture()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>228</x>
+     <y>311</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>240</x>
+     <y>243</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>m_RemoveTextureButton</sender>
+   <signal>clicked()</signal>
+   <receiver>MFASegmenterOptionsDialog</receiver>
+   <slot>SlotRemoveTexture()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>284</x>
+     <y>311</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>352</x>
+     <y>244</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>m_TrainedModelButton</sender>
+   <signal>clicked()</signal>
+   <receiver>MFASegmenterOptionsDialog</receiver>
+   <slot>SlotOpenModel()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>508</x>
+     <y>45</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>544</x>
+     <y>98</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>m_RemoveAlgorithmButton</sender>
+   <signal>clicked()</signal>
+   <receiver>MFASegmenterOptionsDialog</receiver>
+   <slot>SlotRemoveAlgorithm()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>530</x>
+     <y>140</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>574</x>
+     <y>147</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>m_AddAlgorithmButton</sender>
+   <signal>clicked()</signal>
+   <receiver>MFASegmenterOptionsDialog</receiver>
+   <slot>SlotAddAlgorithm()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>463</x>
+     <y>143</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>575</x>
+     <y>124</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>SlotAddLevelset()</slot>
+  <slot>SlotRemoveLevelset()</slot>
+  <slot>SlotAddTexture()</slot>
+  <slot>SlotRemoveTexture()</slot>
+  <slot>SlotOpenModel()</slot>
+  <slot>SlotRemoveAlgorithm()</slot>
+  <slot>SlotAddAlgorithm()</slot>
+ </slots>
+</ui>

@@ -1,0 +1,35 @@
+
+
+
+//////////////////////////////////////////////////////////////////////////////////////////
+#include "ccipdGetLargestContiguousRegion.hxx"
+#include "ccipdVolumeTypes.h"
+//////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+namespace ccipd
+{
+
+
+
+//////////////////////////////////////////////////////////////////////////////////////////
+template
+VolumeMaskImagePointer
+GetLargestContiguousRegions< MaskPixelType, VolumeDimension >(
+  const VolumeMaskImageType * const );
+
+template
+VolumeMaskImagePointer
+GetLargestContiguousRegion< MaskPixelType, VolumeDimension >(
+  const VolumeMaskImageType * const );
+
+template
+VolumeBinaryImagePointer
+GetLargestContiguousRegion< BinaryPixelType, VolumeDimension >(
+  const VolumeBinaryImageType * const );
+//////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+} // namespace ccipd

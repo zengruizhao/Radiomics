@@ -1,0 +1,19 @@
+function thickbox(varargin)
+
+if nargin<1,
+    width=1.5;
+else
+    width=varargin{1};
+end
+
+% hh=findobj('Parent',gca,'LineWidth',0.5);
+hh=[findobj('Parent',gca,'Tag','Upper Whisker'); ...
+    findobj('Parent',gca,'Tag','Lower Whisker'); ...
+    findobj('Parent',gca,'Tag','Median'); ...
+    findobj('Parent',gca,'Tag','Box'); ...
+    findobj('Parent',gca,'Tag','Outliers'); ...
+    findobj('Parent',gca,'Tag','Upper Adjacent Value'); ...
+    findobj('Parent',gca,'Tag','Lower Adjacent Value'); ];
+for i=1:length(hh),
+    set(hh,'LineWidth',width);
+end

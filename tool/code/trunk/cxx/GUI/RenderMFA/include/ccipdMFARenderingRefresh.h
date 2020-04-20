@@ -1,0 +1,34 @@
+#ifndef __ccipdMFARenderingRefresh_h
+#define __ccipdMFARenderingRefresh_h
+
+
+
+//////////////////////////////////////////////////////////////////////////////////////////
+#include "ccipdVTKForwardDeclarations.h"
+#include "ccipdMFAForwardDeclarations.h"
+//////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+namespace ccipd
+{
+
+
+
+//////////////////////////////////////////////////////////////////////////////////////////
+/**
+ * Re-render all actors
+ * from an MFA segmenter
+ * onto a VTK render window.
+ * 
+ * \returns The collection of rendered actors.
+ */
+vtkActorCollectionPointer RefreshRendering(
+        vtkRenderWindow & renderWindow,
+  const MFAModel        & model );
+//////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+} // namespace ccipd
+#endif // __ccipdMFARenderingRefresh_h
