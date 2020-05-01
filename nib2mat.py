@@ -86,10 +86,10 @@ def nib2mat_all_wholeimage():
                 img_data = img.get_fdata()
                 label = nib.load(os.path.join(case_file, i[:-11] + '_label.nii.gz'))
                 label_data = label.get_fdata()
-                slice_min = np.min(np.unique(np.where(label_data)[-1]))
-                slice_max = np.max(np.unique(np.where(label_data)[-1]))
-                out_data = img_data[..., slice_min:(slice_max + 1)]
-                out_label = label_data[..., slice_min:(slice_max + 1)]
+                # slice_min = np.min(np.unique(np.where(label_data)[-1]))
+                # slice_max = np.max(np.unique(np.where(label_data)[-1]))
+                # out_data = img_data[..., slice_min:(slice_max + 1)]
+                # out_label = label_data[..., slice_min:(slice_max + 1)]
                 out_data = img_data
                 out_label = label_data
                 if not os.path.exists(os.path.join(out_path, case)):
